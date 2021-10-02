@@ -1,4 +1,7 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,17 +15,18 @@
  * @since		Version 1.0
  * @filesource
  */
+if (!function_exists('remove_js')) {
 
-if (! function_exists('remove_js')) {
     function remove_js($description = '') {
         return preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', "", $description);
     }
+
 }
 
 if (!function_exists('has_permission')) {
-    function has_permission($permission_for = '', $admin_id = '')
-    {
-        $CI    = &get_instance();
+
+    function has_permission($permission_for = '', $admin_id = '') {
+        $CI = &get_instance();
         $CI->load->database();
 
         // GET THE LOGGEDIN IN ADMIN ID
@@ -44,12 +48,13 @@ if (!function_exists('has_permission')) {
             }
         }
     }
+
 }
 
 if (!function_exists('check_permission')) {
-    function check_permission($permission_for)
-    {
-        $CI    = &get_instance();
+
+    function check_permission($permission_for) {
+        $CI = &get_instance();
         $CI->load->database();
 
         if (!has_permission($permission_for)) {
@@ -57,12 +62,13 @@ if (!function_exists('check_permission')) {
             redirect(site_url('admin/dashboard'), 'refresh');
         }
     }
+
 }
 
 if (!function_exists('is_root_admin')) {
-    function is_root_admin($admin_id = '')
-    {
-        $CI    = &get_instance();
+
+    function is_root_admin($admin_id = '') {
+        $CI = &get_instance();
         $CI->load->database();
 
         // GET THE LOGGEDIN IN ADMIN ID
@@ -78,20 +84,22 @@ if (!function_exists('is_root_admin')) {
             return false;
         }
     }
+
 }
 
-if (! function_exists('resizeImage')) {
+if (!function_exists('resizeImage')) {
+
     function resizeImage($filelocation = "", $target_path = "", $width = "", $height = "") {
-        $CI =&  get_instance();
+        $CI = & get_instance();
         $CI->load->database();
-        
-        if($width == ""){
+
+        if ($width == "") {
             $width = 200;
         }
 
-        if($height == ""){
+        if ($height == "") {
             $maintain_ratio = TRUE;
-        }else{
+        } else {
             $maintain_ratio = FALSE;
         }
 
@@ -109,30 +117,32 @@ if (! function_exists('resizeImage')) {
 
         if ($CI->image_lib->resize()) {
             return true;
-        }else{
+        } else {
             $CI->image_lib->display_errors();
             return false;
         }
         $CI->image_lib->clear();
-   }
+    }
+
 }
 
 if (!function_exists('get_settings')) {
-    function get_settings($key = '')
-    {
-        $CI    = &get_instance();
+
+    function get_settings($key = '') {
+        $CI = &get_instance();
         $CI->load->database();
 
         $CI->db->where('key', $key);
         $result = $CI->db->get('settings')->row('value');
         return $result;
     }
+
 }
 
 if (!function_exists('currency')) {
-    function currency($price = "")
-    {
-        $CI    = &get_instance();
+
+    function currency($price = "") {
+        $CI = &get_instance();
         $CI->load->database();
         if ($price != "") {
             $CI->db->where('key', 'system_currency');
@@ -155,23 +165,25 @@ if (!function_exists('currency')) {
             }
         }
     }
+
 }
 
 if (!function_exists('custom_date')) {
-    function custom_date($strtotime = "", $format = "")
-    {
+
+    function custom_date($strtotime = "", $format = "") {
         if ($format == "") {
             return date('d', $strtotime) . '-' . site_phrase(date('M', $strtotime)) . '-' . date('Y', $strtotime);
         } elseif ($format == 1) {
             return site_phrase(date('D', $strtotime)) . ', ' . date('d', $strtotime) . '-' . site_phrase(date('M', $strtotime)) . '-' . date('Y', $strtotime);
         }
     }
+
 }
 
 if (!function_exists('currency_code_and_symbol')) {
-    function currency_code_and_symbol($type = "")
-    {
-        $CI    = &get_instance();
+
+    function currency_code_and_symbol($type = "") {
+        $CI = &get_instance();
         $CI->load->database();
         $CI->db->where('key', 'system_currency');
         $currency_code = $CI->db->get('settings')->row()->value;
@@ -184,23 +196,25 @@ if (!function_exists('currency_code_and_symbol')) {
             return $currency_code;
         }
     }
+
 }
 
 if (!function_exists('get_frontend_settings')) {
-    function get_frontend_settings($key = '')
-    {
-        $CI    = &get_instance();
+
+    function get_frontend_settings($key = '') {
+        $CI = &get_instance();
         $CI->load->database();
 
         $CI->db->where('key', $key);
         $result = $CI->db->get('frontend_settings')->row()->value;
         return $result;
     }
+
 }
 
 if (!function_exists('slugify')) {
-    function slugify($text)
-    {
+
+    function slugify($text) {
         $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
         $text = trim($text, '-');
         $text = strtolower($text);
@@ -209,12 +223,13 @@ if (!function_exists('slugify')) {
             return 'n-a';
         return $text;
     }
+
 }
 
 if (!function_exists('get_video_extension')) {
+
     // Checks if a video is youtube, vimeo or any other
-    function get_video_extension($url)
-    {
+    function get_video_extension($url) {
         if (strpos($url, '.mp4') > 0) {
             return 'mp4';
         } elseif (strpos($url, '.webm') > 0) {
@@ -223,21 +238,23 @@ if (!function_exists('get_video_extension')) {
             return 'unknown';
         }
     }
+
 }
 
 if (!function_exists('ellipsis')) {
+
     // Checks if a video is youtube, vimeo or any other
-    function ellipsis($long_string, $max_character = 30)
-    {
+    function ellipsis($long_string, $max_character = 30) {
         $short_string = strlen($long_string) > $max_character ? mb_substr($long_string, 0, $max_character) . "..." : $long_string;
         return $short_string;
     }
+
 }
 
 // This function helps us to decode the theme configuration json file and return that array to us
 if (!function_exists('themeConfiguration')) {
-    function themeConfiguration($theme, $key = "")
-    {
+
+    function themeConfiguration($theme, $key = "") {
         $themeConfigs = [];
         if (file_exists('assets/frontend/' . $theme . '/config/theme-config.json')) {
             $themeConfigs = file_get_contents('assets/frontend/' . $theme . '/config/theme-config.json');
@@ -255,15 +272,16 @@ if (!function_exists('themeConfiguration')) {
             return false;
         }
     }
+
 }
 
 // Human readable time
 if (!function_exists('readable_time_for_humans')) {
-    function readable_time_for_humans($duration)
-    {
+
+    function readable_time_for_humans($duration) {
         if ($duration) {
             $duration_array = explode(':', $duration);
-            $hour   = $duration_array[0];
+            $hour = $duration_array[0];
             $minute = $duration_array[1];
             $second = $duration_array[2];
             if ($hour > 0) {
@@ -284,11 +302,12 @@ if (!function_exists('readable_time_for_humans')) {
         }
         return $duration;
     }
+
 }
 
 if (!function_exists('trimmer')) {
-    function trimmer($text)
-    {
+
+    function trimmer($text) {
         $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
         $text = trim($text, '-');
         $text = strtolower($text);
@@ -297,20 +316,22 @@ if (!function_exists('trimmer')) {
             return 'n-a';
         return $text;
     }
+
 }
 
 if (!function_exists('lesson_progress')) {
-    function lesson_progress($lesson_id = "", $user_id = "")
-    {
-        $CI    = &get_instance();
+
+    function lesson_progress($lesson_id = "", $user_id = "") {
+        $CI = &get_instance();
         $CI->load->database();
         if ($user_id == "") {
             $user_id = $CI->session->userdata('user_id');
         }
         $user_details = $CI->user_model->get_all_user($user_id)->row_array();
         $watch_history_array = json_decode($user_details['watch_history'], true);
-        
-        if(!is_array($watch_history_array)) $watch_history_array = array();
+
+        if (!is_array($watch_history_array))
+            $watch_history_array = array();
 
         for ($i = 0; $i < count($watch_history_array); $i++) {
             $watch_history_for_each_lesson = $watch_history_array[$i];
@@ -320,11 +341,12 @@ if (!function_exists('lesson_progress')) {
         }
         return 0;
     }
+
 }
 if (!function_exists('course_progress')) {
-    function course_progress($course_id = "", $user_id = "", $return_type = "")
-    {
-        $CI    = &get_instance();
+
+    function course_progress($course_id = "", $user_id = "", $return_type = "") {
+        $CI = &get_instance();
         $CI->load->database();
         if ($user_id == "") {
             $user_id = $CI->session->userdata('user_id');
@@ -377,12 +399,13 @@ if (!function_exists('course_progress')) {
             }
         }
     }
+
 }
 
 // RANDOM NUMBER GENERATOR FOR ELSEWHERE
 if (!function_exists('random')) {
-    function random($length_of_string)
-    {
+
+    function random($length_of_string) {
         // String of all alphanumeric character
         $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
@@ -390,12 +413,13 @@ if (!function_exists('random')) {
         // of specified length
         return substr(str_shuffle($str_result), 0, $length_of_string);
     }
+
 }
 
 // RANDOM NUMBER GENERATOR FOR ELSEWHERE
 if (!function_exists('phpFileUploadErrors')) {
-    function phpFileUploadErrors($error_code)
-    {
+
+    function phpFileUploadErrors($error_code) {
         $phpFileUploadErrorsArray = array(
             0 => 'There is no error, the file uploaded with success',
             1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
@@ -408,13 +432,14 @@ if (!function_exists('phpFileUploadErrors')) {
         );
         return $phpFileUploadErrorsArray[$error_code];
     }
+
 }
 
 
 // course bundle subscription data
 if (!function_exists('get_bundle_validity')) {
-    function get_bundle_validity($bundle_id = "", $user_id = "")
-    {
+
+    function get_bundle_validity($bundle_id = "", $user_id = "") {
         $CI = &get_instance();
         $CI->load->database();
         if ($user_id == "") {
@@ -444,6 +469,7 @@ if (!function_exists('get_bundle_validity')) {
             return 'invalid';
         }
     }
+
 }
 
 
@@ -474,10 +500,11 @@ if (!function_exists('obtain_credentials_before_upload')) {
             return json_decode($response);
         }
     }
+
 }
 if (!function_exists('uploading_file_vidocipher')) {
 
-    function uploading_file_vidocipher($filePath = '') {   
+    function uploading_file_vidocipher($filePath = '') {
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://dev.vdocipher.com/api/videos/importUrl",
@@ -496,16 +523,17 @@ if (!function_exists('uploading_file_vidocipher')) {
                 "Content-Type: application/json"
             ),
         ));
-        $response = curl_exec($curl);        
+        $response = curl_exec($curl);
         curl_close($curl);
         return json_decode($response);
     }
+
 }
 
 if (!function_exists('update_vidocipher_status')) {
 
     function update_vidocipher_status($video_id) {
-        $res=array();
+        $res = array();
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://dev.vdocipher.com/api/videos/$video_id",
@@ -526,10 +554,57 @@ if (!function_exists('update_vidocipher_status')) {
 
         curl_close($curl);
         if ($err) {
+            
         } else {
             return $res = json_decode($response);
-        }        
+        }
     }
+
+}
+
+if (!function_exists('get_vidociphr_video_by_id')) {
+
+    function get_vidociphr_video_by_id($video_id) {
+        $res = array();
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://dev.vdocipher.com/api/videos/$video_id/otp",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => json_encode([
+                'annotate' => json_encode([[
+                'type' => 'text',
+                'text' => 'Procorner.in',
+                'x' => '85%',
+                'y' => '90%',
+                'alpha' => '1',
+                'color' => '0xFFFFFF',
+                'size' => '25'
+            ]]),
+            ]),
+            CURLOPT_HTTPHEADER => array(
+                "Accept: application/json",
+                "Authorization: Apisecret " . API_SECRET,
+                "Content-Type: application/json"
+            ),
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $res = json_decode($response);
+            return $res;
+        }
+    }
+
 }
 
 

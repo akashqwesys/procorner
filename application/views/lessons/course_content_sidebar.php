@@ -66,8 +66,10 @@
                                                 else:
                                                     $lesson_url = site_url('home/lesson/'.slugify($course_details['title']).'/'.$course_id.'/'.$lesson['id']);
                                                 endif;
+                                                
+                                                if($lesson['vidoCipher_status']==2){
                                                 ?>
-
+                                                
                                                 <tr style="width: 100%; padding: 5px 0px;background-color: <?php if ($lesson_id == $lesson['id'])echo '#E6F2F5'; else echo '#fff';?>;">
                                                     <td style="text-align: left; padding:7px 10px;">
                                                         <?php
@@ -121,6 +123,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
+                                                <?php } ?>
                                             <?php endforeach; ?>
                                         </table>
                                     </div>
