@@ -2,3 +2,4 @@
 /uploads/lesson_files
 .htaccess
 .htaccess
+application/language/english.json
