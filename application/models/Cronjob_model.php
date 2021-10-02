@@ -24,9 +24,9 @@ class Cronjob_model extends CI_Model {
         echo $res;
         if($res==1){
             echo 'yes';
-            $video_url=str_replace(base_url(),"",$video_url);
-            echo $video_url;die;
-            $res=unlink($video_url); 
+            $video_url1=str_replace(base_url(),"",$video_url);
+            echo $video_url1;die;
+            $res=unlink($video_url1); 
             print_r($res);die;
             echo 'no';
         }
