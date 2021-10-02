@@ -17,9 +17,13 @@ class Cronjob_model extends CI_Model {
     public function get_pending_video_list() {
         return $this->db->get_where('lesson', array('vidoCipher_status' => 1,'video_type' => 'system'))->result_array();
     }
-    public function update_video_status($video_id) {
+    public function update_video_status($video_id,$video_url) {        
         $data['vidoCipher_status']=2;
         $this->db->where('vidoCipher_id', $video_id);
-        $this->db->update('lesson', $data);
+        $res=$this->db->update('lesson', $data);
+        if(!empty($res) && $res==1){            
+            $video_url=str_replace(BASE_URL.'/',"",$video_url);
+            unlink($video_url);
+        }
     }
 }

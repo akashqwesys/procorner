@@ -21,7 +21,7 @@ class Cronjob extends CI_Controller {
                 $res=update_vidocipher_status($row['vidoCipher_id']);
                 if(!empty($res)){
                     if($res->status=="ready"){
-                        $this->Cronjob_model->update_video_status($row['vidoCipher_id']);
+                        $this->Cronjob_model->update_video_status($row['vidoCipher_id'],$row['video_url']);
                     }
                 }
             }
