@@ -22,9 +22,9 @@ class Cronjob_model extends CI_Model {
         $this->db->where('vidoCipher_id', $video_id);
         $res=$this->db->update('lesson', $data);        
         if($res==1){            
-            $video_url1=str_replace(base_url(),'',$video_url);
-            echo $video_url1;die;
-            unlink($video_url1);             
+//            $video_url1=str_replace(base_url(),'',$video_url);
+//            echo $video_url1;die;
+            unlink($video_url);             
         }
     }
 }

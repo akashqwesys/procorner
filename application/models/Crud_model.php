@@ -1122,7 +1122,8 @@ class Crud_model extends CI_Model
             $data['duration_for_mobile_application'] = $hour . ':' . $min . ':' . $sec;
             $data['video_type_for_mobile_application'] = 'html5';
             $data['video_url_for_mobile_application'] = $mobile_app_lesson_url;
-        } elseif ($lesson_type == "s3") {
+        } 
+        elseif ($lesson_type == "s3") {
             // SET MAXIMUM EXECUTION TIME 600
             ini_set('max_execution_time', '600');
 
@@ -1183,7 +1184,8 @@ class Crud_model extends CI_Model
             $data['duration_for_mobile_application'] = $hour . ':' . $min . ':' . $sec;
             $data['video_type_for_mobile_application'] = "html5";
             $data['video_url_for_mobile_application'] = $result['ObjectURL'];
-        } elseif ($lesson_type == "system") {
+        } 
+        elseif ($lesson_type == "system") {
             // SET MAXIMUM EXECUTION TIME 600
             ini_set('max_execution_time', '600');
 
@@ -1225,7 +1227,7 @@ class Crud_model extends CI_Model
             }
             $video_file_path = 'uploads/lesson_files/videos/' . $uploadable_video_file;
             move_uploaded_file($tmp_video_file, $video_file_path);
-            $data['video_url'] = site_url($video_file_path);
+            $data['video_url'] = $video_file_path;
             $data['video_type'] = 'system';
             $data['lesson_type'] = 'video';
             $data['attachment_type'] = 'file';
