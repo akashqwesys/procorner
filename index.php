@@ -1,19 +1,4 @@
 <?php
-
-
-//if ((isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTPS'] == '1'))) || (isset($_SERVER['HTTPS']) && $_SERVER['SERVER_PORT'] == 443)) ? "https://" : "http://";
-
-$protocol = ((isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTPS'] == '1'))) || (isset($_SERVER['HTTPS']) && $_SERVER['SERVER_PORT'] == 443)) ? "https://" : "http://";
-$r = $_SERVER['SCRIPT_NAME'];
-$subdomain = explode('/', $r);
-array_pop($subdomain);
-$urllink=$protocol.$_SERVER['SERVER_NAME'];
-if($urllink=="https://localhost" || $urllink=="http://localhost"){
-    if(isset($subdomain[1])){
-        $urllink.='/'.$subdomain[1];
-    }    
-}
-define('BASE_URL',$urllink);
 /**
  * CodeIgniter
  *

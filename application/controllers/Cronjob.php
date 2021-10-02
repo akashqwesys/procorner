@@ -14,8 +14,7 @@ class Cronjob extends CI_Controller {
         $this->output->set_header('Pragma: no-cache');
     }
 
-    public function vido_cipher_upload_status() {
-        echo 'hi';die;
+    public function vido_cipher_upload_status() {        
         $resData=$this->Cronjob_model->get_pending_video_list();         
         if(!empty($resData)){
             foreach ($resData as $row){
