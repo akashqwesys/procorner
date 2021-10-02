@@ -1487,7 +1487,7 @@ class Crud_model extends CI_Model
                 $video_file_path = 'uploads/lesson_files/videos/' . $uploadable_video_file;
                 move_uploaded_file($tmp_video_file, $video_file_path);
 
-                $data['video_url'] = site_url($video_file_path);
+                $data['video_url'] = $video_file_path;
                 $data['video_url_for_mobile_application'] = site_url($video_file_path);                
                 
                 
