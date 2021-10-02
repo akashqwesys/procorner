@@ -21,11 +21,13 @@ class Cronjob_model extends CI_Model {
         $data['vidoCipher_status']=2;
         $this->db->where('vidoCipher_id', $video_id);
         $res=$this->db->update('lesson', $data);
-        echo 'hi';
-        if(!empty($res) && $res==1){            
+        echo $res;
+        if($res==1){
+            echo 'yes';
             $video_url=str_replace(base_url(),"",$video_url);
             $res=unlink($video_url); 
             print_r($res);die;
+            echo 'no';
         }
     }
 }
