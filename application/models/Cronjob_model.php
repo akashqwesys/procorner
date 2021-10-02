@@ -23,7 +23,8 @@ class Cronjob_model extends CI_Model {
         $res=$this->db->update('lesson', $data);
         if(!empty($res) && $res==1){            
             $video_url=str_replace(base_url(),"",$video_url);
-            unlink($video_url);
+            $res=unlink($video_url); 
+            print_r($res);die;
         }
     }
 }
