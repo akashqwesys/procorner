@@ -21,9 +21,7 @@ class Cronjob_model extends CI_Model {
         $data['vidoCipher_status']=2;
         $this->db->where('vidoCipher_id', $video_id);
         $res=$this->db->update('lesson', $data);        
-        if($res==1){            
-//            $video_url1=str_replace(base_url(),'',$video_url);
-//            echo $video_url1;die;
+        if($res==1){  
             unlink($video_url);             
         }
     }
