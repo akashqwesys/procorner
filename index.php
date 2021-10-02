@@ -7,7 +7,7 @@ $protocol = ((isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SER
 $r = $_SERVER['SCRIPT_NAME'];
 $subdomain = explode('/', $r);
 array_pop($subdomain);
-$urllink=$protocol.$_SERVER['HTTP_HOST'];
+$urllink=$protocol.$_SERVER['SERVER_NAME'];
 if($urllink=="https://localhost" || $urllink=="http://localhost"){
     if(isset($subdomain[1])){
         $urllink.='/'.$subdomain[1];

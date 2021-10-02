@@ -15,7 +15,8 @@ class Cronjob extends CI_Controller {
     }
 
     public function vido_cipher_upload_status() {
-        $resData=$this->Cronjob_model->get_pending_video_list();        
+        echo 'hi';die;
+        $resData=$this->Cronjob_model->get_pending_video_list();         
         if(!empty($resData)){
             foreach ($resData as $row){
                 $res=update_vidocipher_status($row['vidoCipher_id']);
