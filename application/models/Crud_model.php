@@ -1292,7 +1292,6 @@ class Crud_model extends CI_Model
 
     public function edit_lesson($lesson_id)
     {
-
         $previous_data = $this->db->get_where('lesson', array('id' => $lesson_id))->row_array();
 
         $data['course_id'] = html_escape($this->input->post('course_id'));
@@ -1442,7 +1441,8 @@ class Crud_model extends CI_Model
 
             $data['duration_for_mobile_application'] = $hour . ':' . $min . ':' . $sec;
             $data['video_type_for_mobile_application'] = "html5";
-        } elseif ($lesson_type == "system") {
+        } 
+        elseif ($lesson_type == "system") {
             // SET MAXIMUM EXECUTION TIME 600
             ini_set('max_execution_time', '600');
 
@@ -1479,7 +1479,6 @@ class Crud_model extends CI_Model
                 // custom random name of the video file
                 $uploadable_video_file    =  md5(uniqid(rand(), true)) . '.' . strtolower($fileExtension);
 
-
                 $tmp_video_file = $_FILES['system_video_file']['tmp_name'];
 
                 if (!file_exists('uploads/lesson_files/videos')) {
@@ -1489,7 +1488,16 @@ class Crud_model extends CI_Model
                 move_uploaded_file($tmp_video_file, $video_file_path);
 
                 $data['video_url'] = site_url($video_file_path);
-                $data['video_url_for_mobile_application'] = site_url($video_file_path);
+                $data['video_url_for_mobile_application'] = site_url($video_file_path);                
+                
+                
+//                echo $previous_data['vidoCipher_id'];die;
+                $response=uploading_file_vidocipher(site_url($video_file_path));                
+                if(!empty($response) && isset($response->id)){                    
+                    $data['vidoCipher_id']=$response->id;
+                    $data['vidoCipher_status']=1;             
+                    delete_vidociphr_video_by_id($previous_data['vidoCipher_id']);
+                }                
             }
 
             $data['video_type'] = 'system';

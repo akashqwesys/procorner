@@ -608,8 +608,29 @@ if (!function_exists('get_vidociphr_video_by_id')) {
 }
 
 
+if (!function_exists('delete_vidociphr_video_by_id')) {
 
-
+    function delete_vidociphr_video_by_id($video_id) {
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://dev.vdocipher.com/api/videos?videos=$video_id",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "DELETE",
+            CURLOPT_HTTPHEADER => array(
+                "Accept: application/json",
+                "Authorization: Apisecret " . API_SECRET,
+                "Content-Type: application/json",
+            ), 
+        ));
+        $response=curl_exec($curl);       
+        curl_close($curl);  
+//        echo $response;die;
+    }
+}
 
 // ------------------------------------------------------------------------
 /* End of file common_helper.php */

@@ -711,5 +711,6 @@
     "total_lessons": "Total lessons",
     "total_duration": "Total duration",
     "number_of_reviews": "Number of reviews",
-    "avg_rating": "Avg rating"
+    "avg_rating": "Avg rating",
+    "lesson_has_been_updated_successfully": "Lesson has been updated successfully"
 }
