@@ -2523,23 +2523,19 @@ class Crud_model extends CI_Model
                     array_push($result, $value);
                 }
             }
-        }       
+        }
         return $result;
     }
     // This function is responsible for showing all the uninstalled themes inside themes folder
     function get_uninstalled_themes($dir = 'themes')
-    {       
+    {
         $result = array();
-        $cdir = preg_grep('/^([^.])/', scandir($dir));   
-        
-        print_r($cdir);die;
-        
+        $cdir = $files = preg_grep('/^([^.])/', scandir($dir));
         foreach ($cdir as $key => $value) {
-            if (!in_array($value, array(".", "..", ".DS_Store"))) {                
+            if (!in_array($value, array(".", "..", ".DS_Store"))) {
                 array_push($result, $value);
             }
         }
-//        print_r($result);die;
         return $result;
     }
     // This function is responsible for retreving all the language file from language folder
