@@ -4,19 +4,19 @@ $installed_themes = $this->crud_model->get_installed_themes();
 //print_r($installed_themes);die;
 
 $uninstalled_themes = $this->crud_model->get_uninstalled_themes();
-print_r($uninstalled_themes);die;
-exit();
+//print_r($uninstalled_themes);die;
+//exit();
 ?>
 <!-- It will show list of uninstalled themes for installing as an alert -->
 <?php 
-if(!empty($uninstalled_themes)){
+//if(!empty($uninstalled_themes)){
 foreach ($uninstalled_themes as $key => $uninstalled_theme) : ?>
   <div class="alert alert-info new-theme-alert" role="alert">
     <i class="dripicons-information mr-2"></i> <strong><?php echo ucfirst(substr($uninstalled_theme, 0, -4)); ?></strong> <?php echo get_phrase('theme_is_showed_up') . '. ' . get_phrase('hit_the_install_button_for_installing'); ?>.
     <a href="<?php echo site_url('admin/install_theme/' . $uninstalled_theme); ?>" class="btn btn-primary btn-rounded float-right"><?php echo get_phrase('install') . ' ' . ucfirst(substr($uninstalled_theme, 0, -4)) . ' ' . get_phrase('theme'); ?></a>
   </div>
 <?php endforeach;
-}
+//}
 ?>
 
 <div class="row ">
