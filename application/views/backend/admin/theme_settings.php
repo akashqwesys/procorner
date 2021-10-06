@@ -4,6 +4,8 @@ $installed_themes = $this->crud_model->get_installed_themes();
 //print_r($installed_themes);die;
 
 $uninstalled_themes = $this->crud_model->get_uninstalled_themes();
+print_r($uninstalled_themes);die;
+exit();
 ?>
 <!-- It will show list of uninstalled themes for installing as an alert -->
 <?php 
