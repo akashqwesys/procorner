@@ -2513,7 +2513,7 @@ class Crud_model extends CI_Model
     }
 
     // This function is responsible for showing all the installed themes
-    function get_installed_themes($dir = APPPATH . '/views/frontend')
+    function get_installed_themes($dir = APPPATH . 'views/frontend')
     {
         $result = array();
         $cdir = $files = preg_grep('/^([^.])/', scandir($dir));        
