@@ -1,6 +1,11 @@
 RewriteEngine On
-#RewriteCond %{SERVER_PORT} 80
-#RewriteRule ^(.*)$ https://procorner.in/$1 [R,L]
+RewriteCond %{SERVER_PORT} 80
+<<<<<<< HEAD
+
+=======
+>>>>>>> parent of 489fdc0 (test ignore file)
+RewriteRule ^(.*)$ https://procorner.in/$1 [R,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?/$1 [L]
