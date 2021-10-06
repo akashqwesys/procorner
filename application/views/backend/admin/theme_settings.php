@@ -1,6 +1,8 @@
 <?php
 $curl_enabled = function_exists('curl_version');
 $installed_themes = $this->crud_model->get_installed_themes();
+print_r($installed_themes);die;
+
 $uninstalled_themes = $this->crud_model->get_uninstalled_themes();
 ?>
 <!-- It will show list of uninstalled themes for installing as an alert -->
@@ -34,13 +36,13 @@ $uninstalled_themes = $this->crud_model->get_uninstalled_themes();
           <li class="nav-item">
             <a href="#installed_themes" data-toggle="tab" aria-expanded="false" class="nav-link active">
               <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-              <span class="d-none d-lg-block"><?php echo get_phrase('installed_themes'); ?></span>
+              <span class="d-none d-lg-block"><?php //echo get_phrase('installed_themes'); ?></span>
             </a>
           </li>
           <li class="nav-item">
             <a href="#premium_themes" data-toggle="tab" aria-expanded="true" class="nav-link">
               <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
-              <span class="d-none d-lg-block"><?php echo get_phrase('add_new_themes'); ?></span>
+              <span class="d-none d-lg-block"><?php //echo get_phrase('add_new_themes'); ?></span>
             </a>
           </li>
         </ul> -->
