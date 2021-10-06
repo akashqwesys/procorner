@@ -36,10 +36,9 @@ if (!function_exists('has_permission')) {
 
         $CI->db->where('admin_id', $admin_id);
         $get_admin_permissions = $CI->db->get('permissions');
-        
         if ($get_admin_permissions->num_rows() == 0) {
             return true;
-        } else {            
+        } else {
             $get_admin_permissions = $get_admin_permissions->row_array();
             $permissions = json_decode($get_admin_permissions['permissions']);
             if (in_array($permission_for, $permissions)) {
@@ -58,7 +57,7 @@ if (!function_exists('check_permission')) {
         $CI = &get_instance();
         $CI->load->database();
 
-        if (has_permission($permission_for)!=0) {
+        if (!has_permission($permission_for)) {
             $CI->session->set_flashdata('error_message', get_phrase('you_are_not_authorized_to_access_this_page'));
             redirect(site_url('admin/dashboard'), 'refresh');
         }
