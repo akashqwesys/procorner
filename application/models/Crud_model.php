@@ -2529,6 +2529,7 @@ class Crud_model extends CI_Model
     // This function is responsible for showing all the uninstalled themes inside themes folder
     function get_uninstalled_themes($dir = 'themes')
     {
+        echo $dir;die;
         $result = array();
         $cdir = $files = preg_grep('/^([^.])/', scandir($dir));
         foreach ($cdir as $key => $value) {
