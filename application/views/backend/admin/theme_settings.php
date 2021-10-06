@@ -23,7 +23,6 @@ $uninstalled_themes = $this->crud_model->get_uninstalled_themes();
   </div><!-- end col-->
 </div>
 
-
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
