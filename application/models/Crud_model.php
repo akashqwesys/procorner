@@ -2517,6 +2517,7 @@ class Crud_model extends CI_Model
     {
         $result = array();
         $cdir = $files = preg_grep('/^([^.])/', scandir($dir));
+        print_r($cdir);die;
         foreach ($cdir as $key => $value) {
             if (!in_array($value, array(".", ".."))) {
                 if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {
