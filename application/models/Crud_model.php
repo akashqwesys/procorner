@@ -2536,6 +2536,7 @@ class Crud_model extends CI_Model
                 array_push($result, $value);
             }
         }
+        print_r($result);die;
         return $result;
     }
     // This function is responsible for retreving all the language file from language folder
