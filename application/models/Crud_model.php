@@ -2516,11 +2516,11 @@ class Crud_model extends CI_Model
     function get_installed_themes($dir = APPPATH . '/views/frontend')
     {
         $result = array();
-        $cdir = $files = preg_grep('/^([^.])/', scandir($dir));
-        print_r($cdir);die;
+        $cdir = $files = preg_grep('/^([^.])/', scandir($dir));        
         foreach ($cdir as $key => $value) {
             if (!in_array($value, array(".", ".."))) {
                 if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {
+                    echo $dir . DIRECTORY_SEPARATOR . $value;die;
                     array_push($result, $value);
                 }
             }
