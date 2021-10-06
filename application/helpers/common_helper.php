@@ -36,6 +36,9 @@ if (!function_exists('has_permission')) {
 
         $CI->db->where('admin_id', $admin_id);
         $get_admin_permissions = $CI->db->get('permissions');
+        
+        print_r($get_admin_permissions);die;
+        
         if ($get_admin_permissions->num_rows() == 0) {
             return true;
         } else {
@@ -527,7 +530,7 @@ if (!function_exists('uploading_file_vidocipher')) {
         curl_close($curl);
         return json_decode($response);
     }
-
+    
 }
 
 if (!function_exists('update_vidocipher_status')) {
@@ -559,7 +562,7 @@ if (!function_exists('update_vidocipher_status')) {
             return $res = json_decode($response);
         }
     }
-
+    
 }
 
 if (!function_exists('get_vidociphr_video_by_id')) {
