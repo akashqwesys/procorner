@@ -4,8 +4,6 @@
     $user_details = $this->user_model->get_all_user($this->session->userdata('user_id'))->row_array();
     $text_align     = $this->db->get_where('settings', array('key' => 'text_align'))->row()->value;
     $logged_in_user_role = strtolower($this->session->userdata('role'));
-    
-    
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,9 +25,11 @@
             <!-- PAGE CONTAINER-->
             <div class="content-page">
                 <div class="content">
-                    
                     <!-- BEGIN PlACE PAGE CONTENT HERE -->
-                    <?php include $logged_in_user_role.'/'.$page_name.'.php';?>
+                    
+                    <?php
+                    echo $logged_in_user_role.'/'.$page_name.'.php';die;
+                    include $logged_in_user_role.'/'.$page_name.'.php';?>
                     <!-- END PLACE PAGE CONTENT HERE -->
                 </div>
             </div>
