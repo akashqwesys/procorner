@@ -49,6 +49,7 @@ $uninstalled_themes = $this->crud_model->get_uninstalled_themes();
           <div class="tab-pane show active" id="installed_themes">
             <div class="row">
               <?php foreach ($installed_themes as $key => $installed_theme) : ?>
+                <?php echo 'hi';die; ?>
                 <div class="col-xl-4">
                   <div class="card-deck-wrapper">
                     <div class="card-deck">
