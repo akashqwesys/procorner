@@ -1,20 +1,16 @@
 <?php
 $curl_enabled = function_exists('curl_version');
-echo $curl_enabled;die;
 $installed_themes = $this->crud_model->get_installed_themes();
 $uninstalled_themes = $this->crud_model->get_uninstalled_themes();
+print_r($installed_themes);die;
 ?>
 <!-- It will show list of uninstalled themes for installing as an alert -->
-<?php 
-if(!empty($uninstalled_themes)){
-foreach ($uninstalled_themes as $key => $uninstalled_theme) : ?>
+<?php foreach ($uninstalled_themes as $key => $uninstalled_theme) : ?>
   <div class="alert alert-info new-theme-alert" role="alert">
     <i class="dripicons-information mr-2"></i> <strong><?php echo ucfirst(substr($uninstalled_theme, 0, -4)); ?></strong> <?php echo get_phrase('theme_is_showed_up') . '. ' . get_phrase('hit_the_install_button_for_installing'); ?>.
     <a href="<?php echo site_url('admin/install_theme/' . $uninstalled_theme); ?>" class="btn btn-primary btn-rounded float-right"><?php echo get_phrase('install') . ' ' . ucfirst(substr($uninstalled_theme, 0, -4)) . ' ' . get_phrase('theme'); ?></a>
   </div>
-<?php endforeach;
-}
-?>
+<?php endforeach; ?>
 
 <div class="row ">
   <div class="col-xl-12">
@@ -39,13 +35,13 @@ foreach ($uninstalled_themes as $key => $uninstalled_theme) : ?>
           <li class="nav-item">
             <a href="#installed_themes" data-toggle="tab" aria-expanded="false" class="nav-link active">
               <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-              <span class="d-none d-lg-block"><?php //echo get_phrase('installed_themes'); ?></span>
+              <span class="d-none d-lg-block"><?php echo get_phrase('installed_themes'); ?></span>
             </a>
           </li>
           <li class="nav-item">
             <a href="#premium_themes" data-toggle="tab" aria-expanded="true" class="nav-link">
               <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
-              <span class="d-none d-lg-block"><?php //echo get_phrase('add_new_themes'); ?></span>
+              <span class="d-none d-lg-block"><?php echo get_phrase('add_new_themes'); ?></span>
             </a>
           </li>
         </ul> -->

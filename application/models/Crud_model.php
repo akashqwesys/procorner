@@ -2513,18 +2513,17 @@ class Crud_model extends CI_Model
     }
 
     // This function is responsible for showing all the installed themes
-    function get_installed_themes($dir = APPPATH . 'views/frontend')
+    function get_installed_themes($dir = APPPATH . '/views/frontend')
     {
         $result = array();
-        $cdir = $files = preg_grep('/^([^.])/', scandir($dir));        
+        $cdir = $files = preg_grep('/^([^.])/', scandir($dir));
         foreach ($cdir as $key => $value) {
             if (!in_array($value, array(".", ".."))) {
-                if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {                    
+                if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {
                     array_push($result, $value);
                 }
             }
         }
-//        print_r($result);die;
         return $result;
     }
     // This function is responsible for showing all the uninstalled themes inside themes folder
