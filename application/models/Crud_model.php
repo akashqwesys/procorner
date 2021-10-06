@@ -2519,12 +2519,12 @@ class Crud_model extends CI_Model
         $cdir = $files = preg_grep('/^([^.])/', scandir($dir));        
         foreach ($cdir as $key => $value) {
             if (!in_array($value, array(".", ".."))) {
-                if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {                    
+                if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {
+                    echo $dir . DIRECTORY_SEPARATOR . $value;die;
                     array_push($result, $value);
                 }
             }
-        }
-        print_r($result);die;
+        }        
         return $result;
     }
     // This function is responsible for showing all the uninstalled themes inside themes folder
