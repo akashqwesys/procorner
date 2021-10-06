@@ -1,6 +1,6 @@
 <?php
 
-//$curl_enabled = function_exists('curl_version');
+$curl_enabled = function_exists('curl_version');
 $installed_themes = $this->Crud_model->get_installed_themes();
 $uninstalled_themes = $this->Crud_model->get_uninstalled_themes();
 
