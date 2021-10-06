@@ -23,13 +23,11 @@
         <div class="wrapper">
             <!-- BEGIN CONTENT -->
             <!-- SIDEBAR -->
-           
-            <?php
-//            echo APPPATH.'backend/'.$logged_in_user_role.'/'.'navigation.php';die;
-            include APPPATH.'backend/'.$logged_in_user_role.'/'.'navigation.php'; ?>
+            <?php include $logged_in_user_role.'/'.'navigation.php' ?>
             <!-- PAGE CONTAINER-->
             <div class="content-page">
                 <div class="content">
+                    
                     <!-- BEGIN PlACE PAGE CONTENT HERE -->
                     <?php include $logged_in_user_role.'/'.$page_name.'.php';?>
                     <!-- END PLACE PAGE CONTENT HERE -->
