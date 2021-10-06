@@ -1,8 +1,8 @@
 <?php
 $curl_enabled = function_exists('curl_version');
-$uninstalled_themes = $this->crud_model->get_uninstalled_themes();
 $installed_themes = $this->crud_model->get_installed_themes();
-//echo '<pre>';print_r($installed_themes);die;
+$uninstalled_themes = $this->crud_model->get_uninstalled_themes();
+print_r($installed_themes);die;
 ?>
 <!-- It will show list of uninstalled themes for installing as an alert -->
 <?php foreach ($uninstalled_themes as $key => $uninstalled_theme) : ?>
@@ -35,13 +35,13 @@ $installed_themes = $this->crud_model->get_installed_themes();
           <li class="nav-item">
             <a href="#installed_themes" data-toggle="tab" aria-expanded="false" class="nav-link active">
               <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-              <span class="d-none d-lg-block"><?php //echo get_phrase('installed_themes'); ?></span>
+              <span class="d-none d-lg-block"><?php echo get_phrase('installed_themes'); ?></span>
             </a>
           </li>
           <li class="nav-item">
             <a href="#premium_themes" data-toggle="tab" aria-expanded="true" class="nav-link">
               <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
-              <span class="d-none d-lg-block"><?php //echo get_phrase('add_new_themes'); ?></span>
+              <span class="d-none d-lg-block"><?php echo get_phrase('add_new_themes'); ?></span>
             </a>
           </li>
         </ul> -->
@@ -49,9 +49,7 @@ $installed_themes = $this->crud_model->get_installed_themes();
         <div class="tab-content">
           <div class="tab-pane show active" id="installed_themes">
             <div class="row">
-              <?php foreach ($installed_themes as $key => $installed_theme) :
-                  
-                  ?>
+              <?php foreach ($installed_themes as $key => $installed_theme) : ?>
                 <div class="col-xl-4">
                   <div class="card-deck-wrapper">
                     <div class="card-deck">

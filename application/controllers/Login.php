@@ -26,17 +26,6 @@ class Login extends CI_Controller
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
     public function validate_login($from = "")
     {
         if ($this->crud_model->check_recaptcha() == false && get_frontend_settings('recaptcha_status') == true) {
