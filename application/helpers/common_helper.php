@@ -37,7 +37,7 @@ if (!function_exists('has_permission')) {
         $CI->db->where('admin_id', $admin_id);
         $get_admin_permissions = $CI->db->get('permissions');
         
-        print_r($get_admin_permissions);die;
+        echo $get_admin_permissions->num_rows();die;
         
         if ($get_admin_permissions->num_rows() == 0) {
             return true;
