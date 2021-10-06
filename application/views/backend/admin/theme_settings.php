@@ -1,7 +1,7 @@
 <?php
 $curl_enabled = function_exists('curl_version');
 $installed_themes = $this->crud_model->get_installed_themes();
-print_r($installed_themes);die;
+//print_r($installed_themes);die;
 
 //$uninstalled_themes = $this->crud_model->get_uninstalled_themes();
 $uninstalled_themes = array();
