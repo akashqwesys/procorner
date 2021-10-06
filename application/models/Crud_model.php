@@ -2532,11 +2532,11 @@ class Crud_model extends CI_Model
         $result = array();
         $cdir = $files = preg_grep('/^([^.])/', scandir($dir));
         foreach ($cdir as $key => $value) {
-            if (!in_array($value, array(".", "..", ".DS_Store"))) {
+            if (!in_array($value, array(".", "..", ".DS_Store"))) {                
                 array_push($result, $value);
             }
         }
-        print_r($result);die;
+//        print_r($result);die;
         return $result;
     }
     // This function is responsible for retreving all the language file from language folder
