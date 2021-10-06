@@ -25,8 +25,8 @@
             <!-- SIDEBAR -->
            
             <?php
-            echo APPPATH.'backend'.$logged_in_user_role.'/'.'navigation.php';die;
-            include APPPATH.$logged_in_user_role.'/'.'navigation.php' ?>
+//            echo APPPATH.'backend/'.$logged_in_user_role.'/'.'navigation.php';die;
+            include APPPATH.'backend/'.$logged_in_user_role.'/'.'navigation.php'; ?>
             <!-- PAGE CONTAINER-->
             <div class="content-page">
                 <div class="content">
