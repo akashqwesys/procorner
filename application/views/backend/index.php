@@ -5,7 +5,7 @@
     $text_align     = $this->db->get_where('settings', array('key' => 'text_align'))->row()->value;
     $logged_in_user_role = strtolower($this->session->userdata('role'));
     
-    echo $logged_in_user_role;die;
+    
 ?>
 <!DOCTYPE html>
 <html>
