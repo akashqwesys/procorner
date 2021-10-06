@@ -2,7 +2,7 @@
 $curl_enabled = function_exists('curl_version');
 $installed_themes = $this->crud_model->get_installed_themes();
 $uninstalled_themes = $this->crud_model->get_uninstalled_themes();
-print_r($installed_themes);die;
+//print_r($installed_themes);die;
 ?>
 <!-- It will show list of uninstalled themes for installing as an alert -->
 <?php 
