@@ -2535,8 +2535,7 @@ class Crud_model extends CI_Model
             $cdir=array();
         }else{
             $cdir = $files = preg_grep('/^([^.])/', scandir($dir));
-        }
-        
+        }        
         foreach ($cdir as $key => $value) {
             if (!in_array($value, array(".", "..", ".DS_Store"))) {
                 array_push($result, $value);
