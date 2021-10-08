@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 /*
 *  @author   : Creativeitem
 *  date    : 09 July, 2020
-*  Academy
+*  Procorner
 *  http://codecanyon.net/user/Creativeitem
 *  http://support.creativeitem.com
 */

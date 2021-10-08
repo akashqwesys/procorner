@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 /*
  *  @author   : Creativeitem
  *  date    : 07 october, 2018
- *  Academy
+ *  Procorner
  *  http://codecanyon.net/user/Creativeitem
  *  http://support.creativeitem.com
  */
