@@ -321,7 +321,7 @@ CREATE TABLE `frontend_settings` (
 INSERT INTO `frontend_settings` (`id`, `key`, `value`) VALUES
 (1, 'banner_title', 'Learn on your schedule'),
 (2, 'banner_sub_title', 'Study any topic, anytime. Explore thousands of courses for the lowest price ever!'),
-(4, 'about_us', '<p></p><h2><span xss=removed>This is about us</span></h2><p><span xss=\"removed\">Welcome to Academy. It will help you to learn in a new ways</span></p>'),
+(4, 'about_us', '<p></p><h2><span xss=removed>This is about us</span></h2><p><span xss=\"removed\">Welcome to Procorner. It will help you to learn in a new ways</span></p>'),
 (10, 'terms_and_condition', '<h2>Terms and Condition</h2>This is the Terms and condition page for your companys'),
 (11, 'privacy_policy', '<p></p><p></p><h2><span xss=\"removed\">Privacy Policy</span><br></h2>This is the Privacy Policy page for your companys<p></p><p><b>This is another</b> <u><a href=\"https://youtube.com/watch?v=PHgc8Q6qTjc\" target=\"_blank\">thing you will</a></u> <span xss=\"removed\">not understand</span>.</p>'),
 (13, 'theme', 'default'),
@@ -553,8 +553,8 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id`, `key`, `value`) VALUES
 (1, 'language', 'english'),
-(2, 'system_name', 'Academy LMS'),
-(3, 'system_title', 'Academy Learning Club'),
+(2, 'system_name', 'Procorner LMS'),
+(3, 'system_title', 'Procorner Learning Club'),
 (4, 'system_email', 'academy@example.com'),
 (5, 'address', 'Sydeny, Australia'),
 (6, 'phone', '+143-52-9933631'),

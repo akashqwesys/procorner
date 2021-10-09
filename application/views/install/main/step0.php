@@ -8,7 +8,7 @@
     			<!-- panel body -->
     			<div class="panel-body" style="font-size: 14px;">
             <p style="font-size: 14px;">
-              Welcome to Academy-LMS Installation. You will need to know the following items before
+              Welcome to Procorner-LMS Installation. You will need to know the following items before
               proceeding.
             </p>
             <ol>

@@ -8,7 +8,7 @@
 	<meta name="description" content="Creativeitem Software Installation" />
 	<meta name="author" content="Creativeitem" />
 
-	<title>Installation | Academy-LMS</title>
+	<title>Installation | Procorner-LMS</title>
 	<?php include 'styles.php'; ?>
 </head>
 <body class="page-body">
