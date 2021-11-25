@@ -1564,6 +1564,10 @@ class Crud_model extends CI_Model
 
     public function delete_lesson($lesson_id)
     {
+        $previous_data = $this->db->get_where('lesson', array('id' => $lesson_id))->row_array();
+        if(!empty($previous_data)){
+            delete_vidociphr_video_by_id($previous_data['vidoCipher_id']);
+        }
         $this->db->where('id', $lesson_id);
         $this->db->delete('lesson');
     }
