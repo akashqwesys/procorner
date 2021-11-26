@@ -46,7 +46,7 @@ if ( ! function_exists('get_phrase'))
             $langArray[$key] = ucfirst(str_replace('_', ' ', $key));
             $jsonData = json_encode($langArray, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
             file_put_contents(APPPATH.'language/'.$language_code.'.json', stripslashes($jsonData));
-        }
+        }        
         // THIS BLOCK OF CODE IS THE CORE FOR TRANSLATING
         return $langArray[$key];
     }
