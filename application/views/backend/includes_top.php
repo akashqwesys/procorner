@@ -1,4 +1,4 @@
-<link rel="shortcut icon" href="<?php echo base_url('uploads/system/').get_frontend_settings('favicon');?>">
+<link rel="shortcut icon" href="<?php echo base_url('uploads/system/').get_frontend_settings('favicon'); ?>">
 <!-- third party css -->
 <link href="<?php echo base_url('assets/backend/css/vendor/jquery-jvectormap-1.2.2.css'); ?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url('assets/backend/css/vendor/dataTables.bootstrap4.css'); ?>" rel="stylesheet" type="text/css" />
