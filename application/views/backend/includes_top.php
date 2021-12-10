@@ -7,7 +7,7 @@
 <link href="<?php echo base_url('assets/backend/css/vendor/select.bootstrap4.css'); ?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url('assets/backend/css/vendor/summernote-bs4.css'); ?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url('assets/backend/css/vendor/fullcalendar.min.css'); ?>" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url('assets/backend/css/vendor/dropzone.css'); ?>" rel="stylesheet" type="text/css" />
+<!-- <link href="<?php //echo base_url('assets/backend/css/vendor/dropzone.css'); ?>" rel="stylesheet" type="text/css" /> -->
 <!-- third party css end -->
 <!-- App css -->
 <link href="<?php echo base_url('assets/backend/css/app.min.css'); ?>" rel="stylesheet" type="text/css" />
