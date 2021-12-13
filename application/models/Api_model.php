@@ -500,6 +500,7 @@ class Api_model extends CI_Model
 
 	public function section_wise_lessons($section_id = "", $user_id = "")
 	{
+		
 		$response = array();
 		$lessons = $this->crud_model->get_lessons('section', $section_id)->result_array();
 		foreach ($lessons as $key => $lesson) {
