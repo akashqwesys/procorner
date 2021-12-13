@@ -499,11 +499,20 @@ class Api_model extends CI_Model
 	}
 
 	public function section_wise_lessons($section_id = "", $user_id = "")
-	{
-		
+	{		
 		$response = array();
 		$lessons = $this->crud_model->get_lessons('section', $section_id)->result_array();
-		foreach ($lessons as $key => $lesson) {
+		$i=0;
+		foreach ($lessons as $key => $lesson) {	
+			$response[$key]['otp'] = '';
+			$response[$key]['playbackInfo'] = '';
+			if($i==0){
+				$video_id = $lesson['vidoCipher_id'];
+				$res_vidocipher = get_vidociphr_video_by_id($video_id);
+				$response[$key]['otp'] = $res_vidocipher->otp;
+				$response[$key]['playbackInfo'] = $res_vidocipher->playbackInfo;
+				
+			}		
 			$response[$key]['id'] = $lesson['id'];
 			$response[$key]['title'] = $lesson['title'];
 			$response[$key]['vidoCipher_id'] = $lesson['vidoCipher_id'];
@@ -526,6 +535,7 @@ class Api_model extends CI_Model
 			} else {
 				$response[$key]['is_completed'] = 0;
 			}
+			$i=$i+1;
 		}
 		$response = $this->add_user_validity($response);
 		return $response;
