@@ -505,6 +505,9 @@ class Api_model extends CI_Model
 		foreach ($lessons as $key => $lesson) {
 			$response[$key]['id'] = $lesson['id'];
 			$response[$key]['title'] = $lesson['title'];
+			$response[$key]['vidoCipher_id'] = $lesson['vidoCipher_id'];
+			//if vidoCipher_status is 2 means video is ready for stream
+			$response[$key]['vidoCipher_status'] = $lesson['vidoCipher_status'];
 			$response[$key]['duration'] = readable_time_for_humans($lesson['duration_for_mobile_application']);
 			$response[$key]['course_id'] = $lesson['course_id'];
 			$response[$key]['section_id'] = $lesson['section_id'];

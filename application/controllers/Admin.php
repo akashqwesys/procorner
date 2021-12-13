@@ -1158,7 +1158,6 @@ class Admin extends CI_Controller
             redirect(site_url('admin/instructor_payout'), 'refresh');
         }
     }
-
     // STRIPE CHECKOUT ACTIONS
     public function stripe_payment($payout_id = "", $session_id = "")
     {

@@ -34,9 +34,9 @@ if ( ! function_exists('get_phrase'))
         // // THIS BLOCK OF CODE IS THE CORE FOR TRANSLATING
         // return $langArray[$key];
         $CI =&  get_instance();
-        if (!$CI->session->userdata('language')) {
+        // if (!$CI->session->userdata('language')) {
             $CI->session->set_userdata('language', get_settings('language'));
-        }
+        // }
         $language_code = $CI->session->userdata('language');
         $key = strtolower(preg_replace('/\s+/', '_', $phrase));
         $langArray = openJSONFile($language_code);
