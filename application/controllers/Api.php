@@ -246,6 +246,25 @@ class Api extends REST_Controller {
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
 
+
+ 
+
+  // Course Details
+  public function video_otp_playbackinfo_get() {
+    $response = array();
+    $response['otp'] = '';
+    $response['playbackInfo'] = '';
+    $res_vidocipher = get_vidociphr_video_by_id($_GET['vidoCipher_id']);    
+    if(!empty($res_vidocipher)){         
+      $response['otp'] = $res_vidocipher->otp;
+      $response['playbackInfo'] = $res_vidocipher->playbackInfo;      
+    }	
+    return $this->set_response($response, REST_Controller::HTTP_OK);
+  }    
+
+
+
+
   // Course Details
   public function course_details_by_id_get() {
     $response = array();
