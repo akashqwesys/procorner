@@ -24,6 +24,8 @@ class Home extends CI_Controller
         $this->home();
     }
 
+    
+
     public function verification_code()
     {
         if (!$this->session->userdata('register_email')) {

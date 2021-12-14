@@ -27,6 +27,11 @@ class User extends CI_Controller
         $this->instructor_authorization($this->router->method);
     }
 
+    public function landing()
+    {
+        $this->load->view('landing');
+    }
+
 
     public function get_protected_routes($method)
     {
