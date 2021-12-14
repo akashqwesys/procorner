@@ -565,6 +565,11 @@ class Api_model extends CI_Model
 		return $this->add_user_validity($lesson_details);
 	}
 
+	public function lesson_details_by_videoId_get($vidoCipher_id)
+	{
+		return $this->crud_model->get_lessons_by_videoId($vidoCipher_id)->row_array();		
+	}
+
 	// Get course details by id
 	public function course_details_by_id_get($user_id = "", $course_id = "")
 	{

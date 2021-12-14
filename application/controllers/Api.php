@@ -247,22 +247,35 @@ class Api extends REST_Controller {
   }
 
 
- 
-
-  // Course Details
+  // video otp playbackinfo
   public function video_otp_playbackinfo_get() {
     $response = array();
     $response['otp'] = '';
     $response['playbackInfo'] = '';
-    $res_vidocipher = get_vidociphr_video_by_id($_GET['vidoCipher_id']);    
-    if(!empty($res_vidocipher)){         
-      $response['otp'] = $res_vidocipher->otp;
-      $response['playbackInfo'] = $res_vidocipher->playbackInfo;      
-    }	
+    $res_vidocipher = get_vidociphr_video_by_id($_GET['vidoCipher_id']);
+    if (isset($_GET['auth_token']) && !empty($_GET['auth_token'])) {
+      $auth_token = $_GET['auth_token'];
+      $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+    }else{
+      $logged_in_user_details['user_id'] = 0;
+    }
+
+    if ($logged_in_user_details['user_id'] > 0) {
+      if(!empty($res_vidocipher)){         
+        $response['otp'] = $res_vidocipher->otp;
+        $response['playbackInfo'] = $res_vidocipher->playbackInfo;      
+      }	
+    }else{
+      $lesson=$this->api_model->lesson_details_by_videoId_get($_GET['vidoCipher_id']);      
+      if(!empty($lesson)){
+        if($lesson['is_free']==1){
+          $response['otp'] = $res_vidocipher->otp;
+          $response['playbackInfo'] = $res_vidocipher->playbackInfo; 
+        }           
+      }
+    }          
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }    
-
-
 
 
   // Course Details

@@ -486,6 +486,12 @@ class Crud_model extends CI_Model
         }
     }
 
+
+    public function get_lessons_by_videoId($vidoCipher_id)
+    {
+        return $this->db->get_where('lesson', array('vidoCipher_id' => $vidoCipher_id));       
+    }
+
     public function add_course($param1 = "")
     {
         $outcomes = $this->trim_and_return_json($this->input->post('outcomes'));
