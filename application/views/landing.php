@@ -12,7 +12,7 @@
   <!-- Favicons -->
   <link href="<?php echo base_url().'assets/landing/img/favicon.png' ;?>" rel="icon">
   <link href="<?php echo base_url().'assets/landing/img/apple-touch-icon.png';?>" rel="apple-touch-icon">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -41,22 +41,18 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Bikin</a></h1>
+      <h1 class="logo"><a href="#">AKASH SHAH</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/landing/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto active" href="#">About</a></li>
+          <li><a class="nav-link scrollto" href="#">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>Courses</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="#">Course 1</a></li>
+              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>
@@ -64,29 +60,30 @@
                   <li><a href="#">Deep Drop Down 4</a></li>
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              </li> -->
+              <li><a href="#">Course 2</a></li>            
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><a class="nav-link scrollto " href="#">Speaking</a></li>
+          <li><a class="nav-link scrollto" href="#">Consulting</a></li>
+          <li><a class="nav-link scrollto" href="#">Support</a></li>                  
+          <li><a class="getstarted scrollto" href="#">My Account</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
+      <!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
+  <div class="elementor-background-overlay"></div>
     <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-      <h1>Build Better Websites With Bikin</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <h1>THE LINKEDIN MASTERCLASS 2021</h1><br>
+      <h2>Learn how I got 130K+ followers, reached over 40M people and acquire 1000's of leads for FREE which generates 10's of thousands of dollars on a monthly basis from LinkedIn using Growth Hacking & Automation.</h2>      
       <img src="<?php echo base_url().'assets/landing/img/hero-img.png';?>" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+      <a href="#about" class="btn-get-started scrollto">Yes! I want to growth hack LinkedIn</a>
     </div>
 
   </section><!-- End Hero -->
@@ -94,7 +91,7 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- <section id="about" class="about">
       <div class="container">
 
         <div class="row no-gutters">
@@ -136,10 +133,11 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section>
+    <!-- End About Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
+    <!-- <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
 
         <div class="row">
@@ -171,36 +169,41 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section> -->
+    <!-- End Clients Section -->
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
-          <h2>Features</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>What You Will Learn</h2>
+          <p>Access to over 74 videos, 8 hours of pure growth hacking video content which will help you to put your LinkedIn on steroids and never worry about leads for your business ever again.</p>
         </div>
 
         <div class="row content">
-          <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
+          <!-- <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
             <img src="<?php echo base_url().'assets/landing/img/features-1.png';?>" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7 pt-4" data-aos="fade-left" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
+          </div> -->
+          <div class="col-md-12 pt-4" data-aos="fade-left" data-aos-delay="100">
+            <!-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3> -->
+            <!-- <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
-            </p>
+            </p> -->
             <ul>
-              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check"></i> Ullam est qui quos consequatur eos accusamus.</li>
-            </ul>
+              <li>My 6-Step Blueprint which is designed to create a brand awareness and generate leads without sending a single message to anyone on LinkedIn. Let the customers come to you.</li>             
+              <li>The Advanced Profile Optimisation Strategies that me and my clients use to rank for the desired keywords on LinkedIn search and google search in no time. Obviously results in tons of leads and sales all organic.</li>             
+              <li>My super secret tactics to get 100’s of endorsements on all your skills and recommendations on your LinkedIn profile using automation without even asking for them, making your profile look legit.</li>             
+              <li>My secret connection growth strategies which will help you add your potential prospects. You will also learn how to steal your actively engaged competitors connections using automation.</li>             
+              <li>My unique and untapped Sales Navigator automated process which will help you find qualified leads easily, add them to your connections, send them a series of automated messages, find their email id, send them an email sequence and show them on AD on Facebook all automated.</li>
+              <li>The exact way I generate super engaging content, my content hacking tricks which got me over 25M views on LinkedIn ( Average of 87K views per post )</li>
+              <li>My lead generation secrets using content that has helped me and my clients acquire over 50,000+ highly qualified leads in last 6 months.</li>
+            </ul>            
           </div>
         </div>
 
-        <div class="row content">
+        <!-- <div class="row content">
           <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
             <img src="<?php echo base_url().'assets/landing/img/features-2.png';?>" class="img-fluid" alt="">
           </div>
@@ -249,7 +252,7 @@
               culpa qui officia deserunt mollit anim id est laborum
             </p>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Features Section -->

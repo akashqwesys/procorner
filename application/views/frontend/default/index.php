@@ -45,7 +45,7 @@
 
 </head>
 <body class="gray-bg">
-	<?php
+	<?php	
 	if ($this->session->userdata('user_login')) {
 		include 'logged_in_header.php';
 	}else {

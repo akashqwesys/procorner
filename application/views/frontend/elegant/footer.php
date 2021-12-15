@@ -28,6 +28,7 @@
         <ul class="contacts">
           <li><a href="tel://<?php echo get_settings('phone'); ?>"><i class="ti-mobile"></i> <?php echo get_settings('phone'); ?></a></li>
           <li><a href="mailto:<?php echo get_settings('system_email'); ?>"><i class="ti-email"></i> <?php echo get_settings('system_email'); ?></a></li>
+          <li><a href="#"><i class="ti-map"></i> 101, Prapti Apartment, Olpadi Street, Athwalines, Surat</a></li>
         </ul>
         <!-- <div id="newsletter">
           <h6>Newsletter</h6>
