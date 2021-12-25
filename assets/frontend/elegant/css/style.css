@@ -2697,7 +2697,7 @@ html[xmlns] .flexslider .slides {
     bottom: 0;
     z-index: 9;
     width: 100%;
-    padding: 60px 60px 45px 60px;
+    padding: 50px 50px 10px 50px;
 }
 
 @media (max-width: 767px) {
