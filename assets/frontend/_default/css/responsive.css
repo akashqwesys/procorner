@@ -31,23 +31,23 @@
     }
 
     .main-nav-wrap{
-        margin: 0 20px 0 15px;
+        margin: 0 40px 0 25px;
     }
     .main-nav-wrap>ul>li>a{
-        text-decoration: none;
-        font-size: 14px;
+        font-size: 13px;
+        color: #505763;
         padding: 23px 0;
         display: inline-block;
         position: relative;
-        padding-left: 25px
+        padding-left: 16px
     }
     .main-nav-wrap>ul>li>a .d-inline{
         position: absolute;
         left: 0;
-        top:calc( 43.5% - 6px );
+        top:calc( 50% - 6px );
     }
     .main-nav-wrap>ul>li>a i{
-        color: #122222;
+        color: #a1a7b3;
         margin-right: 5px;
         font-size: 12px;
     }
@@ -100,13 +100,13 @@
     }
     .main-nav-wrap>ul>li>ul>li a{
         padding: 5px 15px;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: 400;
         color: #29303b;
         display: block;
     }
     .main-nav-wrap>ul>li>ul>li a:hover{
-        color: #000;;
+        color: #007791;;
         background-color: #f2f3f5;
     }
     .main-nav-wrap>ul>li>ul ul{
@@ -133,6 +133,9 @@
     }
     .main-nav-wrap li[class*="go-back"]{
         display: none;
+    }
+    .sign-in-box{
+        margin-left: 15px;
     }
 }
 
@@ -422,7 +425,7 @@
         left: 0;
         height: 100%;
         width: 260px;
-        background: #f2f3f5;
+        background: #fff;
         overflow: auto;
         -webkit-overflow-scrolling: touch;
         z-index: 1000;
