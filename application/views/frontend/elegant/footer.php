@@ -1,5 +1,5 @@
 <footer class="d-print-none">
-  <div class="container margin_120_95">
+  <div class="container margin_40_20">
     <div class="row">
       <div class="col-lg-5 col-md-12 p-r-5">
         <p><img src="<?php echo base_url().'uploads/system/'.get_frontend_settings('light_logo'); ?>" height="42" data-retina="true" alt=""></p>
