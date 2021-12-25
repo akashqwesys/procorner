@@ -8,18 +8,12 @@
 <!-- GOOGLE WEB FONT -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
 
-
+<!-- font awesome 5 -->
+<link rel="stylesheet" href="<?php echo base_url().'assets/frontend/elegant/css/fontawesome-all.min.css'; ?>">
 
 <!-- BASE CSS -->
 <link href="<?php echo base_url('assets/frontend/elegant/css/bootstrap.min.css'); ?>" rel="stylesheet">
-<link href="https://creativeitem.com/toolbox/css/style.min.css" rel="stylesheet">
-<!-- <link href="<?php //echo base_url('assets/frontend/elegant/css/style.css'); ?>" rel="stylesheet"> -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<!-- font awesome 5 -->
-<!-- <link rel="stylesheet" href="<?php //echo base_url().'assets/frontend/elegant/css/fontawesome-all.min.css'; ?>"> -->
-
-
+<link href="<?php echo base_url('assets/frontend/elegant/css/style.css'); ?>" rel="stylesheet">
 <link href="<?php echo base_url('assets/frontend/elegant/css/vendors.css'); ?>" rel="stylesheet">
 <link href="<?php echo base_url('assets/frontend/elegant/css/icon_fonts/css/all_icons.min.css'); ?>" rel="stylesheet">
 
