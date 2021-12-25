@@ -30,14 +30,14 @@
 						<li class="col-md-2">
 							<img src="<?php echo $this->crud_model->get_course_thumbnail_url($latest_course['id'], 'course_slider_thumbnail'); ?>" alt="">
 							<div class="caption">
-								<!-- <h3><?php //echo ellipsis($latest_course['title']); ?>
+								<h3><?php echo ellipsis($latest_course['title']); ?>
 									<span>
 										<?php
-			              //$sub_category_details = $this->crud_model->get_category_details_by_id($latest_course['sub_category_id'])->row_array();
-			              //echo $sub_category_details['name'];
+			              $sub_category_details = $this->crud_model->get_category_details_by_id($latest_course['sub_category_id'])->row_array();
+			              echo $sub_category_details['name'];
 			              ?>
 									</span>
-								</h3> -->
+								</h3>
 								<?php if ($latest_course['is_free_course'] == 1): ?>
 		              <small><?php echo site_phrase('free'); ?></small>
 		            <?php else: ?>
