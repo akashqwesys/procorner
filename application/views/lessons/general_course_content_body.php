@@ -58,25 +58,30 @@
                 <!------------- PLYR.IO ------------>
                 <!-- If the video is Amazon S3 video -->
 
-                <!-- If the video is self uploaded video -->
-            <?php elseif (strtolower($provider) == 'system'):?>
+                    <!-- If the video is self uploaded video -->
+            <?php elseif (strtolower($provider) == 'system'):
+                $video_id = $lesson_details['vidoCipher_id'];
+                $vido_cipher_status = $lesson_details['vidoCipher_status'];
+                if($vido_cipher_status==2){
+                    $res_vidocipher= get_vidociphr_video_by_id($video_id);                
+            ?>                
                 <!------------- PLYR.IO ------------>
-                <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
-                <video poster="<?php echo $lesson_thumbnail_url;?>" id="player" playsinline controls>
-                    <?php if (get_video_extension($video_url) == 'mp4'): ?>
-                        <source class="remove_video_src" src="<?php echo $video_url; ?>" type="video/mp4">
-                    <?php elseif (get_video_extension($video_url) == 'webm'): ?>
-                        <source class="remove_video_src" src="<?php echo $video_url; ?>" type="video/webm">
-                    <?php else: ?>
-                        <h4><?php get_phrase('video_url_is_not_supported'); ?></h4>
-                    <?php endif; ?>
-                </video>
-
-                <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
-                <!------------- PLYR.IO ------------>
+                <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">                                                
+                    <div id="embedBox" style="width:100%;height:auto;"></div>
+                    <script>
+                        (function(v,i,d,e,o){v[o]=v[o]||{}; v[o].add = v[o].add || function V(a){ (v[o].d=v[o].d||[]).push(a);};
+                      if(!v[o].l) { v[o].l=1*new Date(); a=i.createElement(d), m=i.getElementsByTagName(d)[0];
+                      a.async=1; a.src=e; m.parentNode.insertBefore(a,m);}
+                      })(window,document,"script","https://player.vdocipher.com/playerAssets/1.6.10/vdo.js","vdo");
+                      vdo.add({
+                        otp: "<?php echo $res_vidocipher->otp;  ?>",
+                        playbackInfo: "<?php echo $res_vidocipher->playbackInfo;  ?>",
+                        theme: "9ae8bbe8dd964ddc9bdb932cca1cb59a",
+                        container: document.querySelector( "#embedBox" )
+                      });
+                    </script>
                 <!-- If the video is self uploaded video -->
-
+                <?php } ?>
             <?php elseif (strtolower($provider) == 'google_drive'):?>
                 <style type="text/css">
                     .hidebtn {
