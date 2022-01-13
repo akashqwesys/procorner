@@ -1,47 +1,130 @@
-<footer class="footer-area d-print-none">
+<footer class="footer-area d-print-none bg-gray mt-5">
   <div class="container-xl">
-    <div class="row">
-      <div class="col-md-6">
-        <p class="copyright-text">
-          <a href=""><img src="<?php echo base_url('uploads/system/'.get_frontend_settings('dark_logo')); ?>" alt="" class="d-inline-block" width="110"></a>
-          <a href="<?php echo get_settings('footer_link'); ?>" target="_blank"><?php echo get_settings('footer_text'); ?></a>
-        </p>
+    <div class="row mb-3">
+      
+      <div class="col-6 col-sm-6 col-md-3">
+        <h5 class="text-muted"><?php echo site_phrase('useful_links'); ?></h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/courses'); ?>"><?php echo site_phrase('all_courses'); ?></a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/sign_up'); ?>"><?php echo site_phrase('sign_up'); ?></a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/login'); ?>"><?php echo site_phrase('login'); ?></a></li>
+        </ul>
       </div>
-      <div class="col-md-6">
-        <ul class="nav justify-content-md-end footer-menu">
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('home/about_us'); ?>"><?php echo site_phrase('about'); ?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('home/refund_policy'); ?>"><?php echo site_phrase('refund_policy'); ?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('home/privacy_policy'); ?>"><?php echo site_phrase('privacy_policy'); ?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('home/terms_and_condition'); ?>"><?php echo site_phrase('terms_and_condition'); ?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('home/login'); ?>">
-              <?php echo site_phrase('login'); ?>
-            </a>
-          </li>
-          <li>
-            <select class="language_selector" onchange="switch_language(this.value)">
-                <?php
-                 $languages = $this->crud_model->get_all_languages();
-                 foreach ($languages as $language): ?>
-                    <?php if (trim($language) != ""): ?>
-                        <option value="<?php echo strtolower($language); ?>" <?php if ($this->session->userdata('language') == $language): ?>selected<?php endif; ?>><?php echo ucwords($language);?></option>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </select>
-          </li>
+      <div class="col-6 col-sm-6 col-md-3">
+        <h5 class="text-muted"><?php echo site_phrase('help'); ?></h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/about_us'); ?>"><?php echo site_phrase('about_us'); ?></a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/privacy_policy'); ?>"><?php echo site_phrase('privacy_policy'); ?></a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/terms_and_condition'); ?>"><?php echo site_phrase('terms_and_condition'); ?></a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/refund_policy'); ?>"><?php echo site_phrase('refund_policy'); ?></a></li>
+        </ul>
+      </div>
+      
+       <div class="col-6 col-sm-6 col-md-3">
+        <h5 class="text-muted">Contact Us</h5>
+        <ul class="list-unstyled text-small">
+            <li class="mb-1">
+              <a class="link-secondary footer-hover-link" href="#">
+                <b><i class="fa fa-phone text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('phone'); ?>
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="link-secondary footer-hover-link" href="#">
+                <b><i class="fa fa-envelope text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('system_email'); ?>
+              </a>
+            </li>
+            <li class="mb-1">
+              <a class="link-secondary footer-hover-link" href="#">
+                <b><i class="fa fa-map-marker text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('address'); ?>
+              </a>
+            </li>
+        </ul>
+      </div>
+      
+      
+      <!--<div class="col-6 col-sm-6 col-md-3">-->
+      <!--  <h5 class="text-muted"><?php //echo site_phrase('top_categories'); ?></h5>-->
+      <!--  <ul class="list-unstyled text-small">-->
+      <!--    <?php //$top_10_categories = $this->crud_model->get_top_categories(6, 'sub_category_id'); ?>-->
+      <!--    <?php //foreach($top_10_categories as $top_10_category): ?>-->
+      <!--      <?php //$category_details = $this->crud_model->get_category_details_by_id($top_10_category['sub_category_id'])->row_array(); ?>-->
+      <!--      <li class="mb-1">-->
+      <!--        <a class="link-secondary footer-hover-link" href="<?php //echo site_url('home/courses?category='.$category_details['slug']); ?>">-->
+      <!--          <?php //echo $category_details['name']; ?>-->
+                <!-- <span class="fw-700 text-end">(<?php //echo $top_10_category['course_number']; ?>)</span> -->
+      <!--        </a>-->
+      <!--      </li>-->
+      <!--    <?php //endforeach; ?>-->
+      <!--  </ul>-->
+      <!--</div>-->
+      
+      
+      <div class="col-sm-12 col-md-3 order-sm-first">
+        <img src="<?php echo base_url('uploads/system/'.get_frontend_settings('dark_logo')); ?>" width="130">
+        <small class="d-block mb-3 fw-600"><?php echo get_settings('website_description'); ?></small>
+
+        <ul class="footer-social-link">
+          <?php $facebook = get_frontend_settings('facebook'); ?>
+          <?php $twitter = get_frontend_settings('twitter'); ?>
+          <?php $linkedin = get_frontend_settings('linkedin'); ?>
+          <?php if($facebook): ?>
+            <li class="mb-1">
+              <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-f"></i></a>
+            </li>
+          <?php endif; ?>
+          <?php if($twitter): ?>
+            <li class="mb-1">
+              <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter"></i></a>
+            </li>
+          <?php endif; ?>
+          <?php if($linkedin): ?>
+            <li class="mb-1">
+              <a href="<?php echo $linkedin; ?>"><i class="fab fa-linkedin"></i></a>
+            </li>
+          <?php endif; ?>
         </ul>
       </div>
     </div>
   </div>
+  <section class="border-top">
+    <div class="container-xl">
+      <div class="row mt-3 py-1">
+        <div class="col-6 col-sm-6 col-md-3 text-muted text-13px">
+          &copy; 2021 <?php echo get_settings('system_name'); ?>, <?php echo site_phrase('all_rights_reserved'); ?>
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 d-none d-md-block"></div>
+        <div class="col-6 col-sm-6 col-md-3 d-none d-md-block"></div>
+        <div class="col-6 col-sm-6 col-md-3 text-center text-md-start">
+          <select class="language_selector" onchange="switch_language(this.value)">
+            <?php
+             $languages = $this->crud_model->get_all_languages();
+             foreach ($languages as $language): ?>
+                <?php if (trim($language) != ""): ?>
+                    <option value="<?php echo strtolower($language); ?>" <?php if ($this->session->userdata('language') == $language): ?>selected<?php endif; ?>><?php echo ucwords($language);?></option>
+                <?php endif; ?>
+            <?php endforeach; ?>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
 </footer>
+
+<script type="text/javascript">
+    function switch_language(language) {
+        $.ajax({
+            url: '<?php echo site_url('home/site_language'); ?>',
+            type: 'post',
+            data: {language : language},
+            success: function(response) {
+                setTimeout(function(){ location.reload(); }, 500);
+            }
+        });
+    }
+</script>
+
+
 
 <!-- PAYMENT MODAL -->
 <!-- Modal -->
@@ -71,7 +154,7 @@ if ($stripe_info[0]['active'] == 0) {
           &nbsp;of&nbsp;<span class="m-progress-total"></span>
         </h5>
 
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" data-bs-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -176,15 +259,4 @@ if ($stripe_info[0]['active'] == 0) {
   </div>
 </div><!-- Modal -->
 
-<script type="text/javascript">
-    function switch_language(language) {
-        $.ajax({
-            url: '<?php echo site_url('home/site_language'); ?>',
-            type: 'post',
-            data: {language : language},
-            success: function(response) {
-                setTimeout(function(){ location.reload(); }, 500);
-            }
-        });
-    }
-</script>
+
