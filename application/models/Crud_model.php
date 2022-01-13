@@ -487,6 +487,11 @@ class Crud_model extends CI_Model
         }
     }
 
+    public function get_lessons_by_videoId($vidoCipher_id)
+    {
+        return $this->db->get_where('lesson', array('vidoCipher_id' => $vidoCipher_id));       
+    }
+
     public function add_course($param1 = "")
     {
         $outcomes = $this->trim_and_return_json($this->input->post('outcomes'));
@@ -1197,64 +1202,66 @@ class Crud_model extends CI_Model
             $data['video_type_for_mobile_application'] = "html5";
             $data['video_url_for_mobile_application'] = $result['ObjectURL'];
         } elseif ($lesson_type == "system") {
-            // SET MAXIMUM EXECUTION TIME 600
-            ini_set('max_execution_time', '600');
+             // SET MAXIMUM EXECUTION TIME 600
+             ini_set('max_execution_time', '600');
 
-            $fileName           = $_FILES['system_video_file']['name'];
-
-            // CHECKING IF THE FILE IS AVAILABLE AND FILE SIZE IS VALID
-            if (array_key_exists('system_video_file', $_FILES)) {
-                if ($_FILES['system_video_file']['error'] !== UPLOAD_ERR_OK) {
-                    $error_code = $_FILES['system_video_file']['error'];
-                    $this->session->set_flashdata('error_message', phpFileUploadErrors($error_code));
-                    redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
-                }
-            } else {
-                $this->session->set_flashdata('error_message', get_phrase('please_select_valid_video_file'));
-                redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
-            };
-
-            $tmp                = explode('.', $fileName);
-            $fileExtension      = strtoupper(end($tmp));
-
-            $video_extensions = ['WEBM', 'MP4'];
-
-            if (!in_array($fileExtension, $video_extensions)) {
-                $this->session->set_flashdata('error_message', get_phrase('please_select_valid_video_file'));
-                redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
-            }
-
-            // custom random name of the video file
-            $uploadable_video_file    =  md5(uniqid(rand(), true)) . '.' . strtolower($fileExtension);
-
-            if ($this->input->post('system_video_file_duration') == "") {
-                $this->session->set_flashdata('error_message', get_phrase('invalid_lesson_duration'));
-                redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
-            }
-
-
-
-            $tmp_video_file = $_FILES['system_video_file']['tmp_name'];
-
-            if (!file_exists('uploads/lesson_files/videos')) {
-                mkdir('uploads/lesson_files/videos', 0777, true);
-            }
-            $video_file_path = 'uploads/lesson_files/videos/' . $uploadable_video_file;
-            move_uploaded_file($tmp_video_file, $video_file_path);
-            $data['video_url'] = site_url($video_file_path);
-            $data['video_type'] = 'system';
-            $data['lesson_type'] = 'video';
-            $data['attachment_type'] = 'file';
-
-            $duration_formatter = explode(':', $this->input->post('system_video_file_duration'));
-            $hour = sprintf('%02d', $duration_formatter[0]);
-            $min = sprintf('%02d', $duration_formatter[1]);
-            $sec = sprintf('%02d', $duration_formatter[2]);
-            $data['duration'] = $hour . ':' . $min . ':' . $sec;
-
-            $data['duration_for_mobile_application'] = $hour . ':' . $min . ':' . $sec;
-            $data['video_type_for_mobile_application'] = "html5";
-            $data['video_url_for_mobile_application'] = site_url($video_file_path);
+             $fileName = $_FILES['system_video_file']['name'];
+ 
+             // CHECKING IF THE FILE IS AVAILABLE AND FILE SIZE IS VALID
+             if (array_key_exists('system_video_file', $_FILES)) {
+                 if ($_FILES['system_video_file']['error'] !== UPLOAD_ERR_OK) {
+                     $error_code = $_FILES['system_video_file']['error'];
+                     $this->session->set_flashdata('error_message', phpFileUploadErrors($error_code));
+                     redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
+                 }
+             } else {
+                 $this->session->set_flashdata('error_message', get_phrase('please_select_valid_video_file'));
+                 redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
+             };
+ 
+             $tmp                = explode('.', $fileName);
+             $fileExtension      = strtoupper(end($tmp));
+ 
+             $video_extensions = ['WEBM', 'MP4'];
+ 
+             if (!in_array($fileExtension, $video_extensions)) {
+                 $this->session->set_flashdata('error_message', get_phrase('please_select_valid_video_file'));
+                 redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
+             }
+ 
+             // custom random name of the video file
+             $uploadable_video_file    =  md5(uniqid(rand(), true)) . '.' . strtolower($fileExtension);
+ 
+             if ($this->input->post('system_video_file_duration') == "") {
+                 $this->session->set_flashdata('error_message', get_phrase('invalid_lesson_duration'));
+                 redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
+             }
+ 
+             $tmp_video_file = $_FILES['system_video_file']['tmp_name'];
+             if (!file_exists('uploads/lesson_files/videos')) {
+                 mkdir('uploads/lesson_files/videos', 0777, true);
+             }
+             $video_file_path = 'uploads/lesson_files/videos/' . $uploadable_video_file;
+             move_uploaded_file($tmp_video_file, $video_file_path);
+             $data['video_url'] = $video_file_path;
+             $data['video_type'] = 'system';
+             $data['lesson_type'] = 'video';
+             $data['attachment_type'] = 'file';
+ 
+             $duration_formatter = explode(':', $this->input->post('system_video_file_duration'));
+             $hour = sprintf('%02d', $duration_formatter[0]);
+             $min = sprintf('%02d', $duration_formatter[1]);
+             $sec = sprintf('%02d', $duration_formatter[2]);
+             $data['duration'] = $hour . ':' . $min . ':' . $sec;
+ 
+             $data['duration_for_mobile_application'] = $hour . ':' . $min . ':' . $sec;
+             $data['video_type_for_mobile_application'] = "html5";
+             $data['video_url_for_mobile_application'] = site_url($video_file_path);
+            
+             $response=uploading_file_vidocipher(site_url($video_file_path));
+             if(!empty($response) && isset($response->id)){
+                 $data['vidoCipher_id']=$response->id;
+             } 
         }elseif($lesson_type == 'text' && $attachment_type == 'description'){
             $data['attachment'] = htmlspecialchars($this->input->post('text_description'));
         } else {
@@ -1454,76 +1461,81 @@ class Crud_model extends CI_Model
             $data['duration_for_mobile_application'] = $hour . ':' . $min . ':' . $sec;
             $data['video_type_for_mobile_application'] = "html5";
         } elseif ($lesson_type == "system") {
-            // SET MAXIMUM EXECUTION TIME 600
-            ini_set('max_execution_time', '600');
+         // SET MAXIMUM EXECUTION TIME 600
+         ini_set('max_execution_time', '600');
 
-            if (isset($_FILES['system_video_file']) && !empty($_FILES['system_video_file']['name'])) {
-                //delete previews video
-                $previews_video_url = $this->db->get_where('lesson', array('id' => $lesson_id))->row('video_url');
-                $video_file = explode('/', $previews_video_url);
-                if (file_exists('uploads/lesson_files/videos/' . end($video_file))) {
-                    unlink('uploads/lesson_files/videos/' . end($video_file));
-                }
-                //end delete previews video
+         if (isset($_FILES['system_video_file']) && !empty($_FILES['system_video_file']['name'])) {
+             //delete previews video
+             $previews_video_url = $this->db->get_where('lesson', array('id' => $lesson_id))->row('video_url');
+             $video_file = explode('/', $previews_video_url);
+             unlink('uploads/lesson_files/videos/' . end($video_file));
+             //end delete previews video
 
-                $fileName = $_FILES['system_video_file']['name'];
+             $fileName           = $_FILES['system_video_file']['name'];
 
-                // CHECKING IF THE FILE IS AVAILABLE AND FILE SIZE IS VALID
-                if (array_key_exists('system_video_file', $_FILES)) {
-                    if ($_FILES['system_video_file']['error'] !== UPLOAD_ERR_OK) {
-                        $error_code = $_FILES['system_video_file']['error'];
-                        $this->session->set_flashdata('error_message', phpFileUploadErrors($error_code));
-                        redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
-                    }
-                } else {
-                    $this->session->set_flashdata('error_message', get_phrase('please_select_valid_video_file'));
-                    redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
-                };
+             // CHECKING IF THE FILE IS AVAILABLE AND FILE SIZE IS VALID
+             if (array_key_exists('system_video_file', $_FILES)) {
+                 if ($_FILES['system_video_file']['error'] !== UPLOAD_ERR_OK) {
+                     $error_code = $_FILES['system_video_file']['error'];
+                     $this->session->set_flashdata('error_message', phpFileUploadErrors($error_code));
+                     redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
+                 }
+             } else {
+                 $this->session->set_flashdata('error_message', get_phrase('please_select_valid_video_file'));
+                 redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
+             };
 
-                $tmp                = explode('.', $fileName);
-                $fileExtension      = strtoupper(end($tmp));
+             $tmp                = explode('.', $fileName);
+             $fileExtension      = strtoupper(end($tmp));
 
-                $video_extensions = ['WEBM', 'MP4'];
-                if (!in_array($fileExtension, $video_extensions)) {
-                    $this->session->set_flashdata('error_message', get_phrase('please_select_valid_video_file'));
-                    redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
-                }
+             $video_extensions = ['WEBM', 'MP4'];
+             if (!in_array($fileExtension, $video_extensions)) {
+                 $this->session->set_flashdata('error_message', get_phrase('please_select_valid_video_file'));
+                 redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
+             }
 
-                // custom random name of the video file
-                $uploadable_video_file    =  md5(uniqid(rand(), true)) . '.' . strtolower($fileExtension);
+             // custom random name of the video file
+             $uploadable_video_file    =  md5(uniqid(rand(), true)) . '.' . strtolower($fileExtension);
+
+             $tmp_video_file = $_FILES['system_video_file']['tmp_name'];
+
+             if (!file_exists('uploads/lesson_files/videos')) {
+                 mkdir('uploads/lesson_files/videos', 0777, true);
+             }
+             $video_file_path = 'uploads/lesson_files/videos/' . $uploadable_video_file;
+             move_uploaded_file($tmp_video_file, $video_file_path);
+
+             $data['video_url'] = $video_file_path;
+             $data['video_url_for_mobile_application'] = site_url($video_file_path);                
+             
+             
+//                echo $previous_data['vidoCipher_id'];die;
+             $response=uploading_file_vidocipher(site_url($video_file_path));                
+             if(!empty($response) && isset($response->id)){                    
+                 $data['vidoCipher_id']=$response->id;
+                 $data['vidoCipher_status']=1;             
+                 delete_vidociphr_video_by_id($previous_data['vidoCipher_id']);
+             }                
+         }
+
+         $data['video_type'] = 'system';
+         $data['lesson_type'] = 'video';
+         $data['attachment_type'] = 'file';
 
 
-                $tmp_video_file = $_FILES['system_video_file']['tmp_name'];
+         if ($this->input->post('system_video_file_duration') == "") {
+             $this->session->set_flashdata('error_message', get_phrase('invalid_lesson_duration'));
+             redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
+         }
 
-                if (!file_exists('uploads/lesson_files/videos')) {
-                    mkdir('uploads/lesson_files/videos', 0777, true);
-                }
-                $video_file_path = 'uploads/lesson_files/videos/' . $uploadable_video_file;
-                move_uploaded_file($tmp_video_file, $video_file_path);
+         $duration_formatter = explode(':', $this->input->post('system_video_file_duration'));
+         $hour = sprintf('%02d', $duration_formatter[0]);
+         $min = sprintf('%02d', $duration_formatter[1]);
+         $sec = sprintf('%02d', $duration_formatter[2]);
+         $data['duration'] = $hour . ':' . $min . ':' . $sec;
 
-                $data['video_url'] = site_url($video_file_path);
-                $data['video_url_for_mobile_application'] = site_url($video_file_path);
-            }
-
-            $data['video_type'] = 'system';
-            $data['lesson_type'] = 'video';
-            $data['attachment_type'] = 'file';
-
-
-            if ($this->input->post('system_video_file_duration') == "") {
-                $this->session->set_flashdata('error_message', get_phrase('invalid_lesson_duration'));
-                redirect(site_url(strtolower($this->session->userdata('role')) . '/course_form/course_edit/' . $data['course_id']), 'refresh');
-            }
-
-            $duration_formatter = explode(':', $this->input->post('system_video_file_duration'));
-            $hour = sprintf('%02d', $duration_formatter[0]);
-            $min = sprintf('%02d', $duration_formatter[1]);
-            $sec = sprintf('%02d', $duration_formatter[2]);
-            $data['duration'] = $hour . ':' . $min . ':' . $sec;
-
-            $data['duration_for_mobile_application'] = $hour . ':' . $min . ':' . $sec;
-            $data['video_type_for_mobile_application'] = "html5";
-
+         $data['duration_for_mobile_application'] = $hour . ':' . $min . ':' . $sec;
+         $data['video_type_for_mobile_application'] = "html5";
         }elseif($lesson_type == 'text' && $attachment_type == 'description'){
             $data['attachment'] = htmlspecialchars($this->input->post('text_description'));
         } else {
@@ -1569,6 +1581,10 @@ class Crud_model extends CI_Model
 
     public function delete_lesson($lesson_id)
     {
+        $previous_data = $this->db->get_where('lesson', array('id' => $lesson_id))->row_array();
+        if(!empty($previous_data)){
+            delete_vidociphr_video_by_id($previous_data['vidoCipher_id']);
+        }
         $this->db->where('id', $lesson_id);
         $this->db->delete('lesson');
     }
@@ -3067,28 +3083,4 @@ class Crud_model extends CI_Model
         $this->db->where('status', 'active');
         return $this->db->get('course');
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
