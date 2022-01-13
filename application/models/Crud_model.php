@@ -1291,11 +1291,13 @@ class Crud_model extends CI_Model
         $this->db->insert('lesson', $data);
         $inserted_id = $this->db->insert_id();
 
-        if ($_FILES['thumbnail']['name'] != "") {
-            if (!file_exists('uploads/thumbnails/lesson_thumbnails')) {
-                mkdir('uploads/thumbnails/lesson_thumbnails', 0777, true);
+        if (isset($_FILES['thumbnail'])) {
+            if ($_FILES['thumbnail']['name'] != "") {
+                if (!file_exists('uploads/thumbnails/lesson_thumbnails')) {
+                    mkdir('uploads/thumbnails/lesson_thumbnails', 0777, true);
+                }
+                move_uploaded_file($_FILES['thumbnail']['tmp_name'], 'uploads/thumbnails/lesson_thumbnails/' . $inserted_id . '.jpg');
             }
-            move_uploaded_file($_FILES['thumbnail']['tmp_name'], 'uploads/thumbnails/lesson_thumbnails/' . $inserted_id . '.jpg');
         }
     }
 
