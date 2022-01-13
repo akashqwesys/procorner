@@ -1461,10 +1461,12 @@ class Crud_model extends CI_Model
                 //delete previews video
                 $previews_video_url = $this->db->get_where('lesson', array('id' => $lesson_id))->row('video_url');
                 $video_file = explode('/', $previews_video_url);
-                unlink('uploads/lesson_files/videos/' . end($video_file));
+                if (file_exists('uploads/lesson_files/videos/' . end($video_file))) {
+                    unlink('uploads/lesson_files/videos/' . end($video_file));
+                }
                 //end delete previews video
 
-                $fileName           = $_FILES['system_video_file']['name'];
+                $fileName = $_FILES['system_video_file']['name'];
 
                 // CHECKING IF THE FILE IS AVAILABLE AND FILE SIZE IS VALID
                 if (array_key_exists('system_video_file', $_FILES)) {
