@@ -607,7 +607,6 @@ if (!function_exists('get_vidociphr_video_by_id')) {
 
 }
 
-
 if (!function_exists('delete_vidociphr_video_by_id')) {
 
     function delete_vidociphr_video_by_id($video_id) {
