@@ -74,7 +74,7 @@
     </div>
 </section>
 
-<section class="mb-5">
+<!-- <section class="mb-5">
     <div class="container-lg">
         <h3 class="course-carousel-title my-4"><?php echo site_phrase('top_categories'); ?></h3>
         <div class="row justify-content-center">
@@ -96,13 +96,13 @@
             <?php endforeach; ?>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="course-carousel-area">
     <div class="container-lg">
         <div class="row">
             <div class="col">
-                <h3 class="course-carousel-title mb-4"><?php echo site_phrase('top_courses'); ?></h3>
+                <h3 class="course-carousel-title mb-4 text-center">Explore top courses</h3>
 
                 <!-- page loader -->
                 <div class="animated-loader"><div class="spinner-border text-secondary" role="status"></div></div>
@@ -269,18 +269,18 @@
     </div>
 </section>
 
-<section class="course-carousel-area">
+<!-- <section class="course-carousel-area">
     <div class="container-lg">
         <div class="row">
             <div class="col">
-                <h3 class="course-carousel-title mb-4"><?php echo site_phrase('top') . ' 10 ' . site_phrase('latest_courses'); ?></h3>
+                <h3 class="course-carousel-title mb-4"><?php echo site_phrase('top') . ' 10 ' . site_phrase('latest_courses'); ?></h3> -->
 
                 <!-- page loader -->
-                <div class="animated-loader"><div class="spinner-border text-secondary" role="status"></div></div>
+                <!-- <div class="animated-loader"><div class="spinner-border text-secondary" role="status"></div></div>
 
                 <div class="course-carousel shown-after-loading" style="display: none;">
                     <?php
-                    $latest_courses = $this->crud_model->get_latest_10_course();
+                    $latest_courses = $this->crud_model->get_top_courses()->result_array();
                     foreach ($latest_courses as $latest_course) : ?>
                         <?php
                             $lessons = $this->crud_model->get_lessons('course', $latest_course['id']);
@@ -438,10 +438,68 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+
 
 
 <section class="featured-instructor">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center mb-5">Inside each course, you will filnd..</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center padding-10">
+            <div class="col-md-7 padding-5">
+                <video width="100%" controls class="box-shadow-video">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
+                    Your browser does not support HTML video.
+                    </video>                
+            </div>
+            <div class="col-md-5 box-shadow-custome mb-5">
+                <div class="m-5 pb-5">
+                    <h4 class="pb-5">Compressive video lesson</h4> 
+                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p> 
+                </div>                                             
+            </div>
+        </div>
+        <div class="row justify-content-center padding-10">
+            
+            <div class="col-md-5 box-shadow-custome mb-5">
+                <div class="m-5 pb-5">
+                    <h4 class="pb-5">Compressive video lesson</h4> 
+                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p> 
+                </div>                                             
+            </div>
+            <div class="col-md-7 padding-5">
+            <video width="100%" controls class="box-shadow-video">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
+                    Your browser does not support HTML video.
+                    </video>                
+            </div>
+        </div>
+        <div class="row justify-content-center padding-10">
+            <div class="col-md-7 padding-5">
+            <video width="100%" controls class="box-shadow-video">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
+                    Your browser does not support HTML video.
+                    </video>                
+            </div>
+            <div class="col-md-5 box-shadow-custome mb-5">
+                <div class="m-5 pb-5">
+                    <h4 class="pb-5">Compressive video lesson</h4> 
+                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p> 
+                </div>                                             
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <section class="featured-instructor">
     <div class="container-lg">
         <div class="row">
             <div class="col">
@@ -465,13 +523,13 @@
                                 <a class="text-decoration-none" href="<?php echo site_url('home/instructor_page/'.$top_instructor['id']); ?>">
                                     <h4 class="mb-1 fw-700"><?php echo $top_instructor['first_name'].' '.$top_instructor['last_name']; ?></h4>
                                     <span class="fw-500 text-muted text-14px"><?php echo ellipsis($top_instructor['title'], 60); ?></span>
-                                    <p class="text-12px fw-500 text-muted my-3"><?php echo ellipsis(strip_tags($top_instructor['biography']),100); ?></p>
+                                    <p class="text-12px fw-500 text-muted my-3"><?php echo ellipsis(strip_tags($top_instructor['biography']),100); ?></p> -->
 
                                     <!-- <?php $skills = explode(',', $top_instructor['skills']); ?>
                                     <?php foreach($skills as $skill): ?>
                                       <span class="badge badge-sub-warning text-12px my-1 py-2"><?php echo $skill; ?></span>
                                     <?php endforeach; ?> -->
-                                </a>
+                                <!-- </a>
 
                                 <p class="top-instructor-arrow my-3">
                                     <span class="cursor-pointer" onclick="$('.top-istructor-slick .slick-prev').click();"><i class="fas fa-angle-left"></i></span>
@@ -484,10 +542,10 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
-<div class="container-xl">
+<!-- <div class="container-xl">
     <div class="row py-3 mb-4">
       <div class="col-md-6 mt-3 mt-md-0">
         <div class="become-user-label text-center mt-3">
@@ -506,7 +564,7 @@
         </div>
       </div>
     </div>
-</div>
+</div> -->
 <script type="text/javascript">
     function handleWishList(elem) {
 

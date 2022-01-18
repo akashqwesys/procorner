@@ -23,7 +23,7 @@ $check_course_enrolled = $this->crud_model->check_course_enrolled($cart_item, $u
 					<?php if ($course_details['is_free_course'] == 1) : ?>
 						<?php $total_price = 0; ?>
 						<?php $this->session->set_userdata('total_price_of_checking_out', $total_price); ?>
-						<div class="current-price" style="margin-left: 65%; font-size: 30px; color: #ec5252;"> <b><i><?php echo get_phrase('free'); ?></i></b></div>
+						<div class="current-price" style="margin-left: 65%; font-size: 30px; color: #1d56fe;"> <b><i><?php echo get_phrase('free'); ?></i></b></div>
 					<?php else : ?>
 						<?php if ($course_details['discount_flag'] == 1) : ?>
 							<?php $total_price = $course_details['discounted_price']; ?>

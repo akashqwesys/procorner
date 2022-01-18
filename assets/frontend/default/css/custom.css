@@ -49,8 +49,8 @@ a{
     text-decoration: none;
 }
 .top-categories:hover, .top-categories:focus{
-    background-color: #ec5252;
-    border: 1px solid #ec5252;
+    background-color: #1d56fe;
+    border: 1px solid #1d56fe;
 }
 .category-icon{
     width: 36px;
@@ -126,7 +126,7 @@ a{
     z-index: 999;
 }
 .become-user-label{
-    background-color: #ec5252;
+    background-color: #1d56fe;
     color: white;
     padding: 50px 15px;
     border-radius: 10px;
@@ -177,7 +177,7 @@ ul.footer-social-link{
 }
 ul.footer-social-link li{
     float: left;
-    background-color: #ec5252;
+    background-color: #1d56fe;
     color: #fff;
     margin: 0px 15px 0px 0px;
     border-radius: 50%;
@@ -265,7 +265,7 @@ p.top-instructor-arrow span i{
     float: left;
 }
 .skill-level-icon .active{
-    background-color: #ec5252;
+    background-color: #1d56fe;
 }
 .skill-level-icon span:first-of-type{
     width: 5px;
@@ -294,7 +294,7 @@ p.top-instructor-arrow span i{
     border-left: none !important;
 }
 .marge-input-box button{
-    background: #ec5252;
+    background: #1d56fe;
     color: #fff;
     font-weight: 500;
     margin: 5px;

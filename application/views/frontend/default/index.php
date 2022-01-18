@@ -44,7 +44,7 @@
 	<?php include 'includes_top.php';?>
 
 </head>
-<body class="gray-bg">
+<body class="gray-bg">		
 	<?php
 	if($this->session->userdata('app_url')):
 		include "go_back_to_mobile_app.php";
