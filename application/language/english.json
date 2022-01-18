@@ -784,5 +784,6 @@
     "learn_more": "Learn more",
     "provide_your_valid_email_address": "Provide your valid email address",
     "search_results": "Search results",
-    "select_none_to_create_a_parent_category": "Select none to create a parent category"
+    "select_none_to_create_a_parent_category": "Select none to create a parent category",
+    "password_reset_failed": "Password reset failed"
 }
