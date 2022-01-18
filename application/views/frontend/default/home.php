@@ -1,5 +1,5 @@
 <section class="home-banner-area" id="home-banner-area" style="background-image: url('<?= base_url("uploads/system/" . get_frontend_settings('banner_image')); ?>'); background-position: right; background-repeat: no-repeat; padding: 100px 0 75px; background-size: auto 100%; color: #fff;">
-    <div class="cropped-home-banner" ></div>
+    <div class="cropped-home-banner"></div>
     <div class="container-xl">
         <div class="row">
             <div class="col position-relative">
@@ -19,15 +19,15 @@
         </div>
     </div>
     <?php
-        $banner_size = getimagesize("uploads/system/" . get_frontend_settings('banner_image'));
-        $banner_ratio = $banner_size[0]/$banner_size[1];
+    $banner_size = getimagesize("uploads/system/" . get_frontend_settings('banner_image'));
+    $banner_ratio = $banner_size[0] / $banner_size[1];
     ?>
     <script type="text/javascript">
         var border_bottom = $('.home-banner-wrap').height() + 242;
         $('.cropped-home-banner').css('border-bottom', border_bottom + 'px solid #f1f7f8');
 
         mRight = Number("<?php echo $banner_ratio; ?>") * $('.home-banner-area').outerHeight();
-        $('.cropped-home-banner').css('right', (mRight-65) + 'px');
+        $('.cropped-home-banner').css('right', (mRight - 65) + 'px');
     </script>
 </section>
 
@@ -80,16 +80,16 @@
         <div class="row justify-content-center">
 
             <?php $top_10_categories = $this->crud_model->get_top_categories(12, 'sub_category_id'); ?>
-            <?php foreach($top_10_categories as $top_10_category): ?>
+            <?php foreach ($top_10_categories as $top_10_category) : ?>
                 <?php $category_details = $this->crud_model->get_category_details_by_id($top_10_category['sub_category_id'])->row_array(); ?>
                 <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
-                    <a href="<?php echo site_url('home/courses?category='.$category_details['slug']); ?>" class="top-categories">
+                    <a href="<?php echo site_url('home/courses?category=' . $category_details['slug']); ?>" class="top-categories">
                         <div class="category-icon">
                             <i class="<?php echo $category_details['font_awesome_class']; ?>"></i>
                         </div>
                         <div class="category-title">
                             <?php echo $category_details['name']; ?>
-                            <p><?php echo $top_10_category['course_number'].' '.site_phrase('courses'); ?></p>
+                            <p><?php echo $top_10_category['course_number'] . ' ' . site_phrase('courses'); ?></p>
                         </div>
                     </a>
                 </div>
@@ -105,15 +105,17 @@
                 <h3 class="course-carousel-title mb-4 text-center">Explore top courses</h3>
 
                 <!-- page loader -->
-                <div class="animated-loader"><div class="spinner-border text-secondary" role="status"></div></div>
+                <div class="animated-loader">
+                    <div class="spinner-border text-secondary" role="status"></div>
+                </div>
 
                 <div class="course-carousel shown-after-loading" style="display: none;">
                     <?php $top_courses = $this->crud_model->get_top_courses()->result_array();
                     $cart_items = $this->session->userdata('cart_items');
                     foreach ($top_courses as $top_course) : ?>
                         <?php
-                            $lessons = $this->crud_model->get_lessons('course', $top_course['id']);
-                            $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($top_course['id']);
+                        $lessons = $this->crud_model->get_lessons('course', $top_course['id']);
+                        $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($top_course['id']);
                         ?>
                         <div class="course-box-wrap">
                             <a onclick="return check_action(this);" href="<?php echo site_url('home/course/' . rawurlencode(slugify($top_course['title'])) . '/' . $top_course['id']); ?>" class="has-popover">
@@ -142,7 +144,7 @@
                                             <?php endfor; ?>
                                             <div class="d-inline-block">
                                                 <span class="text-dark ms-1 text-15px">(<?php echo $average_ceil_rating; ?>)</span>
-                                                <span class="text-dark text-12px text-muted ms-2">(<?php echo $number_of_ratings.' '.site_phrase('reviews'); ?>)</span>
+                                                <span class="text-dark text-12px text-muted ms-2">(<?php echo $number_of_ratings . ' ' . site_phrase('reviews'); ?>)</span>
                                             </div>
                                         </div>
                                         <div class="d-flex text-dark">
@@ -152,7 +154,7 @@
                                             </div>
                                             <div class="ms-3">
                                                 <i class="far fa-list-alt text-14px"></i>
-                                                <span class="text-muted text-12px"><?php echo $lessons->num_rows().' '.site_phrase('lectures'); ?></span>
+                                                <span class="text-muted text-12px"><?php echo $lessons->num_rows() . ' ' . site_phrase('lectures'); ?></span>
                                             </div>
                                         </div>
 
@@ -169,16 +171,16 @@
 
                                         <div class="d-block">
                                             <div class="floating-user d-inline-block">
-                                                <?php if ($top_course['multi_instructor']):
+                                                <?php if ($top_course['multi_instructor']) :
                                                     $instructor_details = $this->user_model->get_multi_instructor_details_with_csv($top_course['user_id']);
                                                     $margin = 0;
                                                     foreach ($instructor_details as $key => $instructor_detail) { ?>
-                                                        <img style="margin-left: <?php echo $margin; ?>px;" class="position-absolute" src="<?php echo $this->user_model->get_user_image_url($instructor_detail['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $instructor_detail['first_name'].' '.$instructor_detail['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/'.$instructor_detail['id']); ?>');">
-                                                        <?php $margin = $margin+17; ?>
+                                                        <img style="margin-left: <?php echo $margin; ?>px;" class="position-absolute" src="<?php echo $this->user_model->get_user_image_url($instructor_detail['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $instructor_detail['first_name'] . ' ' . $instructor_detail['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $instructor_detail['id']); ?>');">
+                                                        <?php $margin = $margin + 17; ?>
                                                     <?php } ?>
-                                                <?php else: ?>
+                                                <?php else : ?>
                                                     <?php $user_details = $this->user_model->get_all_user($top_course['user_id'])->row_array(); ?>
-                                                    <img src="<?php echo $this->user_model->get_user_image_url($user_details['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user_details['first_name'].' '.$user_details['last_name']; ?>"  onclick="return check_action(this,'<?php echo site_url('home/instructor_page/'.$user_details['id']); ?>');">
+                                                    <img src="<?php echo $this->user_model->get_user_image_url($user_details['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user_details['first_name'] . ' ' . $user_details['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $user_details['id']); ?>');">
                                                 <?php endif; ?>
                                             </div>
 
@@ -275,16 +277,16 @@
             <div class="col">
                 <h3 class="course-carousel-title mb-4"><?php echo site_phrase('top') . ' 10 ' . site_phrase('latest_courses'); ?></h3> -->
 
-                <!-- page loader -->
-                <!-- <div class="animated-loader"><div class="spinner-border text-secondary" role="status"></div></div>
+<!-- page loader -->
+<!-- <div class="animated-loader"><div class="spinner-border text-secondary" role="status"></div></div>
 
                 <div class="course-carousel shown-after-loading" style="display: none;">
                     <?php
                     $latest_courses = $this->crud_model->get_top_courses()->result_array();
                     foreach ($latest_courses as $latest_course) : ?>
                         <?php
-                            $lessons = $this->crud_model->get_lessons('course', $latest_course['id']);
-                            $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($latest_course['id']);
+                        $lessons = $this->crud_model->get_lessons('course', $latest_course['id']);
+                        $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($latest_course['id']);
                         ?>
                         <div class="course-box-wrap">
                             <a onclick="return check_action(this);" href="<?php echo site_url('home/course/' . rawurlencode(slugify($latest_course['title'])) . '/' . $latest_course['id']); ?>" class="has-popover">
@@ -313,7 +315,7 @@
                                             <?php endfor; ?>
                                             <div class="d-inline-block">
                                                 <span class="text-dark ms-1 text-15px">(<?php echo $average_ceil_rating; ?>)</span>
-                                                <span class="text-dark text-12px text-muted ms-2">(<?php echo $number_of_ratings.' '.site_phrase('reviews'); ?>)</span>
+                                                <span class="text-dark text-12px text-muted ms-2">(<?php echo $number_of_ratings . ' ' . site_phrase('reviews'); ?>)</span>
                                             </div>
                                         </div>
                                         <div class="d-flex text-dark">
@@ -323,7 +325,7 @@
                                             </div>
                                             <div class="ms-3">
                                                 <i class="far fa-list-alt text-14px"></i>
-                                                <span class="text-muted text-12px"><?php echo $lessons->num_rows().' '.site_phrase('lectures'); ?></span>
+                                                <span class="text-muted text-12px"><?php echo $lessons->num_rows() . ' ' . site_phrase('lectures'); ?></span>
                                             </div>
                                         </div>
 
@@ -340,16 +342,16 @@
 
                                         <div class="d-block">
                                             <div class="floating-user d-inline-block">
-                                                <?php if ($latest_course['multi_instructor']):
+                                                <?php if ($latest_course['multi_instructor']) :
                                                     $instructor_details = $this->user_model->get_multi_instructor_details_with_csv($latest_course['user_id']);
                                                     $margin = 0;
                                                     foreach ($instructor_details as $key => $instructor_detail) { ?>
-                                                        <img style="margin-left: <?php echo $margin; ?>px;" class="position-absolute" src="<?php echo $this->user_model->get_user_image_url($instructor_detail['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $instructor_detail['first_name'].' '.$instructor_detail['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/'.$instructor_detail['id']); ?>');">
-                                                        <?php $margin = $margin+17; ?>
+                                                        <img style="margin-left: <?php echo $margin; ?>px;" class="position-absolute" src="<?php echo $this->user_model->get_user_image_url($instructor_detail['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $instructor_detail['first_name'] . ' ' . $instructor_detail['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $instructor_detail['id']); ?>');">
+                                                        <?php $margin = $margin + 17; ?>
                                                     <?php } ?>
-                                                <?php else: ?>
+                                                <?php else : ?>
                                                     <?php $user_details = $this->user_model->get_all_user($latest_course['user_id'])->row_array(); ?>
-                                                    <img src="<?php echo $this->user_model->get_user_image_url($user_details['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user_details['first_name'].' '.$user_details['last_name']; ?>"  onclick="return check_action(this,'<?php echo site_url('home/instructor_page/'.$user_details['id']); ?>');">
+                                                    <img src="<?php echo $this->user_model->get_user_image_url($user_details['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user_details['first_name'] . ' ' . $user_details['last_name']; ?>"  onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $user_details['id']); ?>');">
                                                 <?php endif; ?>
                                             </div>
 
@@ -442,6 +444,9 @@
 
 
 
+
+
+
 <section class="featured-instructor">
     <div class="container-lg">
         <div class="row">
@@ -455,46 +460,84 @@
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
                     Your browser does not support HTML video.
-                    </video>                
+                </video>
             </div>
             <div class="col-md-5 box-shadow-custome mb-5">
                 <div class="m-5 pb-5">
-                    <h4 class="pb-5">Compressive video lesson</h4> 
-                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p> 
-                </div>                                             
+                    <h4 class="pb-5">Compressive video lesson</h4>
+                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p>
+                </div>
             </div>
         </div>
         <div class="row justify-content-center padding-10">
+
+            <div class="col-md-5 box-shadow-custome mb-5">
+                <div class="m-5 pb-5">
+                    <h4 class="pb-5">Compressive video lesson</h4>
+                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p>
+                </div>
+            </div>
+            <div class="col-md-7 padding-5">
+                <video width="100%" controls class="box-shadow-video">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
+                    Your browser does not support HTML video.
+                </video>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-7 padding-5">
+                <video width="100%" controls class="box-shadow-video">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
+                    Your browser does not support HTML video.
+                </video>
+            </div>
+            <div class="col-md-5 box-shadow-custome mb-5">
+                <div class="m-5 pb-5">
+                    <h4 class="pb-5">Compressive video lesson</h4>
+                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="course-carousel-area">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col">
+                <!-- <h3 class="course-carousel-title mb-4 text-center">Money Back Guarantee</h3>  -->
+                <div class="col-md-12 d-flex">
+                    <img src="assets/frontend/default/img/monyback.png" width="50%">
+                    <div class="text-box mt-5">
+                        <h4>45 DAYS MONEY BACK GUARANTEE</h4>
+                        <p>
+                            If you don't get results after you followed the methods I teach in the course. I will personally work with you to correct you if you are doing it wrong. If you still don't get results, I will refund 100% of your money. Full details here.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-instructor">
+     <div class="container-lg">       
+        <div class="row justify-content-center">
             
-            <div class="col-md-5 box-shadow-custome mb-5">
+            <div class="col-md-7 mb-5">
                 <div class="m-5 pb-5">
-                    <h4 class="pb-5">Compressive video lesson</h4> 
-                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p> 
-                </div>                                             
+                    <h4 class="pb-5">Compressive video lesson</h4>
+                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p>
+                </div>
             </div>
-            <div class="col-md-7 padding-5">
-            <video width="100%" controls class="box-shadow-video">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
-                    Your browser does not support HTML video.
-                    </video>                
+            <div class="col-md-5">   
+                <img src="assets/frontend/default/img/tutor.png" width="100%">             
             </div>
-        </div>
-        <div class="row justify-content-center padding-10">
-            <div class="col-md-7 padding-5">
-            <video width="100%" controls class="box-shadow-video">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
-                    Your browser does not support HTML video.
-                    </video>                
-            </div>
-            <div class="col-md-5 box-shadow-custome mb-5">
-                <div class="m-5 pb-5">
-                    <h4 class="pb-5">Compressive video lesson</h4> 
-                    <p class="pb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro quod officia adipisci sed. Ad quos repellat, nihil, aliquam asperiores animi itaque nostrum incidunt harum totam soluta, necessitatibus neque rerum nobis!</p> 
-                </div>                                             
-            </div>
-        </div>
+        </div>   
     </div>
 </section>
 
@@ -511,25 +554,25 @@
                 <div class="animated-loader"><div class="spinner-border text-secondary" role="status"></div></div>
                 <div class="top-istructor-slick shown-after-loading" style="display: none;">
                     <?php $top_instructor_ids = $this->crud_model->get_top_instructor(10); ?>
-                    <?php foreach($top_instructor_ids as $top_instructor_id): ?>
+                    <?php foreach ($top_instructor_ids as $top_instructor_id) : ?>
                         <?php $top_instructor = $this->user_model->get_all_user($top_instructor_id['creator'])->row_array(); ?>
                         <div class="d-sm-flex text-center text-md-start">
                             <div class="top-instructor-img ms-auto me-auto">
-                                <a href="<?php echo site_url('home/instructor_page/'.$top_instructor['id']); ?>">
+                                <a href="<?php echo site_url('home/instructor_page/' . $top_instructor['id']); ?>">
                                     <img src="<?php echo $this->user_model->get_user_image_url($top_instructor['id']); ?>" width="100%">
                                 </a>
                             </div>
                             <div class="top-instructor-details">
-                                <a class="text-decoration-none" href="<?php echo site_url('home/instructor_page/'.$top_instructor['id']); ?>">
-                                    <h4 class="mb-1 fw-700"><?php echo $top_instructor['first_name'].' '.$top_instructor['last_name']; ?></h4>
+                                <a class="text-decoration-none" href="<?php echo site_url('home/instructor_page/' . $top_instructor['id']); ?>">
+                                    <h4 class="mb-1 fw-700"><?php echo $top_instructor['first_name'] . ' ' . $top_instructor['last_name']; ?></h4>
                                     <span class="fw-500 text-muted text-14px"><?php echo ellipsis($top_instructor['title'], 60); ?></span>
-                                    <p class="text-12px fw-500 text-muted my-3"><?php echo ellipsis(strip_tags($top_instructor['biography']),100); ?></p> -->
+                                    <p class="text-12px fw-500 text-muted my-3"><?php echo ellipsis(strip_tags($top_instructor['biography']), 100); ?></p> -->
 
-                                    <!-- <?php $skills = explode(',', $top_instructor['skills']); ?>
-                                    <?php foreach($skills as $skill): ?>
+<!-- <?php $skills = explode(',', $top_instructor['skills']); ?>
+                                    <?php foreach ($skills as $skill) : ?>
                                       <span class="badge badge-sub-warning text-12px my-1 py-2"><?php echo $skill; ?></span>
                                     <?php endforeach; ?> -->
-                                <!-- </a>
+<!-- </a>
 
                                 <p class="top-instructor-arrow my-3">
                                     <span class="cursor-pointer" onclick="$('.top-istructor-slick .slick-prev').click();"><i class="fas fa-angle-left"></i></span>
@@ -556,9 +599,9 @@
       <div class="col-md-6">
         <div class="become-user-label text-center mt-3">
             <h3 class="pb-4"><?php echo site_phrase('become_instructor'); ?></h3>
-            <?php if($this->session->userdata('user_id')): ?>
+            <?php if ($this->session->userdata('user_id')) : ?>
                 <a href="<?php echo site_url('user/become_an_instructor'); ?>"><?php echo site_phrase('join_now'); ?></a>
-            <?php else: ?>
+            <?php else : ?>
                 <a href="<?php echo site_url('home/sign_up'); ?>"><?php echo site_phrase('join_now'); ?></a>
             <?php endif; ?>
         </div>
@@ -665,10 +708,27 @@
                 slidesToScroll: 4,
                 swipe: false,
                 touchMove: false,
-                responsive: [
-                    { breakpoint: 840, settings: { slidesToShow: 3, slidesToScroll: 3, }, },
-                    { breakpoint: 620, settings: { slidesToShow: 2, slidesToScroll: 2, }, },
-                    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, }, },
+                responsive: [{
+                        breakpoint: 840,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                        },
+                    },
+                    {
+                        breakpoint: 620,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        },
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        },
+                    },
                 ],
             });
         }
