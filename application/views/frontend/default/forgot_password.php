@@ -1,3 +1,6 @@
+<?php if(get_frontend_settings('recaptcha_status')): ?>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<?php endif; ?>
 <section class="category-course-list-area">
     <div class="container">
       <div class="row mb-5 mt-3">
@@ -20,6 +23,12 @@
                   <input type="email" name="email" class="form-control" placeholder="<?php echo site_phrase('email'); ?>" aria-label="<?php echo site_phrase('email'); ?>" aria-describedby="<?php echo site_phrase('email'); ?>" id="forgot-password-email" required>
                 </div>
               </div>
+<!-- 
+              <?php //if(get_frontend_settings('recaptcha_status')): ?>
+                <div class="form-group mt-4 mb-0">
+                  <div class="g-recaptcha" data-sitekey="<?php //echo get_frontend_settings('recaptcha_sitekey'); ?>"></div>
+                </div>
+              <?php //endif; ?> -->
 
               <?php if(get_frontend_settings('recaptcha_status')): ?>
                 <div class="form-group mt-4 mb-0">
