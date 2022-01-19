@@ -47,7 +47,7 @@
         top:calc( 43.5% - 6px );
     }
     .main-nav-wrap>ul>li>a i{
-        color: #122222;
+        color: #707171;
         margin-right: 5px;
         font-size: 12px;
     }
@@ -71,6 +71,7 @@
     .main-nav-wrap ul li:hover > ul{
         opacity: 1;
         visibility: visible;
+        border-radius: 8px;
     }
     .main-nav-wrap>ul>li>ul{
         top: 100%;
@@ -109,6 +110,9 @@
         color: #000;;
         background-color: #f2f3f5;
     }
+    .main-nav-wrap>ul>li>ul>.all-category-devided>a:hover{
+        border-radius: 0px 0px 8px 8px !important;
+    }
     .main-nav-wrap>ul>li>ul ul{
         top: 0;
         left: 270px;
@@ -124,7 +128,7 @@
     }
     .main-nav-wrap>ul>li>ul>li ul{
         position: absolute;
-        background: #f7f8fa;
+        background: #fff;
         height: auto;
         min-height: calc( 100% + 1px );
         top:-1px;

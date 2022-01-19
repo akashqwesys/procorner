@@ -46,21 +46,28 @@ $course_details_url = site_url("home/course/".slugify($course_details['title']).
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <ul class="nav nav-tabs <?php if(!addon_status('forum') && !addon_status('noticeboard')) echo 'border-0'; ?>">
+                        <li class="nav-item">
+                            <a class="nav-link remove-active active" id="overview" onclick="load_overview()" href="javascript:;">Overview</a>
+                        </li>
                         <?php if(addon_status('forum')): ?>
                             <li class="nav-item">
-                                <a class="nav-link remove-active active" id="qAndA" onclick="load_questions('<?= $course_id; ?>')" href="javascript:;"><?= site_phrase('forum'); ?></a>
+                                <a class="nav-link remove-active" id="qAndA" onclick="load_questions('<?= $course_id; ?>')" href="javascript:;">Q&A</a>
                             </li>
                         <?php endif; ?>
                         <?php if(addon_status('noticeboard')): ?>
                             <li class="nav-item">
-                                <a class="nav-link remove-active <?php if(!addon_status('forum')) echo 'active'; ?>" id="noticeboard_tab" onclick="load_course_notices('<?= $course_id; ?>')" href="javascript:;"><?= site_phrase('noticeboard'); ?></a>
+                                <a class="nav-link remove-active" id="noticeboard_tab" onclick="load_course_notices('<?= $course_id; ?>')" href="javascript:;"><?= site_phrase('noticeboard'); ?></a>
                             </li>
                         <?php endif; ?>
                     </ul>
                 </div>
                 <!--load body with ajax for any addon. First load course forum addon if exits or elseif-->
                 <div class="col-md-12 p-4" id="load-tabs-body">
-                    <?php if(addon_status('forum')): ?>
+                <?php if($course_details["description"]!=''): 
+                    echo $course_details["description"];
+                    ?>    
+
+                <?php elseif(addon_status('forum')): ?>
                         <?php include 'course_forum.php'; ?>
                     <?php elseif(addon_status('noticeboard')): ?>
                         <?php include 'noticeboard_body.php'; ?>

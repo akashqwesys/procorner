@@ -155,4 +155,20 @@
 			}
   		});
 	}
+
+
+
+
+//Load overview
+	function load_overview(){
+		$('.remove-active').removeClass('active');
+		$('#overview').addClass('active');
+
+		$('#load-tabs-body').hide();
+		$('#show_questions').show();
+
+		$('#show_questions').hide();
+		$('#load-tabs-body').show();
+		$('#load-tabs-body').html('<p><?php echo $course_details["description"]; ?></p>');
+	}
 </script>
