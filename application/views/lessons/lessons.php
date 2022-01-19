@@ -51,7 +51,7 @@ $course_details_url = site_url("home/course/".slugify($course_details['title']).
                         </li>
                         <?php if(addon_status('forum')): ?>
                             <li class="nav-item">
-                                <a class="nav-link remove-active" id="qAndA" onclick="load_questions('<?= $course_id; ?>')" href="javascript:;">Q&A</a>
+                                <a class="nav-link remove-active" id="qAndA" onclick="load_questions('<?= $course_id; ?>')" href="javascript:;"><?= site_phrase('forum'); ?></a>
                             </li>
                         <?php endif; ?>
                         <?php if(addon_status('noticeboard')): ?>

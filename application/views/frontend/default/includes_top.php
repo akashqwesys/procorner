@@ -15,5 +15,6 @@
 <link rel="stylesheet" href="<?php echo base_url() . 'assets/frontend/default/css/main.css'; ?>">
 <link rel="stylesheet" href="<?php echo base_url() . 'assets/frontend/default/css/responsive.css'; ?>">
 <link rel="stylesheet" href="<?php echo base_url() . 'assets/frontend/default/css/custom.css'; ?>">
+<link rel="stylesheet" href="<?php echo base_url() . 'assets/frontend/default/css/tagify.css'; ?>">
 <link rel="stylesheet" href="<?php echo base_url() . 'assets/global/toastr/toastr.css' ?>">
 <script src="<?php echo base_url('assets/backend/js/jquery-3.3.1.min.js'); ?>"></script>

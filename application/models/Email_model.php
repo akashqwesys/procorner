@@ -29,7 +29,8 @@ class Email_model extends CI_Model {
 			$email_data['to_name'] = $query->row('first_name').' '.$query->row('last_name');
 			$email_data['message'] = 'Your password has been changed. Your new password is : <b style="cursor: pointer;"><u>'.$new_password.'</u></b><br />';
 			$email_template = $this->load->view('email/common_template', $email_data, TRUE);
-			$this->send_smtp_mail($email_template, $email_data['subject'], $email_data['to'], $email_data['from']);
+			$res=$this->send_smtp_mail($email_template, $email_data['subject'], $email_data['to'], $email_data['from']);
+			// print_r($res);die;
 			return true;
 		}else {
 			return false;

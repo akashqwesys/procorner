@@ -832,5 +832,9 @@
     "dec": "Dec",
     "go": "Go",
     "the_dates_of_month": "The dates of month",
-    "noticeboard": "Noticeboard"
+    "noticeboard": "Noticeboard",
+    "reply": "Reply",
+    "write_a_reply": "Write a reply",
+    "publish_reply": "Publish reply",
+    "please_check_your_email_for_new_password": "Please check your email for new password"
 }

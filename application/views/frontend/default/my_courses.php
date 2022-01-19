@@ -118,7 +118,7 @@ foreach ($my_courses as $my_course) {
                                 <div class="course-details" style="display: none; padding-bottom: 10px;" id = "course_rating_view_<?php echo $course_details['id']; ?>">
                                   <a href="<?php echo site_url('home/course/'.rawurlencode(slugify($course_details['title'])).'/'.$my_course['course_id']); ?>"><h5 class="title"><?php echo ellipsis($course_details['title']); ?></h5></a>
                                   <?php
-                    								$user_specific_rating = $this->crud_model->get_user_specific_rating('course', $course_details['id']);
+                    								$user_specific_rating = $this->crud_model->get_user_specific_rating('course', $course_details['id']);                                                    
                     							?>
                     							<form class="javascript:;" action="" method="post">
                     								<div class="form-group select">
@@ -133,7 +133,7 @@ foreach ($my_courses as $my_course) {
                     									</div>
                     								</div>
                     								<div class="form-group add_top_30">
-                    									<textarea name="review" id ="review_of_a_course_<?php echo $course_details['id']; ?>" class="form-control" style="height:120px;" placeholder="<?php echo site_phrase('write_your_review_here'); ?>"><?php echo $user_specific_rating['review']; ?></textarea>
+                    									<textarea name="review" id ="review_of_a_course_<?php echo $course_details['id']; ?>" class="form-control" style="height:120px;" placeholder="<?php echo site_phrase('write_your_review_here'); ?>"><?php if(isset($user_specific_rating['review'])){echo $user_specific_rating['review'];}else{echo '';} ?></textarea>
                     								</div>
                     								<button type="" class="btn red w-100 radius-10 mt-2" onclick="publishRating('<?php echo $course_details['id']; ?>')" name="button"><?php echo site_phrase('publish_rating'); ?></button>
                     								<a href="javascript::" class="btn red w-100 radius-10 mt-2" onclick="toggleRatingView('<?php echo $course_details['id']; ?>')" name="button"><?php echo site_phrase('cancel_rating'); ?></a>
