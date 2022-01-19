@@ -1,7 +1,7 @@
 <section class="page-header-area my-course-area">
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <!-- <div class="row"> -->
+            <!-- <div class="col"> -->
                 <h1 class="page-title print-hidden"><?php echo $page_title; ?></h1>
                 <ul class="print-hidden">
                   <li class="<?php if($page_name == 'my_courses') echo 'active'; ?>"><a href="<?php echo site_url('home/my_courses'); ?>"><?php echo site_phrase('courses'); ?></a></li>
@@ -19,6 +19,6 @@
                   <li class="<?php if($page_name == 'user_profile') echo 'active'; ?>"><a href="<?php echo site_url('home/profile/user_profile'); ?>"><?php echo site_phrase('profile'); ?></a></li>
                 </ul>
             </div>
-        </div>
-    </div>
+        <!-- </div> -->
+    <!-- </div> -->
 </section>

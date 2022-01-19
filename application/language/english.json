@@ -785,5 +785,22 @@
     "provide_your_valid_email_address": "Provide your valid email address",
     "search_results": "Search results",
     "select_none_to_create_a_parent_category": "Select none to create a parent category",
-    "password_reset_failed": "Password reset failed"
+    "password_reset_failed": "Password reset failed",
+    "bundles": "Bundles",
+    "paytm_checkout": "Paytm checkout",
+    "pay_via_paytm": "Pay via paytm",
+    "please_do_not_refresh_this_page": "Please do not refresh this page",
+    "checksum_mismatched": "Checksum mismatched",
+    "compose": "Compose",
+    "select_a_message_thread_to_read_it_here": "Select a message thread to read it here",
+    "send": "Send",
+    "date": "Date",
+    "total_price": "Total price",
+    "invoice": "Invoice",
+    "account": "Account",
+    "add_information_about_yourself_to_share_on_your_profile": "Add information about yourself to share on your profile",
+    "basics": "Basics",
+    "add_your_twitter_link": "Add your twitter link",
+    "add_your_facebook_link": "Add your facebook link",
+    "add_your_linkedin_link": "Add your linkedin link"
 }

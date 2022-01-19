@@ -50,9 +50,9 @@
 		include "go_back_to_mobile_app.php";
 	endif;
 
-	if ($this->session->userdata('user_login')) {
+	if ($this->session->userdata('user_login')) {	
 		include 'logged_in_header.php';
-	}else {
+	}else {		
 		include 'logged_out_header.php';
 	}
 

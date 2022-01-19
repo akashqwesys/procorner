@@ -795,7 +795,7 @@ class Crud_model extends CI_Model
 
 
     public function get_course_by_id($course_id = "")
-    {
+    {           
         return $this->db->get_where('course', array('id' => $course_id));
     }
 

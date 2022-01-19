@@ -13,11 +13,10 @@
   </style>
   <ul class="mobile-main-nav">
     <div class="mobile-menu-helper-top"></div>
-
-    <!-- <li class="has-children text-nowrap fw-bold">
+    <li class="has-children text-nowrap fw-bold">
       <a href="">
         <i class="fas fa-th d-inline text-20px"></i>
-        <span class="fw-500"><?php //echo site_phrase('categories'); ?></span>
+        <span class="fw-500"><?php echo site_phrase('categories'); ?></span>
         <span class="has-sub-category"><i class="fas fa-angle-right"></i></span>
       </a>
 
@@ -64,7 +63,7 @@
           </li>
         <?php endif; ?>
       </ul>
-    </li> -->
+    </li>
 
     <div class="mobile-menu-helper-bottom"></div>
   </ul>

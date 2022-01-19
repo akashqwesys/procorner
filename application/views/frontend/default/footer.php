@@ -3,11 +3,12 @@
     <div class="row mb-3">
       
       <div class="col-6 col-sm-6 col-md-3">
-        <h5 class="text-muted"><?php echo site_phrase('useful_links'); ?></h5>
+        <h5 class="text-muted">Join our community</h5>
         <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/courses'); ?>"><?php echo site_phrase('all_courses'); ?></a></li>
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/sign_up'); ?>"><?php echo site_phrase('sign_up'); ?></a></li>
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/login'); ?>"><?php echo site_phrase('login'); ?></a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Linkedin group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Facebook group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Instagram group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Whatsapp group</a></li>
         </ul>
       </div>
       <div class="col-6 col-sm-6 col-md-3">
@@ -24,17 +25,17 @@
         <h5 class="text-muted">Contact Us</h5>
         <ul class="list-unstyled text-small">
             <li class="mb-1">
-              <a class="link-secondary footer-hover-link" href="#">
+              <a class="link-secondary footer-hover-link" href="tel:<?php echo get_settings('phone'); ?>">
                 <b><i class="fa fa-phone text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('phone'); ?>
               </a>
             </li>
             <li class="mb-1">
-              <a class="link-secondary footer-hover-link" href="#">
+              <a class="link-secondary footer-hover-link" href="mailto:<?php echo get_settings('system_email'); ?>">
                 <b><i class="fa fa-envelope text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('system_email'); ?>
               </a>
             </li>
             <li class="mb-1">
-              <a class="link-secondary footer-hover-link" href="#">
+              <a class="link-secondary footer-hover-link" target="_blank" href="https://www.google.com/maps/place/Qwesys+Digital+Solutions+-+IT+Company/@21.1754862,72.7961925,17z/data=!3m1!4b1!4m5!3m4!1s0x3be04e7ad43a0fad:0xef7eeeee1505b0cf!8m2!3d21.1754862!4d72.7983812">
                 <b><i class="fa fa-map-marker text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('address'); ?>
               </a>
             </li>
@@ -61,27 +62,31 @@
       
       <div class="col-sm-12 col-md-3 order-sm-first">
         <img src="<?php echo base_url('uploads/system/'.get_frontend_settings('dark_logo')); ?>" width="130">
-        <small class="d-block mb-3 fw-600"><?php echo get_settings('website_description'); ?></small>
+        <small class="d-block mb-3 fw-600">Procorner Eduflex Private Limited believes in providing best learning to level up current knowledge in specific platform. In current scenario</small>
 
         <ul class="footer-social-link">
-          <?php $facebook = get_frontend_settings('facebook'); ?>
-          <?php $twitter = get_frontend_settings('twitter'); ?>
-          <?php $linkedin = get_frontend_settings('linkedin'); ?>
-          <?php if($facebook): ?>
+          <?php //$facebook = get_frontend_settings('facebook'); ?>
+          <?php //$twitter = get_frontend_settings('twitter'); ?>
+          <?php //$linkedin = get_frontend_settings('linkedin'); ?>
+          <?php //if($facebook): ?>
             <li class="mb-1">
-              <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
             </li>
-          <?php endif; ?>
-          <?php if($twitter): ?>
+          <?php //endif; ?>
+          <?php //if($twitter): ?>
             <li class="mb-1">
-              <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
             </li>
-          <?php endif; ?>
-          <?php if($linkedin): ?>
+          <?php //endif; ?>
+          <?php //if($linkedin): ?>
             <li class="mb-1">
-              <a href="<?php echo $linkedin; ?>"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
             </li>
-          <?php endif; ?>
+          <?php //endif; ?>
+
+          <li class="mb-1">
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </li>
         </ul>
       </div>
     </div>
@@ -89,23 +94,9 @@
   <section class="border-top">
     <div class="container-xl">
       <div class="row mt-3 py-1">
-        <div class="col-6 col-sm-6 col-md-3 text-muted text-13px">
+        <div class="col-12 text-muted text-13px text-center">
           &copy; 2021 <?php echo get_settings('system_name'); ?>, <?php echo site_phrase('all_rights_reserved'); ?>
-        </div>
-
-        <div class="col-6 col-sm-6 col-md-3 d-none d-md-block"></div>
-        <div class="col-6 col-sm-6 col-md-3 d-none d-md-block"></div>
-        <div class="col-6 col-sm-6 col-md-3 text-center text-md-start">
-          <select class="language_selector" onchange="switch_language(this.value)">
-            <?php
-             $languages = $this->crud_model->get_all_languages();
-             foreach ($languages as $language): ?>
-                <?php if (trim($language) != ""): ?>
-                    <option value="<?php echo strtolower($language); ?>" <?php if ($this->session->userdata('language') == $language): ?>selected<?php endif; ?>><?php echo ucwords($language);?></option>
-                <?php endif; ?>
-            <?php endforeach; ?>
-          </select>
-        </div>
+        </div>              
       </div>
     </div>
   </section>

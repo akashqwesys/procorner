@@ -15,39 +15,40 @@ foreach ($my_courses as $my_course) {
 
 <section class="my-courses-area">
     <div class="container">
-        <div class="row align-items-baseline">
-            <div class="col-lg-6">
-                <div class="my-course-filter-bar filter-box">
-                    <span><?php echo site_phrase('filter_by'); ?></span>
-                    <div class="btn-group">
-                        <a class="btn btn-outline-secondary dropdown-toggle all-btn" href="#" data-bs-toggle="dropdown">
-                            <?php echo site_phrase('categories'); ?>
-                        </a>
+    <div class="w-100 px-2">
+            <div class="row align-items-baseline bg-white radius-8">            
+                <div class="col-lg-6 py-2">
+                    <!-- <div class="my-course-filter-bar filter-box">                         -->
+                        <div class="btn-group">
+                            <a class="btn bg-background dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                <?php echo site_phrase('categories'); ?>
+                            </a>
 
-                        <div class="dropdown-menu">
-                            <?php foreach ($categories as $category):
-                                $category_details = $this->crud_model->get_categories($category)->row_array();
-                                ?>
-                                <a class="dropdown-item" href="#" id = "<?php echo $category; ?>" onclick="getCoursesByCategoryId(this.id)"><?php echo $category_details['name']; ?></a>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    
-                    <div class="btn-group">
-                        <a href="<?php echo site_url('home/my_courses'); ?>" class="btn reset-btn" disabled><?php echo site_phrase('reset'); ?></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="my-course-search-bar">
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control py-2" placeholder="<?php echo site_phrase('search_my_courses'); ?>" onkeyup="getCoursesBySearchString(this.value)">
-                            <div class="input-group-append">
-                                <button class="btn py-2" type="submit"><i class="fas fa-search"></i></button>
+                            <div class="dropdown-menu">
+                                <?php foreach ($categories as $category):
+                                    $category_details = $this->crud_model->get_categories($category)->row_array();
+                                    ?>
+                                    <a class="dropdown-item" href="#" id = "<?php echo $category; ?>" onclick="getCoursesByCategoryId(this.id)"><?php echo $category_details['name']; ?></a>
+                                <?php endforeach; ?>
                             </div>
                         </div>
-                    </form>
+                        
+                        <div class="btn-group">
+                            <a href="<?php echo site_url('home/my_courses'); ?>" class="btn reset-btn" disabled><?php echo site_phrase('reset'); ?></a>
+                        </div>
+                    <!-- </div> -->
+                </div>
+                <div class="col-lg-6 py-2">
+                    <div class="my-course-search-bar">
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control py-2" placeholder="<?php echo site_phrase('search_my_courses'); ?>" onkeyup="getCoursesBySearchString(this.value)">
+                                <div class="input-group-append">
+                                    <button class="btn py-2" type="submit"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
