@@ -1691,6 +1691,10 @@ class Admin extends CI_Controller
         if ($this->session->userdata('admin_login') != true) {
             redirect(site_url('login'), 'refresh');
         }
+
+
+        print_r($_POST);die;
+
         $success=0;    
         $params=array();
         $params['refCourse_id']=$_POST['refCourse_id'];

@@ -692,11 +692,6 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 		}
 	}
 
-
-
-
-
-
     function load_qanda_list(){
         var cours_id='<?php echo $course_id; ?>';					
         $.ajax({
