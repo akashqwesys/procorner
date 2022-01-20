@@ -1697,10 +1697,6 @@ class Admin extends CI_Controller
         $params['notice_title']=$_REQUEST['notice_title'];
         $params['notice_description']=$_REQUEST['notice_description'];
         $params['date_added']=date("Y-m-d");  
-        
-        
-        print_r($_REQUEST['refCourse_id']);die;
-
         if (!empty($params)) {
             $res=$this->crud_model->add_notice($params);
             if($res){
