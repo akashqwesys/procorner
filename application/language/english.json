@@ -836,5 +836,10 @@
     "reply": "Reply",
     "write_a_reply": "Write a reply",
     "publish_reply": "Publish reply",
-    "please_check_your_email_for_new_password": "Please check your email for new password"
+    "please_check_your_email_for_new_password": "Please check your email for new password",
+    "notice_description": "Notice description",
+    "enter_notice_title": "Enter notice title",
+    "notice_title": "Notice title",
+    "q&a": "Q&a",
+    "user_not_found": "User not found"
 }

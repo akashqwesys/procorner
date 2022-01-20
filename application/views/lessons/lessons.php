@@ -1,3 +1,110 @@
+<style>
+
+.accordion_one .panel-group {
+    border: 1px solid #f1f1f1;
+    margin-top: 100px
+}
+
+a:link {
+    text-decoration: none
+}
+
+.accordion_one .panel {
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 0px solid transparent;
+    border-radius: 0;
+    margin: 0
+}
+
+.accordion_one .panel-default {
+    border: 0
+}
+
+.accordion-wrap .panel-heading {
+    padding: 0px;
+    border-radius: 0px
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 24px
+}
+
+.accordion_one .panel .panel-heading a.collapsed {
+    color: #999999;
+    display: block;
+    padding: 12px 30px;
+    border-top: 0px
+}
+
+.accordion_one .panel .panel-heading a {
+    display: block;
+    padding: 12px 30px;
+    background: #fff;
+    color: #313131;
+    border-bottom: 1px solid #f1f1f1
+}
+
+.accordion-wrap .panel .panel-heading a {
+    font-size: 14px
+}
+
+.accordion_one .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top: 0;
+    padding-top: 0;
+    padding: 25px 30px 30px 35px;
+    background: #fff;
+    color: #999999
+}
+
+.img-accordion {
+    width: 81px;
+    float: left;
+    margin-right: 15px;
+    display: block
+}
+
+.accordion_one .panel .panel-heading a.collapsed:after {
+    content: "\2b";
+    color: #999999;
+    background: #f1f1f1
+}
+
+.accordion_one .panel .panel-heading a:after,
+.accordion_one .panel .panel-heading a.collapsed:after {
+    font-family: 'FontAwesome';
+    font-size: 15px;
+    width: 36px;
+    line-height: 48px;
+    text-align: center;
+    background: #F1F1F1;
+    float: left;
+    margin-left: -31px;
+    margin-top: -12px;
+    margin-right: 15px
+}
+
+.accordion_one .panel .panel-heading a:after {
+    content: "\2212"
+}
+
+.accordion_one .panel .panel-heading a:after,
+.accordion_one .panel .panel-heading a.collapsed:after {
+    font-family: 'FontAwesome';
+    font-size: 15px;
+    width: 36px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #F1F1F1;
+    float: left;
+    margin-left: -31px;
+    margin-top: -12px;
+    margin-right: 15px
+}
+
+</style>
 <?php
 $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 
@@ -53,12 +160,13 @@ $course_details_url = site_url("home/course/".slugify($course_details['title']).
                             <li class="nav-item">
                                 <a class="nav-link remove-active" id="qAndA" onclick="load_questions('<?= $course_id; ?>')" href="javascript:;"><?= site_phrase('forum'); ?></a>
                             </li>
-                        <?php endif; ?>
-                        <?php if(addon_status('noticeboard')): ?>
-                            <li class="nav-item">
-                                <a class="nav-link remove-active" id="noticeboard_tab" onclick="load_course_notices('<?= $course_id; ?>')" href="javascript:;"><?= site_phrase('noticeboard'); ?></a>
-                            </li>
-                        <?php endif; ?>
+                        <?php endif; ?>                       
+                        <li class="nav-item">
+                            <a class="nav-link remove-active" id="noticeboard_tab" onclick="load_course_notices('<?= $course_id; ?>')" href="javascript:;">Noticeboard</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link remove-active" id="qna_tab" onclick="load_course_qna('<?= $course_id; ?>')" href="javascript:;">Q&A</a>
+                        </li>                      
                     </ul>
                 </div>
                 <!--load body with ajax for any addon. First load course forum addon if exits or elseif-->

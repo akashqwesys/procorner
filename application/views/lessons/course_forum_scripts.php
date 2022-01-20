@@ -171,4 +171,49 @@
 		$('#load-tabs-body').show();
 		$('#load-tabs-body').html('<p><?php echo $course_details["description"]; ?></p>');
 	}
+
+	function load_course_notices(cours_id){
+		$('.remove-active').removeClass('active');
+		$('#noticeboard_tab').addClass('active');
+
+		$('#load-tabs-body').hide();
+		$('#show_questions').show();
+
+		$('#show_questions').hide();
+		$('#load-tabs-body').show();         					
+        $.ajax({
+		        url: '<?php echo site_url('home/notice_list'); ?>',
+		        type: 'post',
+		        data: {refCourse_id:cours_id},                        
+		        success: function(response){
+		        	var response = JSON.parse(response);
+		   			if(response.status == 1){						  
+                        $('#load-tabs-body').html(response.html_data);                        
+					}
+		        }
+		    });	
+	}
+
+	function load_course_qna(cours_id){
+		$('.remove-active').removeClass('active');
+		$('#qna_tab').addClass('active');
+
+		$('#load-tabs-body').hide();
+		$('#show_questions').show();
+
+		$('#show_questions').hide();
+		$('#load-tabs-body').show();         					
+        $.ajax({
+		        url: '<?php echo site_url('home/qna_list'); ?>',
+		        type: 'post',
+		        data: {refCourse_id:cours_id},                        
+		        success: function(response){
+		        	var response = JSON.parse(response);
+		   			if(response.status == 1){						  
+                        $('#load-tabs-body').html(response.html_data);                        
+					}
+		        }
+		    });	
+	}
+
 </script>

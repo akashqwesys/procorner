@@ -56,15 +56,14 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                     <?php endif; ?>
 
 
-                                    <?php if (addon_status('noticeboard')) : ?>
-                                        <li class="nav-item">
-                                            <a href="#noticeboard" onclick="load_notic_list()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
-                                                <i class="mdi mdi-clipboard-text-outline"></i>
-                                                <span class="d-none d-sm-inline"><?php echo get_phrase('noticeboard'); ?></span>
-                                            </a>
-                                        </li>
-                                    <?php endif; ?>
-
+                                    
+                                    <li class="nav-item">
+                                        <a href="#noticeboard" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                            <i class="mdi mdi-clipboard-text-outline"></i>
+                                            <span class="d-none d-sm-inline"><?php echo get_phrase('noticeboard'); ?></span>
+                                        </a>
+                                    </li>
+                                                                       
                                     <?php if (addon_status('course_analytics')) : ?>
                                         <li class="nav-item">
                                             <a href="#course_analytics" onclick="load_analytics_chart()" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
@@ -84,6 +83,12 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                         <a href="#requirements" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                                             <i class="mdi mdi-bell-alert"></i>
                                             <span class="d-none d-sm-inline"><?php echo get_phrase('requirements'); ?></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#qanda" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                            <i class="mdi mdi-clipboard-text-outline"></i>
+                                            <span class="d-none d-sm-inline">Q&A</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -504,6 +509,67 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                             <!-- Course media content edit file ends -->
                                         </div> <!-- end row -->
                                     </div>
+
+                                    <div class="tab-pane" id="noticeboard">                                   
+                                        <div class="row">
+                                            <div class="col-md-7" id="noticeboard_form">                                            
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-lg-2 col-form-label" for="notice_title">Notice title<span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input type="text" name="notice_title" id="notice_title" class="form-control" placeholder="Enter your notice title">
+                                                    </div>
+                                                </div>                                        
+                                                <div class="form-group row mb-3">
+                                                    <label class="col-md-2 col-form-label" for="notice_description"><?php echo get_phrase('description'); ?></label>
+                                                    <div class="col-md-10">
+                                                        <textarea name="notice_description" id = "notice_description" class="form-control"></textarea>
+                                                    </div>
+                                                </div>                                      
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-lg-2 col-form-label"></label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <button type="button" class="btn btn-success" onclick="add_new_notice(this)">Add new notice</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="w-100 p-0 m-0 overfloy-y-auto max-height-475 min-height-125" id="notice_list">	                                                   	
+                                                </div>
+                                            </div>
+                                        </div>                                    
+                                    </div>
+                                    
+                                    <div class="tab-pane" id="qanda">                                   
+                                        <div class="row">
+                                            <div class="col-md-7" id="qanda_form">                                            
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-lg-2 col-form-label" for="question">Question<span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input type="text" name="question" id="question" class="form-control" placeholder="Enter question">
+                                                    </div>
+                                                </div>                                        
+                                                <div class="form-group row mb-3">
+                                                    <label class="col-md-2 col-form-label" for="answer">Answer</label>
+                                                    <div class="col-md-10">
+                                                        <textarea name="answer" id = "answer" class="form-control"></textarea>
+                                                    </div>
+                                                </div>                                      
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-lg-2 col-form-label"></label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <button type="button" class="btn btn-success" onclick="add_new_qanda(this)">Add new Q&A</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="w-100 p-0 m-0 overfloy-y-auto max-height-475 min-height-125" id="qanda_list">	                                                   	
+                                                </div>
+                                            </div>
+                                        </div>                                    
+                                    </div>
+
                                     <div class="tab-pane" id="seo">
                                         <div class="row justify-content-center">
                                             <div class="col-xl-8">
@@ -565,6 +631,129 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
         initSummerNote(['#description']);
         togglePriceFields('is_free_course');
     });
+    $(document).ready(function () {
+        initSummerNote(['#notice_description']);
+    });
+    $(document).ready(function () {
+        initSummerNote(['#answer']);
+    });
+
+
+    function load_notic_list(){
+        var cours_id='<?php echo $course_id; ?>';					
+        $.ajax({
+		        url: '<?php echo site_url('admin/notice_list'); ?>',
+		        type: 'post',
+		        data: {refCourse_id:cours_id},                        
+		        success: function(response){
+		        	var response = JSON.parse(response);
+		   			if(response.status == 1){
+                        $('#notice_list').html(response.html_data);                        
+					}
+		        }
+		    });	
+	}
+    load_notic_list();
+
+    function add_new_notice(btn){
+		//loading start
+		var btn_text = $(btn).text();
+		$(btn).html('<span class="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>Uploading...');
+		$(btn).prop("disabled",true);
+		$('.ajax_loaderBar').addClass('start_ajax_loading');
+
+		var notice_title = $('#notice_title').val();
+		var notice_description = $('#notice_description').val();
+        var cours_id='<?php echo $course_id; ?>';
+
+		if(notice_title != "" && notice_description != "") {
+		    $.ajax({
+		        url: '<?php echo site_url('admin/add_notice'); ?>',
+		        type: 'post',
+		        data: {notice_title : notice_title, notice_description : notice_description,refCourse_id:cours_id},                        
+		        success: function(response){
+		        	var response = JSON.parse(response);
+		   			if(response.status == 1){
+                        load_notic_list();
+		         		$.NotificationApp.send("Success!", response.message ,"top-right","rgba(0,0,0,0.2)","success");
+					}else{
+						$.NotificationApp.send("Oh snap!", response.message ,"top-right","rgba(0,0,0,0.2)","error");
+		   			}
+                    $(btn).html('Add new notice');
+                    $(btn).prop("disabled",false);
+                    $('.ajax_loaderBar').removeClass('start_ajax_loading');
+		        }
+		    });
+		}else{
+			$(btn).html(btn_text);
+			$(btn).prop("disabled",false);
+			$('.ajax_loaderBar').removeClass('start_ajax_loading');
+			$.NotificationApp.send("Oh snap!", "Fill up the required feilds" ,"top-right","rgba(0,0,0,0.2)","error");
+		}
+	}
+
+
+
+
+
+
+    function load_qanda_list(){
+        var cours_id='<?php echo $course_id; ?>';					
+        $.ajax({
+		        url: '<?php echo site_url('admin/qanda_list'); ?>',
+		        type: 'post',
+		        data: {refCourse_id:cours_id},                        
+		        success: function(response){
+		        	var response = JSON.parse(response);
+		   			if(response.status == 1){
+                        $('#qanda_list').html(response.html_data);                        
+					}
+		        }
+		    });	
+	}
+    load_qanda_list();
+
+    function add_new_qanda(btn){
+		//loading start
+		var btn_text = $(btn).text();
+		$(btn).html('<span class="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>Uploading...');
+		$(btn).prop("disabled",true);
+		$('.ajax_loaderBar').addClass('start_ajax_loading');
+
+		var qna_title = $('#question').val();
+		var qna_description = $('#answer').val();
+        var cours_id='<?php echo $course_id; ?>';
+
+		if(notice_title != "" && notice_description != "") {
+		    $.ajax({
+		        url: '<?php echo site_url('admin/add_qanda'); ?>',
+		        type: 'post',
+		        data: {qna_title : qna_title, qna_description : qna_description,refCourse_id:cours_id},                        
+		        success: function(response){
+		        	var response = JSON.parse(response);
+		   			if(response.status == 1){
+                        load_qanda_list();
+		         		$.NotificationApp.send("Success!", response.message ,"top-right","rgba(0,0,0,0.2)","success");
+					}else{
+						$.NotificationApp.send("Oh snap!", response.message ,"top-right","rgba(0,0,0,0.2)","error");
+		   			}
+                    $(btn).html('Add new Q&A');
+                    $(btn).prop("disabled",false);
+                    $('.ajax_loaderBar').removeClass('start_ajax_loading');
+		        }
+		    });
+		}else{
+			$(btn).html(btn_text);
+			$(btn).prop("disabled",false);
+			$('.ajax_loaderBar').removeClass('start_ajax_loading');
+			$.NotificationApp.send("Oh snap!", "Fill up the required feilds" ,"top-right","rgba(0,0,0,0.2)","error");
+		}
+	}
+
+
+
+
+
 </script>
 
 <script type="text/javascript">

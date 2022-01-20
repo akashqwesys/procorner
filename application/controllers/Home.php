@@ -1130,4 +1130,90 @@ class Home extends CI_Controller
         $this->load->view('frontend/'.get_frontend_settings('theme').'/preview_free_lesson', $page_data);
     }
 
+
+
+
+
+
+
+
+    //noticeboard by vasim
+    public function notice_list()
+    {
+        if ($this->session->userdata('user_login') != 1) {
+            redirect('home', 'refresh');
+        }
+        $success=0;
+        $html_data="<div class='row justify-content-center'><div class='col-md-7 p-0 text-center py-4'>";                
+        if (isset($_POST['refCourse_id'])) {
+            $res=$this->crud_model->notice_list($_POST['refCourse_id']);
+            if(!empty($res)){
+                $success=1;
+                foreach($res as $row){
+                    // print_r($row);die;
+                    $date_updated=date_create($row['date_updated']);
+                    $date=date_format($date_updated,"Y/m/d H:i:s");
+                    $html_data.="
+                    <div class='card mt-3'>
+                        <div class='card-body'>
+                            <p class='text-left'>                                
+                                <b><i class='far fa-clipboard pr-2'></i>
+                                ".$row['notice_title']."</b>                                
+                                <small class='pl-3 text-muted text-12'><i class='text-dark far fa-clock'></i> ".$date."</small>
+                            </p>
+                            <div class='description text-left'>".$row['notice_description']."</div>
+                        </div>
+                    </div>";                        
+                }            
+            }                      
+        }
+        $html_data.="</div></div>";
+        $json_data = array(
+            "status"=>$success,
+            "html_data"=>$html_data            
+        );
+        echo json_encode($json_data);
+    }
+
+
+    //noticeboard by vasim
+    public function qna_list()
+    {
+        if ($this->session->userdata('user_login') != 1) {
+            redirect('home', 'refresh');
+        }
+        $success=0;
+        $html_data="<div class='accordion' id='accordionExample'>";                
+        if (isset($_POST['refCourse_id'])) {
+            $res=$this->crud_model->qanda_list($_POST['refCourse_id']);
+            if(!empty($res)){
+                $success=1;
+                foreach($res as $row){
+                    // print_r($row);die;
+                    $date_updated=date_create($row['date_updated']);
+                    $date=date_format($date_updated,"Y/m/d H:i:s");
+                    $html_data.="                                        
+                        <div class='accordion-item'>
+                        <h2 class='accordion-header' id='heading-".$row['qna_id']."'>
+                            <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapse-".$row['qna_id']."' aria-expanded='false' aria-controls='collapse-".$row['qna_id']."'>
+                            <h5>".$row['qna_title']."</h5>
+                            </button>
+                        </h2>
+                        <div id='collapse-".$row['qna_id']."' class='accordion-collapse collapse' aria-labelledby='heading-".$row['qna_id']."' data-bs-parent='#accordionExample'>
+                            <div class='accordion-body'>
+                            ".$row['qna_description']."
+                            </div>
+                        </div>
+                        </div>";                                            
+                }            
+            }                      
+        }
+        $html_data.="</div>";
+        $json_data = array(
+            "status"=>$success,
+            "html_data"=>$html_data            
+        );
+        echo json_encode($json_data);
+    }
+
 }

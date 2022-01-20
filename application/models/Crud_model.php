@@ -3083,4 +3083,31 @@ class Crud_model extends CI_Model
         $this->db->where('status', 'active');
         return $this->db->get('course');
     }
+
+
+
+
+    //notice module by vasim//    
+    function add_notice($params)
+    {              
+        return $this->db->insert('noticeboard', $params);         
+    }
+    function notice_list($refCourse_id)
+    {                         
+        $this->db->where('refCourse_id',$refCourse_id);
+        $this->db->order_by('noticeboard_id', 'desc');
+        return $this->db->get('noticeboard')->result_array();   
+    }
+
+     //Q&A module by vasim//    
+     function add_qanda($params)
+     {              
+        return $this->db->insert('qna', $params);         
+     }
+     function qanda_list($refCourse_id)
+     {                         
+         $this->db->where('refCourse_id',$refCourse_id);
+        //  $this->db->order_by('qna_id', 'desc');
+         return $this->db->get('qna')->result_array();   
+     }
 }

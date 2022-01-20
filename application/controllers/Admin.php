@@ -1681,4 +1681,133 @@ class Admin extends CI_Controller
         $question_json = $this->input->post('itemJSON');
         $this->crud_model->sort_question($question_json);
     }
+
+
+
+
+    //add notice board by vasim//
+    public function add_notice()
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+        $success=0;    
+        $params=array();
+        $params['refCourse_id']=$_POST['refCourse_id'];
+        $params['notice_title']=$_POST['notice_title'];
+        $params['notice_description']=$_POST['notice_description'];
+        $params['date_added']=date("Y-m-d");        
+        if (!empty($params)) {
+            $res=$this->crud_model->add_notice($params);
+            if($res){
+                $success=1;
+            }                      
+        }
+
+        $json_data = array(
+            "status"=>$success            
+        );
+        echo json_encode($json_data);
+    }
+    public function notice_list()
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+        $success=0;
+        $html_data='';                
+        if (isset($_POST['refCourse_id'])) {
+            $res=$this->crud_model->notice_list($_POST['refCourse_id']);
+            if(!empty($res)){
+                $success=1;
+
+                foreach($res as $row){
+                    // print_r($row);die;
+                    $html_data.="<div class='alert alert-success pb-1 pt-1' role='alert' id='notice_del_button_".$row['noticeboard_id']."'>
+                        <a href='javascript:;' onclick='showAjaxModal('', 'Notice details')' class='text-success'><strong><i class='mdi mdi-clipboard-arrow-right-outline'></i> ".$row['notice_title']." </strong></a>
+                        <div class='dropright dropright float-right'>
+                            <button type='button' class='border-0 bg-transparent' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                <i class='mdi mdi-dots-vertical'></i>
+                            </button>
+                            <ul class='dropdown-menu' x-placement='left-start' y-placement='bottom'>		       
+                                <li><a class='dropdown-item' href='javascript:;' onclick='showLargeModal('', 'Edit notice')'>Edit</a></li>
+                                <li><a class='dropdown-item' onclick='ajax_confirm_modal('', 'notice_del_button_2')' href='javascript:;'>Delete</a></li>
+                            </ul>
+                        </div>
+                        <div class='w-100 text-12 text-muted'>".$row['notice_description']."</div>
+                    </div>";
+                }            
+            }                      
+        }
+
+        $json_data = array(
+            "status"=>$success,
+            "html_data"=>$html_data            
+        );
+        echo json_encode($json_data);
+    }
+
+
+
+    //add Q&A board by vasim//
+    public function add_qanda()
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+        $success=0;    
+        $params=array();
+        $params['refCourse_id']=$_POST['refCourse_id'];
+        $params['qna_title']=$_POST['qna_title'];
+        $params['qna_description']=$_POST['qna_description'];
+        $params['date_added']=date("Y-m-d");        
+        if (!empty($params)) {
+            $res=$this->crud_model->add_qanda($params);
+            if($res){
+                $success=1;
+            }                      
+        }
+
+        $json_data = array(
+            "status"=>$success            
+        );
+        echo json_encode($json_data);
+    }
+    public function qanda_list()
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+        $success=0;
+        $html_data='';                
+        if (isset($_POST['refCourse_id'])) {
+            $res=$this->crud_model->qanda_list($_POST['refCourse_id']);
+            if(!empty($res)){
+                $success=1;
+
+                foreach($res as $row){
+                    // print_r($row);die;
+                    $html_data.="<div class='alert alert-success pb-1 pt-1' role='alert' id='qna_del_button_".$row['qna_id']."'>
+                        <a href='javascript:;' onclick='showAjaxModal('', 'Notice details')' class='text-success'><strong><i class='mdi mdi-clipboard-arrow-right-outline'></i> ".$row['qna_title']." </strong></a>
+                        <div class='dropright dropright float-right'>
+                            <button type='button' class='border-0 bg-transparent' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                <i class='mdi mdi-dots-vertical'></i>
+                            </button>
+                            <ul class='dropdown-menu' x-placement='left-start' y-placement='bottom'>		       
+                                <li><a class='dropdown-item' href='javascript:;' onclick='showLargeModal('', 'Edit notice')'>Edit</a></li>
+                                <li><a class='dropdown-item' onclick='ajax_confirm_modal('', 'notice_del_button_2')' href='javascript:;'>Delete</a></li>
+                            </ul>
+                        </div>
+                        <div class='w-100 text-12 text-muted'>".$row['qna_description']."</div>
+                    </div>";
+                }            
+            }                      
+        }
+
+        $json_data = array(
+            "status"=>$success,
+            "html_data"=>$html_data            
+        );
+        echo json_encode($json_data);
+    }
 }
