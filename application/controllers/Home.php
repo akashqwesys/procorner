@@ -1152,7 +1152,7 @@ class Home extends CI_Controller
                 foreach($res as $row){
                     // print_r($row);die;
                     $date_updated=date_create($row['date_updated']);
-                    $date=date_format($date_updated,"Y/m/d H:i:s");
+                    $date=date_format($date_updated,"d M Y");
                     $html_data.="
                     <div class='card mt-3'>
                         <div class='card-body'>
