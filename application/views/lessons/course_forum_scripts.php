@@ -189,6 +189,8 @@
 		        	var response = JSON.parse(response);
 		   			if(response.status == 1){						  
                         $('#load-tabs-body').html(response.html_data);                        
+					}else{
+						$('#load-tabs-body').html(''); 	
 					}
 		        }
 		    });	
@@ -211,6 +213,8 @@
 		        	var response = JSON.parse(response);
 		   			if(response.status == 1){						  
                         $('#load-tabs-body').html(response.html_data);                        
+					}else{
+						$('#load-tabs-body').html(''); 	
 					}
 		        }
 		    });	
