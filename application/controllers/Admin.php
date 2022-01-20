@@ -1693,7 +1693,7 @@ class Admin extends CI_Controller
         }
 
 
-        print_r($_POST);die;
+        print_r($_REQUEST);die;
 
         $success=0;    
         $params=array();
