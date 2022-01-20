@@ -1691,15 +1691,11 @@ class Admin extends CI_Controller
         if ($this->session->userdata('admin_login') != true) {
             redirect(site_url('login'), 'refresh');
         }
-
-
-        print_r($_REQUEST);die;
-
         $success=0;    
         $params=array();
-        $params['refCourse_id']=$_POST['refCourse_id'];
-        $params['notice_title']=$_POST['notice_title'];
-        $params['notice_description']=$_POST['notice_description'];
+        $params['refCourse_id']=$_REQUEST['refCourse_id'];
+        $params['notice_title']=$_REQUEST['notice_title'];
+        $params['notice_description']=$_REQUEST['notice_description'];
         $params['date_added']=date("Y-m-d");        
         if (!empty($params)) {
             $res=$this->crud_model->add_notice($params);
@@ -1720,8 +1716,8 @@ class Admin extends CI_Controller
         }
         $success=0;
         $html_data='';                
-        if (isset($_POST['refCourse_id'])) {
-            $res=$this->crud_model->notice_list($_POST['refCourse_id']);
+        if (isset($_REQUEST['refCourse_id'])) {
+            $res=$this->crud_model->notice_list($_REQUEST['refCourse_id']);
             if(!empty($res)){
                 $success=1;
 
@@ -1761,9 +1757,9 @@ class Admin extends CI_Controller
         }
         $success=0;    
         $params=array();
-        $params['refCourse_id']=$_POST['refCourse_id'];
-        $params['qna_title']=$_POST['qna_title'];
-        $params['qna_description']=$_POST['qna_description'];
+        $params['refCourse_id']=$_REQUEST['refCourse_id'];
+        $params['qna_title']=$_REQUEST['qna_title'];
+        $params['qna_description']=$_REQUEST['qna_description'];
         $params['date_added']=date("Y-m-d");        
         if (!empty($params)) {
             $res=$this->crud_model->add_qanda($params);
@@ -1784,8 +1780,8 @@ class Admin extends CI_Controller
         }
         $success=0;
         $html_data='';                
-        if (isset($_POST['refCourse_id'])) {
-            $res=$this->crud_model->qanda_list($_POST['refCourse_id']);
+        if (isset($_REQUEST['refCourse_id'])) {
+            $res=$this->crud_model->qanda_list($_REQUEST['refCourse_id']);
             if(!empty($res)){
                 $success=1;
 
