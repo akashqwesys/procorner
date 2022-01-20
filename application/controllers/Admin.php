@@ -1699,7 +1699,7 @@ class Admin extends CI_Controller
         $params['date_added']=date("Y-m-d");  
         
         
-        print_r($_REQUEST);die;
+        print_r($_REQUEST['refCourse_id']);die;
 
         if (!empty($params)) {
             $res=$this->crud_model->add_notice($params);
