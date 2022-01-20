@@ -1191,7 +1191,7 @@ class Home extends CI_Controller
                 foreach($res as $row){
                     // print_r($row);die;
                     $date_updated=date_create($row['date_updated']);
-                    $date=date_format($date_updated,"Y/m/d H:i:s");
+                    $date=date_format($date_updated,"d M Y");
                     $html_data.="                                        
                         <div class='accordion-item'>
                         <h2 class='accordion-header' id='heading-".$row['qna_id']."'>
