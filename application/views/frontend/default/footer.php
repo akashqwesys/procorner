@@ -23,20 +23,20 @@
       
        <div class="col-6 col-sm-6 col-md-3">
         <h5 class="text-muted">Contact Us</h5>
-        <ul class="list-unstyled text-small">
-            <li class="mb-1">
+        <ul class="list-unstyled text-small custome-ul-li">
+            <li class="mb-1 phone">
               <a class="link-secondary footer-hover-link" href="tel:<?php echo get_settings('phone'); ?>">
-                <b><i class="fa fa-phone text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('phone'); ?>
+                <?php echo get_settings('phone'); ?>
               </a>
             </li>
-            <li class="mb-1">
+            <li class="mb-1 email">
               <a class="link-secondary footer-hover-link" href="mailto:<?php echo get_settings('system_email'); ?>">
-                <b><i class="fa fa-envelope text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('system_email'); ?>
+                <?php echo get_settings('system_email'); ?>
               </a>
             </li>
-            <li class="mb-1">
+            <li class="mb-1 address">
               <a class="link-secondary footer-hover-link" target="_blank" href="https://www.google.com/maps/place/Qwesys+Digital+Solutions+-+IT+Company/@21.1754862,72.7961925,17z/data=!3m1!4b1!4m5!3m4!1s0x3be04e7ad43a0fad:0xef7eeeee1505b0cf!8m2!3d21.1754862!4d72.7983812">
-                <b><i class="fa fa-map-marker text-14px">&nbsp;&nbsp;</i></b><?php echo get_settings('address'); ?>
+                <?php echo get_settings('address'); ?>
               </a>
             </li>
         </ul>

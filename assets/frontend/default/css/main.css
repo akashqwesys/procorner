@@ -1243,6 +1243,66 @@ homepage styles
     content: '';
 }
 
+.custome-ul-li .address {
+    display: flex;
+    align-items: center;
+    /* margin: 10px 0; */
+    line-height: 20px;
+    list-style: none;
+}
+
+.custome-ul-li .address:before {
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url('../img/maps-and-flags.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.custome-ul-li .email {
+    display: flex;
+    align-items: center;
+    /* margin: 10px 0; */
+    line-height: 20px;
+    list-style: none;
+}
+
+.custome-ul-li .email:before {
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url('../img/email.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.custome-ul-li .phone {
+    display: flex;
+    align-items: center;
+    /* margin: 10px 0; */
+    line-height: 20px;
+    list-style: none;
+}
+
+.custome-ul-li .phone:before {
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url('../img/phone.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
 .course-box-wrap:focus {
     outline: none;
 }
