@@ -1173,9 +1173,9 @@ homepage styles
 
 .home-banner-wrap input[type="text"] {
     font-size: 14px;
-    height: 47px;
+    /* height: 47px; */
     padding: 11px 17px;
-    border: none;
+    border: 1;
     border-radius: 8px 0 0 8px;
 }
 
@@ -1184,11 +1184,12 @@ homepage styles
 }
 
 .home-banner-wrap .btn {
-    font-size: 14px;
+    /* font-size: 14px; */
     background: #1d56fe;
-    border-radius: 5px;
+    border-radius: 0px 8px 8px 0px;
     color: #ffffff;
-    padding: 6px 15px;
+    padding: 10px 20px 10px 20px;
+    margin-right: 5rem;
 }
 
 .home-banner-wrap .btn:hover {
