@@ -1068,8 +1068,15 @@ homepage styles
     color: #fff;
 }*/
 
-.home-banner-wrap {
-    max-width: 490px;
+/* .boxshadow-course{
+        box-shadow: 1px -2px 40px -5px rgba(0,0,0,0.65);
+    -webkit-box-shadow: 1px -2px 40px -5px rgba(0,0,0,0.65);
+    -moz-box-shadow: 1px -2px 40px -5px rgba(0,0,0,0.65);
+    border-radius:20px 20px 20px 20px;
+} */
+
+.home-banner-wrap {    
+    margin-top:10rem;
 }
 
 .home-banner-wrap h2 {
@@ -1078,6 +1085,9 @@ homepage styles
     line-height: 1;
     margin-bottom: 10px;
     color: #000;
+}
+.home-banner-wrap h2 span{
+    color: #1d56fe;
 }
 
 .home-banner-wrap p {
@@ -1141,7 +1151,7 @@ homepage styles
 }
 
 .course-carousel-area {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     overflow-x: hidden;
 }
 
@@ -1212,6 +1222,39 @@ homepage styles
     opacity: 1;
 }
 
+
+.content-grid-item li {
+    display: flex;
+    align-items: center;
+    /* margin: 10px 0; */
+    line-height: 30px;
+    list-style: none;
+}
+
+.content-grid-item li:before {
+    display: block;
+    flex-shrink: 0;
+    width: 33px;
+    height: 33px;
+    margin-right: 10px;
+
+    vertical-align: middle;
+
+    background: url('../img/check-mark.png') no-repeat left center;
+    background-size: contain;
+
+    content: '';
+}
+
+
+
+
+
+
+
+
+
+
 .course-box-wrap:focus {
     outline: none;
 }
@@ -1251,15 +1294,15 @@ homepage styles
 }
 
 .course-box:hover:before {
-    opacity: 0;
+    opacity: 1;
 }
 
 .course-box:hover:after {
     opacity: 1;
 }
 
-.course-box:hover {
-    box-shadow: 0px 12px 46px -20px #c9c9c9;
+.course-box{
+    box-shadow: 1px 20px 46px -20px #c9c9c9;
     transition: all .3s ease;
 }
 
@@ -1487,7 +1530,7 @@ homepage styles
 
 .course-box .course-image {
     position: relative;
-    padding: 8px;
+    /* padding: 8px; */
 }
 
 .course-box .course-image img {

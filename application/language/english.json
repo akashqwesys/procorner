@@ -841,5 +841,6 @@
     "enter_notice_title": "Enter notice title",
     "notice_title": "Notice title",
     "q&a": "Q&a",
-    "user_not_found": "User not found"
+    "user_not_found": "User not found",
+    "announcements": "Announcements"
 }

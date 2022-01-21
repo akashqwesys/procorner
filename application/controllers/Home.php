@@ -1196,7 +1196,7 @@ class Home extends CI_Controller
                         <div class='accordion-item'>
                         <h2 class='accordion-header' id='heading-".$row['qna_id']."'>
                             <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapse-".$row['qna_id']."' aria-expanded='false' aria-controls='collapse-".$row['qna_id']."'>
-                            <h5>".$row['qna_title']."</h5>
+                            <h6>".$row['qna_title']."</h6>
                             </button>
                         </h2>
                         <div id='collapse-".$row['qna_id']."' class='accordion-collapse collapse' aria-labelledby='heading-".$row['qna_id']."' data-bs-parent='#accordionExample'>

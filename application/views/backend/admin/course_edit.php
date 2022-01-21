@@ -60,7 +60,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                     <li class="nav-item">
                                         <a href="#noticeboard" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                                             <i class="mdi mdi-clipboard-text-outline"></i>
-                                            <span class="d-none d-sm-inline"><?php echo get_phrase('noticeboard'); ?></span>
+                                            <span class="d-none d-sm-inline"><?php echo get_phrase('Announcements'); ?></span>
                                         </a>
                                     </li>
                                                                        
@@ -88,7 +88,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                     <li class="nav-item">
                                         <a href="#qanda" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                                             <i class="mdi mdi-clipboard-text-outline"></i>
-                                            <span class="d-none d-sm-inline">Q&A</span>
+                                            <span class="d-none d-sm-inline">FAQ</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -514,7 +514,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                         <div class="row">
                                             <div class="col-md-7" id="noticeboard_form">                                            
                                                 <div class="form-group row">
-                                                    <label class="col-md-3 col-lg-2 col-form-label" for="notice_title">Notice title<span class="required">*</span>
+                                                    <label class="col-md-3 col-lg-2 col-form-label" for="notice_title">Title<span class="required">*</span>
                                                     </label>
                                                     <div class="col-md-9 col-lg-10">
                                                         <input type="text" name="notice_title" id="notice_title" class="form-control" placeholder="Enter your notice title">
