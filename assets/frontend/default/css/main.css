@@ -1075,6 +1075,10 @@ homepage styles
     border-radius: 20px 20px 20px 20px;
 }
 
+.boxshadow-resourse a {
+    color: #1d56fe;
+}
+
 .home-banner-wrap {
     margin-top: 10rem;
 }

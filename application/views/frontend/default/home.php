@@ -253,7 +253,7 @@
         </div>
         <div class="row content-grid-row">
             <div class="col-md-3 flex-column p-4 bg-white m-2 boxshadow-resourse">
-                <img src="assets/frontend/default/img/light-bulb.png" class="img-fluid mb-2" alt="">
+                <img src="assets/frontend/default/img/idea.png" class="img-fluid mb-2" alt="" width="75">
                 <h5 class="mb-3"><b>For Learners</b></h5>
                 <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
                 <a href="#"><b>See more <i class="fa fa-arrow-right"></i></b></a>
@@ -261,7 +261,7 @@
             <div class="col-md-1 flex-column p-5">&nbsp;
             </div>
             <div class="col-md-3 flex-column p-4 bg-white m-2 boxshadow-resourse">
-                <img src="assets/frontend/default/img/businessman.png" class="img-fluid mb-2" alt="">
+                <img src="assets/frontend/default/img/businessman.png" class="img-fluid mb-2" alt="" width="75">
                 <h5 class="mb-3"><b>For Learners</b></h5>
                 <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
                 <a href="#"><b>See more <i class="fa fa-arrow-right"></i></b></a>
@@ -269,7 +269,7 @@
             <div class="col-md-1 flex-column p-5">&nbsp;
             </div>
             <div class="col-md-3 flex-column p-4 bg-white m-2 boxshadow-resourse">
-                <img src="assets/frontend/default/img/cap.png" class="img-fluid mb-2" alt="">
+                <img src="assets/frontend/default/img/cap.png" class="img-fluid mb-2" alt="" width="75">
                 <h5 class="mb-3"><b>For Learners</b></h5>
                 <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
                 <a href="#"><b>See more <i class="fa fa-arrow-right"></i></b></a>
