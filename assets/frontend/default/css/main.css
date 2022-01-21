@@ -1245,9 +1245,7 @@ homepage styles
 
 .custome-ul-li .address {
     display: flex;
-    align-items: center;
-    /* margin: 10px 0; */
-    line-height: 20px;
+    margin: 10px 0;
     list-style: none;
 }
 
@@ -1257,7 +1255,6 @@ homepage styles
     width: 20px;
     height: 20px;
     margin-right: 5px;
-    vertical-align: middle;
     background: url('../img/maps-and-flags.png') no-repeat left center;
     background-size: contain;
     content: '';
@@ -1265,9 +1262,7 @@ homepage styles
 
 .custome-ul-li .email {
     display: flex;
-    align-items: center;
-    /* margin: 10px 0; */
-    line-height: 20px;
+    margin: 10px 0;
     list-style: none;
 }
 
@@ -1277,7 +1272,6 @@ homepage styles
     width: 20px;
     height: 20px;
     margin-right: 5px;
-    vertical-align: middle;
     background: url('../img/email.png') no-repeat left center;
     background-size: contain;
     content: '';
@@ -1285,9 +1279,7 @@ homepage styles
 
 .custome-ul-li .phone {
     display: flex;
-    align-items: center;
-    /* margin: 10px 0; */
-    line-height: 20px;
+    margin: 10px 0;
     list-style: none;
 }
 
@@ -1297,7 +1289,6 @@ homepage styles
     width: 20px;
     height: 20px;
     margin-right: 5px;
-    vertical-align: middle;
     background: url('../img/phone.png') no-repeat left center;
     background-size: contain;
     content: '';
