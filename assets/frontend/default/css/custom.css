@@ -299,8 +299,6 @@ p.top-instructor-arrow span i {
     background: linear-gradient(91deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 50%) 100%) !important;
 }
 
-
-}
 .compare-row {
     margin-top: 25px;
     background-color: #fff;
@@ -308,6 +306,7 @@ p.top-instructor-arrow span i {
     border-radius: 10px;
     padding: 28px 10px;
 }
+
 .compare-row-icon {
     height: 26px;
     width: 26px;
@@ -318,44 +317,53 @@ p.top-instructor-arrow span i {
     color: #fff;
     text-align: center;
 }
+
 .skill-level-icon {
     width: 24px;
     height: 24px;
     background-color: transparent;
 }
+
 .skill-level-icon span {
     background-color: #dcdee1;
     margin-left: 1.5px;
     margin-right: 1.5px;
     float: left;
 }
+
 .skill-level-icon .active {
     background-color: #1d56fe;
 }
+
 .skill-level-icon span:first-of-type {
     width: 5px;
     height: 8px;
     margin-top: 16px;
 }
+
 .skill-level-icon span:nth-of-type(2n) {
     width: 5px;
     height: 16px;
     margin-top: 8px;
 }
+
 .skill-level-icon span:last-of-type {
     width: 5px;
     height: 24px;
 }
+
 .marge-input-box input {
     border-radius: 10px 0px 0px 10px;
     border-right: 0px;
     font-size: 13px;
 }
+
 .marge-input-box .input-group-append {
     border: 1px solid #cccfe7;
     border-radius: 0px 10px 10px 0px;
     border-left: none !important;
 }
+
 .marge-input-box button {
     background: #1d56fe;
     color: #fff;
@@ -364,25 +372,31 @@ p.top-instructor-arrow span i {
     font-size: 13px;
     border-radius: 8px;
 }
+
 .marge-input-box button:hover {
     background: #cd4f4f;
     color: #fff;
 }
 
+
 /*Signup & sign in page login*/
+
 .sign-up-form {
     background: #fff;
     padding: 35px 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px -1px #ebebeb;
 }
+
 .sign-up-form .form-group {
     margin-bottom: 15px;
 }
+
 .sign-up-form .form-group label {
     color: #5c5c5c;
     font-weight: 600;
 }
+
 .sign-up-form .form-group .input-group span {
     border-right: none;
     padding: 12px 8px 12px 15px;
@@ -391,6 +405,7 @@ p.top-instructor-arrow span i {
     font-size: 15px;
     font-weight: 500;
 }
+
 .sign-up-form .form-group .input-group input {
     border-left: none;
     padding: 12px 5px;
@@ -400,9 +415,12 @@ p.top-instructor-arrow span i {
     font-weight: 500;
 }
 
+
 /*End Signup & sign in page login*/
 
+
 /*used on Home page*/
+
 .animated-loader {
     width: 100px;
     height: 100px;
@@ -412,10 +430,12 @@ p.top-instructor-arrow span i {
     margin-left: auto;
     margin-right: auto;
 }
+
 .common-search-box {
     margin-right: 50px;
     padding: 0px 0;
 }
+
 .common-search-box input {
     background-color: hsl(192deg 33% 97%);
     border: 1px solid hsl(192deg 33% 97%);
@@ -424,11 +444,13 @@ p.top-instructor-arrow span i {
     border-radius: 5px 0 0 5px;
     font-size: 13px;
 }
+
 .common-search-box input:focus {
     background-color: #fff;
     border-color: #dedfe0;
     border-right-color: transparent;
 }
+
 .common-search-box input:focus+.input-group-button {
     background-color: #fff !important;
     border-top: 1px solid #dedfe0 !important;
@@ -436,6 +458,7 @@ p.top-instructor-arrow span i {
     border-bottom: 1px solid #dedfe0 !important;
     padding: 5px 9px 5px 10px !important;
 }
+
 .common-search-box button {
     background-color: #1d56fe !important;
     border-color: #1d56fe;
@@ -443,16 +466,20 @@ p.top-instructor-arrow span i {
     padding: 1px 6px;
     border-radius: 6px;
 }
+
 .common-search-box button:hover {
     color: #efefef;
 }
+
 .common-search-box .input-group-button {
     background-color: hsl(192deg 33% 97%);
     padding: 6px 10px 6px 10px;
     border-radius: 0px 5px 5px 0px;
 }
 
+
 /*Custom print content*/
+
 @media print {
     .print-content {
         position: fixed !important;
@@ -465,21 +492,22 @@ p.top-instructor-arrow span i {
         width: 100% !important;
         background: #fff !important;
     }
-    
     footer,
     nav,
     title {
         display: none !important;
     }
-    
     body {
         overflow: hidden !important;
     }
 }
 
+
 /*End Custom print content*/
 
+
 /*BLOG start*/
+
 .blog-search-input {
     height: 42px;
     background-color: #f1f7f8;
@@ -489,6 +517,7 @@ p.top-instructor-arrow span i {
     border-right: none;
     border-radius: 0px;
 }
+
 .blog-search-button {
     display: none;
     padding: 0px 20px;
@@ -496,6 +525,7 @@ p.top-instructor-arrow span i {
     border-bottom: 1px solid #cdcdcd;
     background-color: #fff;
 }
+
 .ellipsis-line-2 {
     display: -webkit-box!important;
     -webkit-line-clamp: 2;
@@ -504,6 +534,7 @@ p.top-instructor-arrow span i {
     text-overflow: ellipsis;
     white-space: normal;
 }
+
 .ellipsis-line-3 {
     display: -webkit-box!important;
     -webkit-line-clamp: 3 !important;
@@ -512,5 +543,6 @@ p.top-instructor-arrow span i {
     text-overflow: ellipsis !important;
     white-space: normal !important;
 }
+
 
 /*End Blog*/
