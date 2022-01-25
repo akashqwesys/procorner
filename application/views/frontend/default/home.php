@@ -4,14 +4,14 @@
             <div class="col-md-6 home-banner-wrap">
                 <h2 class="fw-bold"><span>Procorner eduflex</span> private limited - a skill focused <span>institute</span></h2>
                 <p><?php echo site_phrase(get_frontend_settings('banner_sub_title')); ?></p>
-                <form class="" action="<?php echo site_url('home/search'); ?>" method="get">
+                <!-- <form class="" action="<?php echo site_url('home/search'); ?>" method="get">
                     <div class="input-group ">
                         <input type="text" class="form-control" name="query" placeholder="<?php echo site_phrase('what_do_you_want_to_learn'); ?>?" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <span class="input-group-text btn" id="basic-addon2" type="submit"><?php echo site_phrase('search'); ?></span>
                         </div>
                     </div>
-                </form>
+                </form> -->
             </div>
             <div class="col-md-6">
                 <img src="assets/frontend/default/img/tutor.png" width="100%">
