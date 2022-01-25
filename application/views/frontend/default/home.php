@@ -319,7 +319,7 @@
                     <div class="col-md-3 flex-column p-2 bg-white m-2 boxshadow-resourse">
                         <img src="assets/frontend/default/img/course-report.png" class="img-fluid" width="10%" alt="" style="display:inline-block">
                         <h5 style="display:inline-block" style="display:inline-block"><b>Google.com</b></h5>
-                        <span class="badge badge-sub-primary text-11px mt-1">4.8 <i class="fa fa-star" style="color:#fac43f"></i></span>
+                     <span class="badge badge-sub-primary text-11px mt-1">4.8 <i class="fa fa-star" style="color:#fac43f"></i></span>
                     </div>
                     <div class="col-md-1 flex-column">&nbsp;
                     </div>
@@ -334,7 +334,45 @@
     </div>
 </section>
 
-<section class="course-carousel-area blog">
+
+<section class="section-blog py-5">
+    <div class="container-lg">
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <h3 class="course-carousel-title mb-2" style="display:inline-block">Latest stories and insights<br><span class="text-blue">learn with our blogs</span></h3>
+            <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+        </div>
+        <div class="col-md-6"><a href="#" class="btn btn-primary blog-button btn-lg">Visit more blogs</a></div>
+    </div>
+        <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-4 justify-content-center">
+        <?php $blogs = $this->crud_model->get_blogs_home(4); ?>
+            <!-- <div class="col-12">
+                <h4 class="fw-700">Latest blogs</h4>
+            </div> -->
+            <?php foreach ($blogs as $row){ ?>
+            <div class="col">
+                <div class="card radius-10 course-box">
+                    <img src="<?php echo base_url('uploads/thumbnails/blog_thumbnail/' . $row['blog_image']); ?>" class="card-img-top radius-top-10" alt="AI-Based learning is the future of Corporate Training">
+                    <div class="card-body pt-4">
+                      
+                        <h5 class="card-title"><a href="#"><?php echo ellipsis($row['blog_title'], 60); ?></a></h5>
+                        <p class="card-text ellipsis-line-3" style="display: -webkit-box!important;-webkit-line-clamp: 3 !important;-webkit-box-orient: vertical !important;overflow: hidden !important;text-overflow: ellipsis !important;white-space: normal !important;"><?php echo ellipsis(strip_tags(html_entity_decode($row['blog_description'])), 200); ?></p>
+                            <p class="blog-date">
+                            <?php 
+                                $date=date_create($row['added_date']);
+                                echo date_format($date,"d/M/Y");
+                            ?>
+                            </p>
+                            <a href="#" class="color-blue"><b>See more <i class="fa fa-arrow-right"></i></b></a>
+                    </div>
+                </div>
+            </div> 
+              <?php } ?>         
+        </div>
+    </div>
+</section>
+
+<!-- <section class="course-carousel-area blog">
     <div class="container-lg py-5">
         <div class="row">
             <div class="col-md-6">
@@ -343,9 +381,9 @@
             </div>
             <div class="col-md-6"><a href="#" class="btn btn-primary blog-button btn-lg">Visit more blogs</a></div>
         </div>
-        <div class="row mt-5">
-            <!-- page loader -->
-            <div class="animated-loader">
+         <div class="row mt-5"> -->
+            <!-- page loader --> 
+            <!-- <div class="animated-loader">
                 <div class="spinner-border text-secondary" role="status"></div>
             </div>
             <div class="col-md-4 boxshadow-course mb-5">
@@ -395,40 +433,32 @@
             </div>
         </div>
     </div>
-</section>
+</section> --> 
 <section class="featured-instructor see-how-others">
     <div class="container-lg">
         <div class="row">
             <div class="col">
-            <h3 class="course-carousel-title mb-2 text-center">See how others are feeling about us</span></h3>
-            <span class="d-block text-color-dark text-5 pb-2 mb-5 opacity-7 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+                <h3 class="course-carousel-title mb-2 text-center">See how others are feeling about us</span></h3>
+                <span class="d-block text-color-dark text-5 pb-2 mb-5 opacity-7 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
             </div>
         </div>
         <div class="row justify-content-center mb-10">
             <div class="col-md-9 col-lg-7">
-                <div class="animated-loader"><div class="spinner-border text-secondary" role="status"></div></div>
+                <div class="animated-loader">
+                    <div class="spinner-border text-secondary" role="status"></div>
+                </div>
                 <div class="top-istructor-slick shown-after-loading" style="display: none;">
-                    <?php $top_instructor_ids = $this->crud_model->get_top_instructor(10); ?>
-                    <?php foreach($top_instructor_ids as $top_instructor_id): ?>
-                        <?php $top_instructor = $this->user_model->get_all_user($top_instructor_id['creator'])->row_array(); ?>
+                    <?php $testimonials = $this->crud_model->get_testimonial(10); ?>
+                    <?php foreach ($testimonials as $row) : ?>
                         <div class="d-sm-flex text-center text-md-start">
                             <div class="top-instructor-img ms-auto me-auto">
-                                <a href="<?php echo site_url('home/instructor_page/'.$top_instructor['id']); ?>">
-                                    <img src="<?php echo $this->user_model->get_user_image_url($top_instructor['id']); ?>" width="100%">
-                                </a>
+                                <img src="<?php echo base_url('uploads/thumbnails/testimonial_thumbnail/' . $row['testimonial_image']); ?>" width="200px" height="200px">
                             </div>
                             <div class="top-instructor-details">
-                                <a class="text-decoration-none" href="<?php echo site_url('home/instructor_page/'.$top_instructor['id']); ?>">
-                                    <h4 class="mb-1 fw-700"><?php echo $top_instructor['first_name'].' '.$top_instructor['last_name']; ?></h4>
-                                    <span class="fw-500 text-muted text-14px"><?php echo ellipsis($top_instructor['title'], 60); ?></span>
-                                    <p class="text-12px fw-500 text-muted my-3"><?php echo ellipsis(strip_tags($top_instructor['biography']),100); ?></p>
-
-                                    <!-- <?php $skills = explode(',', $top_instructor['skills']); ?>
-                                    <?php foreach($skills as $skill): ?>
-                                      <span class="badge badge-sub-warning text-12px my-1 py-2"><?php echo $skill; ?></span>
-                                    <?php endforeach; ?> -->
-                                </a>
-
+                                <h4 class="mb-1 fw-700"><?php echo $row['testimonial_name']; ?></h4>
+                                <span class="fw-500 text-muted text-14px"><?php echo ellipsis($row['testimonial_title'], 60); ?></span><br>
+                                <span class="fw-500 text-muted text-14px"><?php echo ellipsis($row['testimonial_type'], 60); ?></span>
+                                <p class="text-12px fw-500 text-muted my-3"><?php echo ellipsis(strip_tags(html_entity_decode($row['testimonial_description'])), 200); ?></p>
                                 <p class="top-instructor-arrow my-3">
                                     <span class="cursor-pointer" onclick="$('.top-istructor-slick .slick-prev').click();"><i class="fas fa-angle-left"></i></span>
                                     <span class="cursor-pointer" onclick="$('.top-istructor-slick .slick-next').click();"><i class="fas fa-angle-right"></i></span>
@@ -448,20 +478,20 @@
                 &nbsp;&nbsp;&nbsp;
                 <a href="#" class="btn btn-primary btn-lg">Contact us</a>
             </div>
-        </div>        
+        </div>
     </div>
 </section>
 <section class="contact-us-line">
     <div class="container">
-<div class="row justify-content-center mb-5">
+        <div class="row justify-content-center mb-5">
             <div class="col-md-9 col-lg-9 boxshadow-get-in-line justify-content-center">
-                <h3 class="course-carousel-title m-5" style="display:inline-block"><span>Get in Line with us</span></h3>  
-                <input type="text" class="input-news-letter" placeholder="Sign up for news letter">             
+                <h3 class="course-carousel-title m-5" style="display:inline-block"><span>Get in Line with us</span></h3>
+                <input type="text" class="input-news-letter" placeholder="Sign up for news letter">
                 <a href="#" class="btn btn-lg">Sign up</a>
-            </div>            
+            </div>
         </div>
-                                    </div>
-        </section>
+    </div>
+</section>
 <script type="text/javascript">
     function handleWishList(elem) {
 

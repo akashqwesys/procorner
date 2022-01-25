@@ -329,5 +329,18 @@ $status_wise_courses = $this->crud_model->get_status_wise_courses();
 				<span><?php echo get_phrase('manage_profile'); ?></span>
 			</a>
 		</li>
+
+		<li class="side-nav-item <?php if ($page_name == 'blogs') echo 'active'; ?>">
+			<a href="<?php echo site_url('admin/blogs'); ?>" class="side-nav-link">
+				<i class="dripicons-blog"></i>
+				<span><?php echo get_phrase('blogs'); ?></span>
+			</a>
+		</li>
+		<li class="side-nav-item <?php if ($page_name == 'testimonials') echo 'active'; ?>">
+			<a href="<?php echo site_url('admin/testimonials'); ?>" class="side-nav-link">
+				<i class="dripicons-user"></i>
+				<span><?php echo get_phrase('testimonials'); ?></span>
+			</a>
+		</li>
 	</ul>
 </div>

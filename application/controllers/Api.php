@@ -249,7 +249,6 @@ class Api extends REST_Controller {
   }
 
 
-
   // video otp playbackinfo
   public function video_otp_playbackinfo_get() {
     $response = array();
@@ -279,9 +278,6 @@ class Api extends REST_Controller {
     }          
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }  
-
-
-
 
   // Course Details
   public function course_details_by_id_get() {

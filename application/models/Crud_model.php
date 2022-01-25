@@ -3070,6 +3070,25 @@ class Crud_model extends CI_Model
         return $query->result_array();
     }
 
+    function get_testimonial($limit = 10){
+        $query = $this->db
+            ->select("*")
+            ->from ("testimonial")        
+            ->order_by("testimonial_id","DESC")
+            ->limit($limit)
+            ->get();
+        return $query->result_array();
+    }
+    function get_blogs_home($limit = 10){
+        $query = $this->db
+            ->select("*")
+            ->from ("blog")        
+            ->order_by("blog_id","DESC")
+            ->limit($limit)
+            ->get();
+        return $query->result_array();
+    }
+
     function get_active_course_by_category_id($category_id = "", $category_id_type = "category_id"){
         $this->db->where($category_id_type, $category_id);
         $this->db->where('status', 'active');
@@ -3110,4 +3129,151 @@ class Crud_model extends CI_Model
         //  $this->db->order_by('qna_id', 'desc');
          return $this->db->get('qna')->result_array();   
      }
+
+
+
+    public function get_blogs($param1 = "")
+    {
+        if ($param1 != "") {
+            $this->db->where('blog_id', $param1);
+        }        
+        return $this->db->get('blog');
+    }
+
+
+     public function add_blog()
+    {
+        $data['blog_title']   = html_escape($this->input->post('blog_title'));
+        $data['blog_description']   = html_escape($this->input->post('blog_description'));              
+        if ($_FILES['blog_thumbnail']['name'] != "") {
+            // blog thumbnail adding
+            if (!file_exists('uploads/thumbnails/blog_thumbnail')) {
+                mkdir('uploads/thumbnails/blog_thumbnail', 0777, true);
+            }
+            if ($_FILES['blog_thumbnail']['name'] == "") {
+                $data['blog_image'] = 'blog-thumbnail.png';
+            } else {
+                $data['blog_image'] = md5(rand(10000000, 20000000)) . '.jpg';
+                move_uploaded_file($_FILES['blog_thumbnail']['tmp_name'], 'uploads/thumbnails/blog_thumbnail/' . $data['blog_image']);
+            }
+        }
+        $data['added_date'] = date('Y-m-d');   
+        $res=$this->db->insert('blog', $data);
+        if($res){
+            return true;       
+        }
+        return false;
+    }
+
+    public function edit_blog($param1)
+    {
+
+        $data['blog_title']   = html_escape($this->input->post('blog_title'));
+        $data['blog_description']   = html_escape($this->input->post('blog_description'));              
+        if ($_FILES['blog_thumbnail']['name'] != "") {
+            // blog thumbnail adding
+            if (!file_exists('uploads/thumbnails/blog_thumbnail')) {
+                mkdir('uploads/thumbnails/blog_thumbnail', 0777, true);
+            }
+            if ($_FILES['blog_thumbnail']['name'] == "") {
+                $data['blog_image'] = 'blog-thumbnail.png';
+            } else {
+                $data['blog_image'] = md5(rand(10000000, 20000000)) . '.jpg';
+                move_uploaded_file($_FILES['blog_thumbnail']['tmp_name'], 'uploads/thumbnails/blog_thumbnail/' . $data['blog_image']);
+            }
+        }
+        $data['added_date'] = date('Y-m-d');  
+        $this->db->where('blog_id', $param1);
+        $res=$this->db->update('blog', $data);
+        if($res){
+            return true;       
+        }
+        return false;       
+    }
+
+    public function delete_blog($blog_id)
+    {
+        $this->db->where('blog_id', $blog_id);
+        $this->db->delete('blog');
+    }
+    public function get_blog_details_by_id($id)
+    {
+        return $this->db->get_where('blog', array('blog_id' => $id));
+    }
+
+
+
+
+
+    public function get_testimonials($param1 = "")
+    {
+        if ($param1 != "") {
+            $this->db->where('testimonial_id', $param1);
+        }        
+        return $this->db->get('testimonial');
+    }
+
+
+     public function add_testimonial()
+    {
+        $data['testimonial_name']   = html_escape($this->input->post('testimonial_name'));
+        $data['testimonial_title']   = html_escape($this->input->post('testimonial_title')); 
+        $data['testimonial_type']   = html_escape($this->input->post('testimonial_type'));   
+        $data['testimonial_description']   = html_escape($this->input->post('testimonial_description'));              
+        if ($_FILES['testimonial_thumbnail']['name'] != "") {
+            // blog thumbnail adding
+            if (!file_exists('uploads/thumbnails/testimonial_thumbnail')) {
+                mkdir('uploads/thumbnails/testimonial_thumbnail', 0777, true);
+            }
+            if ($_FILES['testimonial_thumbnail']['name'] == "") {
+                $data['testimonial_image'] = 'blog-thumbnail.png';
+            } else {
+                $data['testimonial_image'] = md5(rand(10000000, 20000000)) . '.jpg';
+                move_uploaded_file($_FILES['testimonial_thumbnail']['tmp_name'], 'uploads/thumbnails/testimonial_thumbnail/' . $data['testimonial_image']);
+            }
+        }
+        $data['date_added'] = date('Y-m-d');   
+        $res=$this->db->insert('testimonial', $data);
+        if($res){
+            return true;       
+        }
+        return false;
+    }
+
+    public function edit_testimonial($param1)
+    {
+        $data['testimonial_name']   = html_escape($this->input->post('testimonial_name'));
+        $data['testimonial_title']   = html_escape($this->input->post('testimonial_title')); 
+        $data['testimonial_type']   = html_escape($this->input->post('testimonial_type'));   
+        $data['testimonial_description']   = html_escape($this->input->post('testimonial_description'));              
+        if ($_FILES['testimonial_thumbnail']['name'] != "") {
+            // blog thumbnail adding
+            if (!file_exists('uploads/thumbnails/testimonial_thumbnail')) {
+                mkdir('uploads/thumbnails/testimonial_thumbnail', 0777, true);
+            }
+            if ($_FILES['testimonial_thumbnail']['name'] == "") {
+                $data['testimonial_image'] = 'testimonial-thumbnail.png';
+            } else {
+                $data['testimonial_image'] = md5(rand(10000000, 20000000)) . '.jpg';
+                move_uploaded_file($_FILES['testimonial_thumbnail']['tmp_name'], 'uploads/thumbnails/testimonial_thumbnail/' . $data['testimonial_image']);
+            }
+        }
+        $data['date_added'] = date('Y-m-d');   
+        $this->db->where('testimonial_id', $param1);
+        $res=$this->db->update('testimonial', $data);
+        if($res){
+            return true;       
+        }
+        return false;       
+    }
+
+    public function delete_testimonial($testimonial_id)
+    {
+        $this->db->where('testimonial_id', $testimonial_id);
+        $this->db->delete('testimonial');
+    }
+    public function get_testimonial_details_by_id($id)
+    {
+        return $this->db->get_where('testimonial', array('testimonial_id' => $id));
+    }
 }

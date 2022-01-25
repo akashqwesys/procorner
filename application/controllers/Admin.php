@@ -1810,4 +1810,132 @@ class Admin extends CI_Controller
         );
         echo json_encode($json_data);
     }
+
+    public function blogs($param1 = "", $param2 = "")
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+
+        // CHECK ACCESS PERMISSION
+        // check_permission('blogs');
+
+        if ($param1 == 'add') {
+            $response = $this->crud_model->add_blog();
+            if ($response) {
+                $this->session->set_flashdata('flash_message', get_phrase('data_added_successfully'));
+            } else {
+                $this->session->set_flashdata('error_message', get_phrase('somthing_happen_wrong...!'));
+            }
+            redirect(site_url('admin/blogs'), 'refresh');
+        } elseif ($param1 == "edit") {
+
+            $response = $this->crud_model->edit_blog($param2);
+            if ($response) {
+                $this->session->set_flashdata('flash_message', get_phrase('data_updated_successfully'));
+            } else {
+                $this->session->set_flashdata('error_message', get_phrase('somthing_happen_wrong...!'));
+            }
+            redirect(site_url('admin/blogs'), 'refresh');
+        } elseif ($param1 == "delete") {
+            $this->crud_model->delete_blog($param2);
+            $this->session->set_flashdata('flash_message', get_phrase('data_deleted'));
+            redirect(site_url('admin/blogs'), 'refresh');
+        }
+        $page_data['page_name'] = 'blogs';
+        $page_data['page_title'] = get_phrase('blogs');
+        $page_data['blogs'] = $this->crud_model->get_blogs()->result_array();
+        $this->load->view('backend/index', $page_data);
+    }
+
+    public function blog_form($param1 = "", $param2 = "")
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+
+        // CHECK ACCESS PERMISSION
+        // check_permission('category');
+
+        if ($param1 == "add_blog") {
+
+            $page_data['page_name'] = 'blog_add';
+            $page_data['blogs'] = $this->crud_model->get_blogs()->result_array();
+            $page_data['page_title'] = get_phrase('add_blog');
+        }
+        if ($param1 == "edit_blog") {
+
+            $page_data['page_name'] = 'blog_edit';
+            $page_data['page_title'] = get_phrase('edit_blog');
+            $page_data['blogs'] = $this->crud_model->get_blogs()->result_array();
+            $page_data['blog_id'] = $param2;
+        }
+
+        $this->load->view('backend/index', $page_data);
+    }
+
+
+
+    public function testimonials($param1 = "", $param2 = "")
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+
+        // CHECK ACCESS PERMISSION
+        // check_permission('blogs');
+
+        if ($param1 == 'add') {
+            $response = $this->crud_model->add_testimonial();
+            if ($response) {
+                $this->session->set_flashdata('flash_message', get_phrase('data_added_successfully'));
+            } else {
+                $this->session->set_flashdata('error_message', get_phrase('somthing_happen_wrong...!'));
+            }
+            redirect(site_url('admin/testimonials'), 'refresh');
+        } elseif ($param1 == "edit") {
+
+            $response = $this->crud_model->edit_testimonial($param2);
+            if ($response) {
+                $this->session->set_flashdata('flash_message', get_phrase('data_updated_successfully'));
+            } else {
+                $this->session->set_flashdata('error_message', get_phrase('somthing_happen_wrong...!'));
+            }
+            redirect(site_url('admin/testimonials'), 'refresh');
+        } elseif ($param1 == "delete") {
+            $this->crud_model->delete_testimonial($param2);
+            $this->session->set_flashdata('flash_message', get_phrase('data_deleted'));
+            redirect(site_url('admin/testimonials'), 'refresh');
+        }
+        $page_data['page_name'] = 'testimonials';
+        $page_data['page_title'] = get_phrase('testimonials');
+        $page_data['testimonials'] = $this->crud_model->get_testimonials()->result_array();
+        $this->load->view('backend/index', $page_data);
+    }
+
+    public function testimonial_form($param1 = "", $param2 = "")
+    {
+        if ($this->session->userdata('admin_login') != true) {
+            redirect(site_url('login'), 'refresh');
+        }
+
+        // CHECK ACCESS PERMISSION
+        // check_permission('category');
+
+        if ($param1 == "add_testimonial") {
+
+            $page_data['page_name'] = 'testimonial_add';
+            $page_data['testimonials'] = $this->crud_model->get_testimonials()->result_array();
+            $page_data['page_title'] = get_phrase('add_testimonial');
+        }
+        if ($param1 == "edit_testimonial") {
+
+            $page_data['page_name'] = 'testimonial_edit';
+            $page_data['page_title'] = get_phrase('edit_testimonial');
+            $page_data['testimonials'] = $this->crud_model->get_testimonials()->result_array();
+            $page_data['testimonial_id'] = $param2;
+        }
+
+        $this->load->view('backend/index', $page_data);
+    }
 }
