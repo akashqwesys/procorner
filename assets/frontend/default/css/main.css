@@ -708,6 +708,14 @@ menu code was here
     background: #f7f8fa;
 }
 
+.sign-in-box {
+    width: 100px;
+}
+
+section {
+    padding: 100px 0;
+}
+
 .sign-in-box>.btn {
     padding: 8.5px 18px;
     font-size: 15px;
@@ -1095,6 +1103,13 @@ homepage styles
     border-radius: 10px;
 }
 
+.boxshadow-counter {
+    box-shadow: -2px 3px 5px -5px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: -2px 3px 5px -5px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: -2px 3px 5px -5px rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+}
+
 .boxshadow-get-in-line {
     box-shadow: 1px -2px 40px -15px rgba(0, 0, 0, 0.65);
     -webkit-box-shadow: 1px -2px 40px -15px rgba(0, 0, 0, 0.65);
@@ -1120,7 +1135,7 @@ homepage styles
 
 .contact-us-line {
     background-color: transparent;
-    margin-top: -5rem;
+    margin-top: -10rem;
 }
 
 
@@ -1152,7 +1167,7 @@ homepage styles
     margin-top: 10rem;
 }
 
-.home-banner-wrap h2 {
+.banner-title h2 {
     font-size: 44px;
     font-weight: 600;
     line-height: 1;
@@ -1160,18 +1175,18 @@ homepage styles
     color: #000;
 }
 
-.home-banner-wrap h2 span {
+.banner-title h2 span {
     color: #1d56fe;
 }
 
-.home-banner-wrap p {
+.banner-title p {
     font-size: 16px;
     line-height: 34px;
     margin-bottom: 30px;
     color: #000;
 }
 
-.home-banner-wrap input[type="text"] {
+.banner-title input[type="text"] {
     font-size: 14px;
     /* height: 47px; */
     padding: 11px 17px;
@@ -1179,11 +1194,11 @@ homepage styles
     border-radius: 8px 0 0 8px;
 }
 
-.home-banner-wrap .input-group-append {
+.banner-title .input-group-append {
     border-radius: 0 8px 8px 0px;
 }
 
-.home-banner-wrap .btn {
+.banner-title .btn {
     /* font-size: 14px; */
     background: #1d56fe;
     border-radius: 0px 8px 8px 0px;
@@ -1192,7 +1207,7 @@ homepage styles
     margin-right: 5rem;
 }
 
-.home-banner-wrap .btn:hover {
+.banner-title .btn:hover {
     background: #c33333;
     border-color: #c33333;
     color: #fff;

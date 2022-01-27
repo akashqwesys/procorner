@@ -3,16 +3,16 @@
     <div class="row mb-3">
       
       <div class="col-6 col-sm-6 col-md-3">
-        <h5 class="text-muted">Join our community</h5>
+        <h5 class="">Join our community</h5>
         <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Linkedin group</a></li>
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Facebook group</a></li>
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Instagram group</a></li>
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Whatsapp group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">LinkedIn Group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Facebook Group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Instagram Group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">WhatsApp Group</a></li>
         </ul>
       </div>
       <div class="col-6 col-sm-6 col-md-3">
-        <h5 class="text-muted"><?php echo site_phrase('help'); ?></h5>
+        <h5 class=""><?php echo site_phrase('help'); ?></h5>
         <ul class="list-unstyled text-small">
           <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/about_us'); ?>"><?php echo site_phrase('about_us'); ?></a></li>
           <li class="mb-1"><a class="link-secondary footer-hover-link" href="<?php echo site_url('home/privacy_policy'); ?>"><?php echo site_phrase('privacy_policy'); ?></a></li>
@@ -22,7 +22,7 @@
       </div>
       
        <div class="col-6 col-sm-6 col-md-3">
-        <h5 class="text-muted">Contact Us</h5>
+        <h5 class="">Contact Us</h5>
         <ul class="list-unstyled text-small custome-ul-li">
             <li class="mb-1 phone">
               <a class="link-secondary footer-hover-link" href="tel:<?php echo get_settings('phone'); ?>">
@@ -62,8 +62,7 @@
       
       <div class="col-sm-12 col-md-3 order-sm-first">
         <img src="<?php echo base_url('uploads/system/'.get_frontend_settings('dark_logo')); ?>" width="130">
-        <small class="d-block mb-3 fw-600">Procorner Eduflex Private Limited believes in providing best learning to level up current knowledge in specific platform. In current scenario</small>
-
+        <small class="d-block mb-3 fw-600 text-muted">Procorner Eduflex Private Limited believes in providing the best learning to level up the next wave of entrepreneurs. Since 2016, our goal has been to help individuals reach their highest potential.</small>
         <ul class="footer-social-link">
           <?php //$facebook = get_frontend_settings('facebook'); ?>
           <?php //$twitter = get_frontend_settings('twitter'); ?>
@@ -91,7 +90,7 @@
       </div>
     </div>
   </div>
-  <section class="border-top">
+  <section class="border-top p-0">
     <div class="container-xl">
       <div class="row mt-3 py-1">
         <div class="col-12 text-muted text-13px text-center">

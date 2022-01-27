@@ -40,7 +40,6 @@ class Api extends REST_Controller {
           $this->session->set_userdata('app_url', $app_url.'://');
           $this->session->set_flashdata('flash_message', get_phrase('welcome') . ' ' . $row->first_name . ' ' . $row->last_name);
 
-
           //add item to cart
           if (!$this->session->userdata('cart_items')) {
             $this->session->set_userdata('cart_items', array());
@@ -59,7 +58,6 @@ class Api extends REST_Controller {
           }else{
             $price = $course_details['price'];
           }
-
           $this->session->set_userdata('total_price_of_checking_out', $price);
           $this->session->set_userdata('cart_items', $previous_cart_items);
 

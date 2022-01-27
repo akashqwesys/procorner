@@ -10,8 +10,13 @@
         display: none !important;
       }
     }
-    .mobile-main-nav .webmenu{
+
+    /* .mobile-main-nav .webmenu{
       margin-right: 3rem;
+    } */
+    .mobile-main-nav .webmenu {
+      padding: 0px 15px;
+      font-weight: 600;
     }
   </style>
   <ul class="mobile-main-nav">

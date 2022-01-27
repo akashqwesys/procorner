@@ -1,9 +1,9 @@
-<section class="bg-white">
+<section class="bg-white p-0">
     <div class="container-md">
-        <div class="row">
-            <div class="col-md-6 home-banner-wrap">
-                <h2 class="fw-bold"><span>Procorner eduflex</span> private limited - a skill focused <span>institute</span></h2>
-                <p><?php echo site_phrase(get_frontend_settings('banner_sub_title')); ?></p>
+        <div class="row align-items-center">
+            <div class="col-md-6 banner-title">
+                <h2 class="fw-bold"><span>India’s</span> coming-of-age platform for <span>all</span> your <span>learning needs.</span></h2>
+                <p>The perfect place to hone your skills and turn them into forces that will guide you in your career journey. All it takes is a single step to turn your dreams into reality. Join us today to give your career the much-needed boost it deserves.</p>
                 <!-- <form class="" action="<?php echo site_url('home/search'); ?>" method="get">
                     <div class="input-group ">
                         <input type="text" class="form-control" name="query" placeholder="<?php echo site_phrase('what_do_you_want_to_learn'); ?>?" aria-describedby="basic-addon2">
@@ -21,29 +21,29 @@
 </section>
 
 <section class="course-carousel-area">
-    <div class="container-lg py-5">
+    <div class="container-lg ">
         <div class="row">
             <div class="col text-center">
-                <h3 class="course-carousel-title mb-4 text-center">Quick Feature</h3>
-                <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+                <h3 class="course-carousel-title mb-2 text-center">Quick Feature</h3>
+                <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">What makes our courses so unique and why should you invest in them?</span>
             </div>
         </div>
         <div class="content-grid">
             <div class="row content-grid-row text-center">
-                <div class="col-md-4 col-lg-4 content-grid-item flex-column p-5">
+                <div class="col-md-4 col col-12 col-lg-4 content-grid-item flex-column p-5 pb-0">
                     <img src="assets/frontend/default/img/study.png" class="img-fluid mb-2" alt="">
                     <h5 class="mb-1"><b>5 Online courses</b></h5>
-                    <p class="mb-0">Explore a varity of fresh topics</p>
+                    <p class="mb-0">Courses on trending, impactful topics</p>
                 </div>
-                <div class="col-md-4 col-lg-4 content-grid-item flex-column p-5">
+                <div class="col-md-4 col col-12 col-lg-4 content-grid-item flex-column p-5 pb-0">
                     <img src="assets/frontend/default/img/qa.png" class="img-fluid mb-2" alt="">
                     <h5 class="mb-1"><b>Expert instruction</b></h5>
-                    <p class="mb-0">Find the right course for you</p>
+                    <p class="mb-0">A Step-by-step help guide</p>
                 </div>
-                <div class="col-md-4 col-lg-4 content-grid-item flex-column p-5">
+                <div class="col-md-4 col col-12 col-lg-4 content-grid-item flex-column p-5 pb-0">
                     <img src="assets/frontend/default/img/access.png" class="img-fluid mb-2" alt="">
                     <h5 class="mb-1"><b>Lifetime access</b></h5>
-                    <p class="mb-0">Lear on your schedule</p>
+                    <p class="mb-0">Learn whenever you want to</p>
                 </div>
             </div>
         </div>
@@ -51,11 +51,11 @@
 </section>
 
 <section class="course-carousel-area bg-white">
-    <div class="container-lg py-5">
+    <div class="container-lg ">
         <div class="row">
             <div class="col text-center">
-                <h3 class="course-carousel-title mb-4 text-center">Explore top courses</h3>
-                <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+                <h3 class="course-carousel-title mb-2 text-center">Explore top courses</h3>
+                <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Invest in our courses. Invest in yourself. Select the best one for you, today!</span>
             </div>
         </div>
         <div class="row mt-5">
@@ -72,7 +72,7 @@
                 $lessons = $this->crud_model->get_lessons('course', $top_course['id']);
                 $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($top_course['id']);
                 ?>
-                <div class="col-md-4 boxshadow-course mb-5">
+                <div class="col-md-4 col col-12 boxshadow-course mb-5">
                     <a onclick="return check_action(this);" href="<?php echo site_url('home/course/' . rawurlencode(slugify($top_course['title'])) . '/' . $top_course['id']); ?>">
                         <div class="course-box">
                             <div class="course-image">
@@ -163,11 +163,11 @@
 </section>
 
 <section class="course-carousel-area">
-    <div class="container-lg py-5">
+    <div class="container-lg ">
         <div class="row">
             <div class="col text-center">
-                <h3 class="course-carousel-title mb-4 text-center">Inside each course, you will find...</h3>
-                <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+                <h3 class="course-carousel-title mb-2 text-center">Inside the courses you’ll get</h3>
+                <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">All the amazing perks that we offer so that you are satisfied with the course materials!</span>
             </div>
         </div>
         <div class="content-grid">
@@ -176,31 +176,31 @@
                     <img src="assets/frontend/default/img/inside.png" class="img-fluid mb-2" alt="">
                 </div>
                 <div class="col-md-6 content-grid-item flex-column p-5">
-                    <h4 class="mb-3"><b>Title Heading goes here</b></h4>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
-                    <ul>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
+                    <h4 class="mb-3"><b>Pro-level Hindi Content</b></h4>
+                    <p class="mb-3">Want to learn in your regional language? You can do that with us along with some features</p>
+                    <ul class="check-list">
+                        <li class="">Crisp understanding of difficult concepts.</li>
+                        <li class="">A detailed breakdown of topics.</li>
+                        <li class="">Content in video format.</li>
+                        <li class="">Actionable steps and strategies.</li>
+                        <li class="">Network and connect with like-minded learners.</li>
+                        <li class="">Pre-recorded content will be provided.</li>
+                        <li class="">Watch at your own pace, anytime, anywhere.</li>
                     </ul>
                 </div>
             </div>
             <div class="row content-grid-row">
                 <div class="col-md-6 content-grid-item flex-column p-5">
-                    <h4 class="mb-3"><b>Title Heading goes here</b></h4>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
-                    <ul>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
+                    <h4 class="mb-3"><b>Queries tab</b></h4>
+                    <p class="mb-3">Satisfy all the lingering questions that arise due to your curiosity while you are learning something new</p>
+                    <ul class="check-list">
+                        <li class="">Don’t take your doubts to the next step of your professional ladder.</li>
+                        <li class="">Clear your doubts with our top educators.</li>
+                        <li class="">Use our Doubts Tab for your queries.</li>
+                        <li>Drop your questions at any time of the day.</li>
+                        <li>Clear your doubts and satisfy your curiosity.</li>
+                        <li>Grow with us as you tweak your mistakes.</li>
+                        <li>Ask your doubts in our community group as well.</li>
                     </ul>
                 </div>
                 <div class="col-md-6 content-grid-item flex-column p-5">
@@ -208,20 +208,20 @@
                 </div>
             </div>
             <div class="row content-grid-row">
-                <div class="col-md-6 content-grid-item flex-column p-5">
+                <div class="col-md-6 content-grid-item flex-column p-5 pb-0">
                     <img src="assets/frontend/default/img/inside.png" class="img-fluid mb-2" alt="">
                 </div>
-                <div class="col-md-6 content-grid-item flex-column p-5">
-                    <h4 class="mb-3"><b>Title Heading goes here</b></h4>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
-                    <ul>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
+                <div class="col-md-6 content-grid-item flex-column p-5 pb-0">
+                    <h4 class="mb-3"><b>Lifetime subscription.</b></h4>
+                    <p class="mb-3">Get this super-feature too along with the purchase of our courses! Check them below</p>
+                    <ul class="check-list">
+                        <li class="">Get unlimited access to your purchased courses.</li>
+                        <li class="">Zero extra fees for any future additions to the course.</li>
+                        <li class="">Revise by going through the courses multiple times.</li>
+                        <li>Get lifetime access to the community group as well.</li>
+                        <li>Any upgrades that are made will be provided for free.</li>
+                        <li>Learn and prosper at your pace.</li>
+                        <li>Rewatch topics for better retention of knowledge.</li>
                     </ul>
                 </div>
             </div>
@@ -230,48 +230,115 @@
 </section>
 <section class="course-carousel-area bg-white">
     <div class="container-lg">
-        <div class="row mb-5 mt-5">
-            <div class="col-md-12 d-flex">
-                <img src="assets/frontend/default/img/monyback.png" width="50%">
-                <div class="text-box mt-5">
-                    <h3>45 DAYS MONEY<br>BACK GUARANTEE</h3>
+        <div class="row">
+            <div class="col-md-12 d-flex">                
+                <div class="text-box">
+                    <h3>45 DAYS MONEY-BACK<br>GUARANTEE</h3>
                     <p>
-                        If you don't get results after you followed the methods I teach in the course. I will personally work with you to correct you if you are doing it wrong. If you still don't get results, I will refund 100% of your money. Full details here.
+                    45 days money-back guarantee
+After purchasing the course if you don’t get the desired results, our team will personally help you. If still, you are unhappy with the course in any way, you can cancel anytime within 45 days of purchase and a full refund will be made.
+<br><a href="#" class="color-blue">Further details here.</a>
+
                     </p>
                 </div>
+                <img src="assets/frontend/default/img/monyback.png" width="50%">
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col">
+            <div class="counter boxshadow-counter">
+                <i class="fa fa-door-open fa-3x"></i>
+                <p class="count-text ">Inception in</p>
+                <h5 class="mb-3"><b>2016</b></h5>        
+            </div>
+            </div>
+            <div class="col">
+            <div class="counter boxshadow-counter">
+                <i class="fa fa-history fa-3x"></i>
+                <p class="count-text ">Experience</p>
+                <h5 class="mb-3"><b>12+ Years</b></h5>        
+            </div>
+            </div>
+            <div class="col">
+            <div class="counter boxshadow-counter">
+            <i class="fa fa-chalkboard-teacher fa-3x"></i>  
+                <p class="count-text ">Learning</p>
+                <h5 class="mb-3"><b>40+ Hours</b></h5>        
+            </div>
+            </div>
+            <div class="col">
+            <div class="counter boxshadow-counter">
+                <i class="fa fa-smile fa-3x"></i>
+                <p class="count-text ">Course satisfaction</p>
+                <h5 class="mb-3"><b>100%</b></h5>        
+            </div>
             </div>
         </div>
     </div>
 </section>
+<!-- <section class="course-carousel-area bg-white counter-section">
+    <div class="container-lg">
+        <div class="row text-center mb-5 mt-5">
+            <div class="col">
+            <div class="counter boxshadow-counter">
+                <i class="fa fa-door-open fa-3x"></i>
+                <p class="count-text ">Inception in</p>
+                <h5 class="mb-3"><b>2016</b></h5>        
+            </div>
+            </div>
+            <div class="col">
+            <div class="counter boxshadow-counter">
+                <i class="fa fa-history fa-3x"></i>
+                <p class="count-text ">Experience</p>
+                <h5 class="mb-3"><b>12+ Years</b></h5>        
+            </div>
+            </div>
+            <div class="col">
+            <div class="counter boxshadow-counter">
+            <i class="fa fa-chalkboard-teacher fa-3x"></i>  
+                <p class="count-text ">Learning</p>
+                <h5 class="mb-3"><b>40+ Hours</b></h5>        
+            </div>
+            </div>
+            <div class="col">
+            <div class="counter boxshadow-counter">
+                <i class="fa fa-smile fa-3x"></i>
+                <p class="count-text ">Course satisfaction</p>
+                <h5 class="mb-3"><b>100%</b></h5>        
+            </div>
+            </div>
+        </div>
+</div>
+</section> -->
 <section class="course-carousel-area">
-    <div class="container-lg py-5">
+    <div class="container-lg ">
         <div class="row mb-5">
             <div class="col text-center">
-                <h3 class="course-carousel-title mb-4 text-center">Resourses</h3>
-                <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+                <h3 class="course-carousel-title mb-2 text-center">Resourses</h3>
+                <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">We have resources for everyone. Whether, you are a working professional, student, or a business. We have something specific for emerging women too</span>
             </div>
         </div>
         <div class="row content-grid-row">
             <div class="col-md-3 flex-column p-4 bg-white m-2 boxshadow-resourse">
                 <img src="assets/frontend/default/img/idea.png" class="img-fluid mb-2" alt="" width="75">
-                <h5 class="mb-3"><b>For Learners</b></h5>
-                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
+                <h5 class="mb-3"><b>For learners</b></h5>
+                <p class="mb-3">Skyrocket your career with your sharp skillset. Or learn for expanding your wit.</p>
                 <a href="#" class="color-blue"><b>See more <i class="fa fa-arrow-right"></i></b></a>
             </div>
             <div class="col-md-1 flex-column p-5">&nbsp;
             </div>
             <div class="col-md-3 flex-column p-4 bg-white m-2 boxshadow-resourse">
                 <img src="assets/frontend/default/img/businessman.png" class="img-fluid mb-2" alt="" width="75">
-                <h5 class="mb-3"><b>For Learners</b></h5>
-                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
+                <h5 class="mb-3"><b>For businesses</b></h5>
+                <p class="mb-3">Incorporate a growth mindset in your employees through our stackable courses.</p>
                 <a href="#" class="color-blue"><b>See more <i class="fa fa-arrow-right"></i></b></a>
             </div>
             <div class="col-md-1 flex-column p-5">&nbsp;
             </div>
             <div class="col-md-3 flex-column p-4 bg-white m-2 boxshadow-resourse">
                 <img src="assets/frontend/default/img/cap.png" class="img-fluid mb-2" alt="" width="75">
-                <h5 class="mb-3"><b>For Learners</b></h5>
-                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
+                <h5 class="mb-3"><b>For emerging women</b></h5>
+                <p class="mb-3">We help women in achieving their dreams by providing certified courses that will empower them.</p>
                 <a href="#" class="color-blue"><b>See more <i class="fa fa-arrow-right"></i></b></a>
             </div>
         </div>
@@ -280,31 +347,30 @@
 </section>
 
 <section class="course-carousel-area bg-white">
-    <div class="container-lg py-5">
+    <div class="container-lg ">
         <div class="content-grid">
             <div class="row content-grid-row mb-5">
-                <div class="col-md-6 content-grid-item flex-column p-5">
+                <div class="col-md-6 content-grid-item flex-column">
                     <img src="assets/frontend/default/img/inside.png" class="img-fluid mb-2" alt="">
                 </div>
-                <div class="col-md-6 content-grid-item flex-column p-5">
+                <div class="col-md-6 content-grid-item flex-column">
                     <h4 class="mb-3"><b>Download our app</b></h4>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</p>
+                    <p class="mb-3">Procorner Eduflex just got a NEW app! We have created this app with some great features. Download the app to see it for yourself!</p>
                     <ul class="mb-4">
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-3">Lorem ipsum dolor sit amet, consectetur</li>
-                        <li class="mb-4">Lorem ipsum dolor sit amet, consectetur</li>
+                        <li class="mb-3">Get productive in your free time.</li>
+                        <li class="mb-3">Bite-sized knowledge to make you smarter.</li>
+                        <li class="mb-3">Join our community of avid learners.</li>
+                        <li class="mb-3">Stay up-to-date with our new courses.</li>
+                        <li>Get better with each passing day.</li>
+                        <li>Network and connect with like-minded individuals.</li>
                     </ul>
                     <a href="" class="btn btn-primary bt-lg">Download App</a>
                 </div>
             </div>
 
-            <div class="row mb-5">
+            <div class="row">
                 <div class="col text-center">
-                    <h3 class="course-carousel-title mb-4 text-center">Leatners across 160+ countries</h3>
+                    <h3 class="course-carousel-title mb-2 text-center">Learners across 160+ countries</h3>
                     <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
                     <img src="assets/frontend/default/img/globalpresence-map.jpg" class="img-fluid mb-2" alt="">
                 </div>
@@ -335,12 +401,12 @@
 </section>
 
 
-<section class="section-blog py-5">
+<section class="section-blog ">
     <div class="container-lg">
     <div class="row mb-5">
         <div class="col-md-6">
             <h3 class="course-carousel-title mb-2" style="display:inline-block">Latest stories and insights<br><span class="text-blue">learn with our blogs</span></h3>
-            <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+            <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Learn more about us through these unique blog pots. They are fun to read and won’t cost you a dime!</span>
         </div>
         <div class="col-md-6"><a href="#" class="btn btn-primary blog-button btn-lg">Visit more blogs</a></div>
     </div>
@@ -373,7 +439,7 @@
 </section>
 
 <!-- <section class="course-carousel-area blog">
-    <div class="container-lg py-5">
+    <div class="container-lg ">
         <div class="row">
             <div class="col-md-6">
                 <h3 class="course-carousel-title mb-2" style="display:inline-block">Latest stories and insights<br><span class="text-blue">learn with our blogs</span></h3>
@@ -386,7 +452,7 @@
             <!-- <div class="animated-loader">
                 <div class="spinner-border text-secondary" role="status"></div>
             </div>
-            <div class="col-md-4 boxshadow-course mb-5">
+            <div class="col-md-4 col col-12 boxshadow-course mb-5">
                 <a href="#">
                     <div class="course-box">
                         <div class="course-image">
@@ -401,7 +467,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 boxshadow-course mb-5">
+            <div class="col-md-4 col col-12 boxshadow-course mb-5">
                 <a href="#">
                     <div class="course-box">
                         <div class="course-image">
@@ -416,7 +482,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 boxshadow-course mb-5">
+            <div class="col-md-4 col col-12 boxshadow-course mb-5">
                 <a href="#">
                     <div class="course-box">
                         <div class="course-image">
@@ -439,10 +505,10 @@
         <div class="row">
             <div class="col">
                 <h3 class="course-carousel-title mb-2 text-center">See how others are feeling about us</span></h3>
-                <span class="d-block text-color-dark text-5 pb-2 mb-5 opacity-7 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+                <span class="d-block text-color-dark text-5 pb-2 mb-5 opacity-7 text-center">Are you still confused? Read others’ opinions about us.</span>
             </div>
         </div>
-        <div class="row justify-content-center mb-10">
+        <div class="row justify-content-center mb-5">
             <div class="col-md-9 col-lg-7">
                 <div class="animated-loader">
                     <div class="spinner-border text-secondary" role="status"></div>
@@ -469,7 +535,7 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mb-10 boxshadow-resourse lets-start">
+        <div class="row justify-content-center mb-5 boxshadow-resourse lets-start">
             <div class="col-md-6">
                 <h3 class="course-carousel-title m-5" style="display:inline-block"><span class="text-blue">Are you ready to start <br>your course now!</span></h3>
             </div>
@@ -481,7 +547,7 @@
         </div>
     </div>
 </section>
-<section class="contact-us-line">
+<section class="contact-us-line pb-0">
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-9 col-lg-9 boxshadow-get-in-line justify-content-center">
