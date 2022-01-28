@@ -1,7 +1,15 @@
 <script src="<?php echo base_url() . 'assets/frontend/default/js/vendor/modernizr-3.5.0.min.js'; ?>"></script>
 <script src="<?php echo base_url() . 'assets/frontend/default/js/vendor/jquery-3.2.1.min.js'; ?>"></script>
 <script src="<?php echo base_url() . 'assets/frontend/default/js/popper.min.js'; ?>"></script>
+
+
+<?php if($page_name == "faq"){ ?>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<?php } ?>
 <script src="<?php echo base_url() . 'assets/frontend/default/js/bootstrap.min.js'; ?>"></script>
+
+
+
 
 <?php if ($page_name == "home" || $page_name == "instructor_page") : ?>
 	<script src="<?php echo base_url() . 'assets/frontend/default/js/slick.min.js'; ?>"></script>

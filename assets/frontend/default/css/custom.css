@@ -597,163 +597,641 @@ p.top-instructor-arrow span i {
 
 /* timeline css about us  */
 
-.Yearly-timeline {
-    font-family: 'Poppins', sans-serif;
+
+/******************* Timeline Demo - 5 *****************/
+
+
+/* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.intro {
+    background: #f45b69;
+    padding: 100px 0;
 }
 
-.Yearly-timeline:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.Yearly-timeline .timeline {
-    width: calc(50% + 17px);
-    padding: 0 30px 30px 0;
-    float: left;
-    position: relative;
-}
-
-.Yearly-timeline .timeline:before,
-.Yearly-timeline .timeline:after {
-    content: '';
-    height: 60px;
-    width: 2px;
-    border-left: 2px solid #70d6ff;
-    transform: rotate(-45deg);
-    position: absolute;
-    right: 30px;
-    bottom: 0;
-}
-
-.Yearly-timeline .timeline:after {
-    background-color: #fff;
-    height: 20px;
-    width: 20px;
-    border: 6px solid #70d6ff;
-    border-radius: 50%;
-    right: 0;
-}
-
-.Yearly-timeline .timeline-content {
-    color: #555;
-    background: #70d6ff;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
-    min-height: 170px;
-    padding: 30px 35px 35px;
-    border-radius: 15px 15px 0 15px;
-    display: block;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+}
+
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul {
+    background: #ffffff;
+    padding: 50px 0;
+}
+
+
+/* .timeline ul li {
+    color: #fff;
+    list-style-type: none;
     position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: #1d56fe;
+} */
+
+.timeline ul .li-2016 {
+    color: #fff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #f44556;
+}
+
+.timeline ul .li-2017 {
+    color: #fff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #e87d2e;
+}
+
+.timeline ul .li-2018 {
+    color: #fff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #13afae;
+}
+
+.timeline ul .li-2019 {
+    color: #fff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #105572;
+}
+
+.timeline ul .li-2020 {
+    color: #fff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #f44556;
+}
+
+.timeline ul .li-2021 {
+    color: #fff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #e87d2e;
+}
+
+.timeline ul .li-2022-mission {
+    color: #fff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #13afae;
+}
+
+.timeline ul .li-2022-vision {
+    color: #fff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #105572;
+}
+
+.timeline ul li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
     z-index: 1;
 }
 
-.Yearly-timeline .timeline-content:before {
-    content: '';
-    background-color: #fff;
+.timeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #3255bb;
+}
+
+.timeline ul li .div-2016 {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #f44556;
+}
+
+.timeline ul li .div-2017 {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #e87d2e;
+}
+
+.timeline ul li .div-2018 {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #13afae;
+}
+
+.timeline ul li .div-2019 {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #105572;
+}
+
+.timeline ul li .div-2020 {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #f44556;
+}
+
+.timeline ul li .div-2021 {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #e87d2e;
+}
+
+.timeline ul li .div-2022-mission {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #13afae;
+}
+
+.timeline ul li .div-2022-vision {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #105572;
+}
+
+.timeline ul li div::before {
+    content: "";
     position: absolute;
-    left: 17px;
-    right: 17px;
-    top: 17px;
-    bottom: 17px;
-    z-index: -1;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
 }
 
-.Yearly-timeline .timeline-content:hover {
-    text-decoration: none;
+.timeline ul li:nth-child(odd) div {
+    left: 45px;
 }
 
-.Yearly-timeline .timeline-icon {
-    color: #777;
-    font-size: 35px;
+.timeline ul li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    /* border-color: transparent #3255bb transparent transparent; */
 }
 
-.Yearly-timeline .title {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0 0 8px;
+.timeline ul li:nth-child(odd) .div-2016::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #f44556 transparent transparent;
 }
 
-.Yearly-timeline .description {
-    color: #777;
-    font-size: 13px;
+.timeline ul li:nth-child(odd) .div-2018::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #13afae transparent transparent;
+}
+
+.timeline ul li:nth-child(odd) .div-2020::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #f44556 transparent transparent;
+}
+
+.timeline ul li:nth-child(odd) .div-2022-mission::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #13afae transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+    left: -439px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    /* border-color: transparent transparent transparent #3255bb; */
+}
+
+.timeline ul li:nth-child(even) .div-2017::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #e87d2e;
+}
+
+.timeline ul li:nth-child(even) .div-2019::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #105572;
+}
+
+.timeline ul li:nth-child(even) .div-2021::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #e87d2e;
+}
+
+.timeline ul li:nth-child(even) .div-2022-vision::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #105572;
+}
+
+time {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+}
+
+.timeline ul li.in-view-2016::after {
+    background-color: #f44556;
+    width: 50px;
+    height: 50px;
+    background: url('../img/calendar2016.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.timeline ul li.in-view-2017::after {
+    background-color: #e87d2e;
+    width: 50px;
+    height: 50px;
+    background: url('../img/calendar2017.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.timeline ul li.in-view-2018::after {
+    background-color: #13afae;
+    width: 50px;
+    height: 50px;
+    background: url('../img/calendar2018.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.timeline ul li.in-view-2019::after {
+    background-color: #105572;
+    width: 50px;
+    height: 50px;
+    background: url('../img/calendar2019.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.timeline ul li.in-view-2020::after {
+    background-color: #f44556;
+    width: 50px;
+    height: 50px;
+    background: url('../img/calendar2016.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.timeline ul li.in-view-2021::after {
+    background-color: #e87d2e;
+    width: 50px;
+    height: 50px;
+    background: url('../img/calendar2017.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.timeline ul li.in-view-2022-mission::after {
+    background-color: #13afae;
+    width: 50px;
+    height: 50px;
+    background: url('../img/calendar2018.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+.timeline ul li.in-view-2022-vision::after {
+    background-color: #105572;
+    width: 50px;
+    height: 50px;
+    background: url('../img/calendar2019.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+}
+
+
+/* .timeline ul li.in-view::after {
+    background: #1d56fe;
+} */
+
+.timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+    .timeline ul li div {
+        width: 250px;
+    }
+    .timeline ul li:nth-child(even) div {
+        left: -289px;
+        /*250+45-6*/
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .timeline ul li {
+        margin-left: 20px;
+    }
+    .timeline ul li div {
+        width: calc(100vw - 91px);
+    }
+    .timeline ul li:nth-child(even) div {
+        left: 45px;
+    }
+    .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #f45b69 transparent transparent;
+    }
+}
+
+
+/* EXTRA/CLIP PATH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline-clippy ul li::after {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+}
+
+.timeline-rhombus ul li::after {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.timeline-rhombus ul li div::before {
+    bottom: 12px;
+}
+
+.timeline-star ul li::after {
+    clip-path: polygon( 50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.timeline-heptagon ul li::after {
+    clip-path: polygon( 50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+
+.timeline-infinite ul li::after {
+    animation: scaleAnimation 2s infinite;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.25);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+
+/* FOOTER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.page-footer {
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: black;
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.page-footer a {
+    display: flex;
+    margin-left: 4px;
+}
+
+
+/* FAQ */
+
+
+/* .faq-section {
+    background: #fdfdfd;
+    min-height: 100vh;
+    padding: 10vh 0 0;
+} */
+
+.faq-section ul li a {
+    color: #1d56fe;
+}
+
+.faq-title h3 {
+    position: relative;
+    margin-bottom: 45px;
+    display: inline-block;
+    line-height: 1;
+}
+
+.faq-title h3::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #1d56fe;
+    bottom: -25px;
+    /* margin-left: -30px; */
+}
+
+.faq-title h6 {
+    position: relative;
+    margin-bottom: 45px;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.faq-title h6::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #1d56fe;
+    bottom: -25px;
+    /* margin-left: -30px; */
+}
+
+.faq-title p {
+    padding: 0 190px;
+    margin-bottom: 10px;
+}
+
+.faq {
+    background: #FFFFFF;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+}
+
+.faq .card {
+    border: none;
+    background: none;
+    border-bottom: 1px dashed #CEE1F8;
+}
+
+.faq .card .card-header {
+    padding: 0px;
+    border: none;
+    background: none;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.faq .card .card-header:hover {
+    background: #e0e6f5;
+    padding-left: 10px;
+}
+
+.faq .card .card-header .faq-title {
+    width: 100%;
+    text-align: left;
+    padding: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-weight: 400;
-    letter-spacing: 0.5px;
-    line-height: 18px;
-    margin: 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #3B566E;
+    text-decoration: none !important;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.Yearly-timeline .timeline:nth-child(even) {
-    padding: 0 0 30px 30px;
-    float: right;
+.faq .card .card-header .faq-title .badge {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 14px;
+    vertical-align: middle;
+    /* float: left; */
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    text-align: center;
+    /* background: #E91E63; */
+    width: 33px;
+    height: 33px;
+    background: url('../img/down.png') no-repeat left center;
+    background-size: contain;
+    content: '';
+    /* color: #fff;
+    font-size: 12px; */
+    margin-right: 20px;
 }
 
-.Yearly-timeline .timeline:nth-child(even):before {
-    transform: rotate(45deg);
-    right: auto;
-    left: 30px;
+.faq .card .card-body {
+    padding: 30px;
+    padding-left: 35px;
+    padding-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #6F8BA4;
+    line-height: 28px;
+    letter-spacing: 1px;
+    border-top: 1px solid #F3F8FF;
 }
 
-.Yearly-timeline .timeline:nth-child(even):after {
-    right: auto;
-    left: 0;
+.faq .card .card-body p {
+    margin-bottom: 14px;
 }
 
-.Yearly-timeline .timeline:nth-child(even) .timeline-content {
-    border-radius: 15px 15px 15px 0;
-}
-
-.Yearly-timeline .timeline:nth-child(4n+2):before,
-.Yearly-timeline .timeline:nth-child(4n+2):after {
-    border-color: #ff70a6;
-}
-
-.Yearly-timeline .timeline:nth-child(4n+2) .timeline-content {
-    background: #ff70a6;
-}
-
-.Yearly-timeline .timeline:nth-child(4n+3):before,
-.Yearly-timeline .timeline:nth-child(4n+3):after {
-    border-color: #ff9770;
-}
-
-.Yearly-timeline .timeline:nth-child(4n+3) .timeline-content {
-    background: #ff9770;
-}
-
-.Yearly-timeline .timeline:nth-child(4n+4):before,
-.Yearly-timeline .timeline:nth-child(4n+4):after {
-    border-color: #ffd670;
-}
-
-.Yearly-timeline .timeline:nth-child(4n+4) .timeline-content {
-    background: #ffd670;
-}
-
-@media screen and (max-width:767px) {
-    .Yearly-timeline .timeline {
-        width: 100%;
-        padding: 30px 0 0 30px;
-        margin: 0 0 20px;
+@media (max-width: 991px) {
+    .faq {
+        margin-bottom: 30px;
     }
-    .Yearly-timeline .timeline:before,
-    .Yearly-timeline .timeline:nth-child(even):before {
-        transform: rotate(-45deg);
-        bottom: auto;
-        top: 0;
-        right: auto;
-        left: 30px;
-    }
-    .Yearly-timeline .timeline:after,
-    .Yearly-timeline .timeline:nth-child(even):after {
-        bottom: auto;
-        top: 0;
-        right: auto;
-        left: 0;
-    }
-    .Yearly-timeline .timeline-content,
-    .Yearly-timeline .timeline:nth-child(even) .timeline-content {
-        border-radius: 0 15px 15px 15px;
+    .faq .card .card-header .faq-title {
+        line-height: 26px;
+        margin-top: 10px;
     }
 }

@@ -673,6 +673,12 @@ class Home extends CI_Controller
         $page_data['page_title'] = site_phrase('about_us');
         $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
     }
+    public function faq()
+    {
+        $page_data['page_name'] = 'faq';
+        $page_data['page_title'] = site_phrase('faq');
+        $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
+    }
 
     public function terms_and_condition()
     {

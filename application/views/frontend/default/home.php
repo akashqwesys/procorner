@@ -354,13 +354,13 @@ After purchasing the course if you don’t get the desired results, our team wil
                     <img src="assets/frontend/default/img/inside.png" class="img-fluid mb-2" alt="">
                 </div>
                 <div class="col-md-6 content-grid-item flex-column">
-                    <h4 class="mb-3"><b>Download our app</b></h4>
+                    <h4 class="mb-2"><b>Download our app</b></h4>
                     <p class="mb-3">Procorner Eduflex just got a NEW app! We have created this app with some great features. Download the app to see it for yourself!</p>
-                    <ul class="mb-4">
-                        <li class="mb-3">Get productive in your free time.</li>
-                        <li class="mb-3">Bite-sized knowledge to make you smarter.</li>
-                        <li class="mb-3">Join our community of avid learners.</li>
-                        <li class="mb-3">Stay up-to-date with our new courses.</li>
+                    <ul class="mb-4 check-list" >
+                        <li class="">Get productive in your free time.</li>
+                        <li class="">Bite-sized knowledge to make you smarter.</li>
+                        <li class="">Join our community of avid learners.</li>
+                        <li class="">Stay up-to-date with our new courses.</li>
                         <li>Get better with each passing day.</li>
                         <li>Network and connect with like-minded individuals.</li>
                     </ul>
@@ -371,7 +371,7 @@ After purchasing the course if you don’t get the desired results, our team wil
             <div class="row">
                 <div class="col text-center">
                     <h3 class="course-carousel-title mb-2 text-center">Learners across 160+ countries</h3>
-                    <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget tortor vel sem semper gravida. Ut posuere.</span>
+                    <span class="d-block text-color-dark text-5 pb-2 mb-1 opacity-7">We have a global footprint of 160+ countries. Our students learn from the comfort of their homes and develop incredible skills.</span>
                     <img src="assets/frontend/default/img/globalpresence-map.jpg" class="img-fluid mb-2" alt="">
                 </div>
                 <div class="row content-grid-row">
