@@ -180,9 +180,47 @@ class Api_model extends CI_Model
 			$courses[$key]['total_enrollment'] = $this->crud_model->enrol_history($course['id'])->num_rows();
 			$courses[$key]['shareable_link'] = site_url('home/course/' . slugify($course['title']) . '/' . $course['id']);
 		}
-
 		return $courses;
 	}
+
+	// get reviews list
+	public function get_ratings($ratable_type = "", $ratable_id = "", $is_sum = false)
+    {
+        if ($is_sum) {
+            $this->db->select_sum('rating');
+            return $this->db->get_where('rating', array('ratable_type' => $ratable_type, 'ratable_id' => $ratable_id));
+        } else {
+			$this->db->select('rating.*,users.first_name,users.last_name');			
+			$this->db->from ("rating");
+            $this->db->where(array('ratable_type' => $ratable_type, 'ratable_id' => $ratable_id));
+			$this->db->join('users', 'users.id = rating.user_id','left');
+			return $this->db->get();
+        }
+    }
+
+	public function get_percentage_of_specific_rating($rating = "", $ratable_type = "", $ratable_id = "")
+    {
+        $number_of_user_rated = $this->db->get_where('rating', array(
+            'ratable_type' => $ratable_type,
+            'ratable_id'   => $ratable_id
+        ))->num_rows();
+
+        $number_of_user_rated_the_specific_rating = $this->db->get_where('rating', array(
+            'ratable_type' => $ratable_type,
+            'ratable_id'   => $ratable_id,
+            'rating'       => $rating
+        ))->num_rows();
+
+        //return $number_of_user_rated.' '.$number_of_user_rated_the_specific_rating;
+        if ($number_of_user_rated_the_specific_rating > 0) {
+            $percentage = ($number_of_user_rated_the_specific_rating / $number_of_user_rated) * 100;
+        } else {
+            $percentage = 0;
+        }
+        return floor($percentage);
+    }
+
+
 	// Get all the language of system
 	public function languages_get()
 	{
@@ -530,6 +568,7 @@ class Api_model extends CI_Model
 			$response[$key]['attachment_url'] = base_url() . 'uploads/lesson_files/' . $lesson['attachment'];
 			$response[$key]['attachment_type'] = $lesson['attachment_type'];
 			$response[$key]['summary'] = $lesson['summary'];
+			$response[$key]['is_free'] = $lesson['is_free'];
 			if ($user_id > 0) {
 				$response[$key]['is_completed'] = lesson_progress($lesson['id'], $user_id);
 			} else {
@@ -594,7 +633,7 @@ class Api_model extends CI_Model
 				get_phrase('high_quality_videos'),
 				get_phrase('life_time_access'),
 			);
-		}
+		}		
 		return $response;
 	}
 

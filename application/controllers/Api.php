@@ -336,6 +336,14 @@ class Api extends REST_Controller
     } else {
       $response = $this->api_model->course_details_by_id_get(0, $course_id);
     }
+    $ratings = $this->api_model->get_ratings('course', $course_id)->result_array();
+    $percentage_ratings=array();
+    for($i=1;$i<=5;$i++){
+      $res=$this->api_model->get_percentage_of_specific_rating($i, 'course', $course_id);
+      $percentage_ratings['rating_'.$i]=$res;
+    }
+    $response['ratings']=$ratings;
+    $response['percentage_ratings']=$percentage_ratings;
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
 
