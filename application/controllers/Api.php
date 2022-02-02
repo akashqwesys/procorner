@@ -75,10 +75,33 @@ class Api extends REST_Controller {
 
   // Unprotected routes will be located here.
   // Fetch all the top courses
-  public function top_courses_get($top_course_id = "") {
+  public function top_courses_get($top_course_id = "") {     
     $top_courses = array();
+    $user_id=0;
+    $enroll_result=array();
+    $response_result=array();
+    if(!empty($_GET['auth_token'])) {  
+      $auth_token = $_GET['auth_token'];
+      $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+      $user_id=$logged_in_user_details['user_id'];      
+    }
+    if($user_id>0){
+      $enroll_result = $this->api_model->enroll_course_get($user_id);    
+    }
     $top_courses = $this->api_model->top_courses_get($top_course_id);
-    $this->set_response($top_courses, REST_Controller::HTTP_OK);
+    if(!empty($enroll_result)){
+      foreach($top_courses as $row){
+        $row['is_enroll']=0;
+        foreach($enroll_result as $row_enrol){
+          if($row['id']==$row_enrol['course_id']){
+            $row['is_enroll']=1;
+          }
+        }
+        array_push($response_result,$row);         
+      }
+    }       
+
+    $this->set_response($response_result, REST_Controller::HTTP_OK);
   }
 
   public function app_logo_get(){

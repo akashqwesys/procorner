@@ -28,6 +28,15 @@ class Api_model extends CI_Model
 		return $result;
 	}
 
+	// get the enroll course by user_id
+	public function enroll_course_get($user_id = 0)
+	{	
+		$this->db->where('user_id', $user_id);		
+		$result = $this->db->get('enrol')->result_array();
+		// This block of codes return the required data of courses				
+		return $result;
+	}
+
 	// Get categories
 	public function categories_get($category_id)
 	{
