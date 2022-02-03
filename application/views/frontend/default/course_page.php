@@ -66,7 +66,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
   </div>
 </section>
 
-<section class="course-content-area">
+<section class="course-content-area pt-0">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 order-last order-lg-first radius-10 mt-4 bg-white p-30-40">
@@ -260,9 +260,9 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
 
               <div class="row justify-content-center mb-3">
                 <div class="col-md-4 top-instructor-img w-sm-100">
-                  <a href="<?php echo site_url('home/instructor_page/'.$instructor['id']); ?>">
+                  <!-- <a href="<?php echo site_url('home/instructor_page/'.$instructor['id']); ?>"> -->
                     <img src="<?php echo $this->user_model->get_user_image_url($instructor['id']); ?>" width="100%">
-                  </a>
+                  <!-- </a> -->
                 </div>
                 <div class="col-md-8 top-instructor-details text-center text-md-start">
                     <h4 class="mb-1 fw-600 "><a class="text-decoration-none" href="<?php echo site_url('home/instructor_page/'.$instructor['id']); ?>"><?php echo $instructor['first_name'].' '.$instructor['last_name']; ?></a></h4>
@@ -291,7 +291,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
 
                     
                     <div class="description ">
-                      <?php echo ellipsis(strip_tags($instructor['biography']), 180); ?>
+                      <?php echo ellipsis(strip_tags($instructor['biography']), 250); ?>
                     </div>
                 </div>
               </div>
@@ -327,10 +327,9 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                     <?php foreach($skills as $skill): ?>
                       <span class="badge badge-sub-warning text-12px my-1 py-2"><?php echo $skill; ?></span>
                     <?php endforeach; ?>
-
                     
                     <div class="description">
-                      <?php echo ellipsis(strip_tags($instructor_details['biography']), 180); ?>
+                      <?php echo ellipsis(strip_tags($instructor_details['biography']), 250); ?>
                     </div>
                 </div>
             </div>
@@ -527,11 +526,11 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                 </div>
               <?php else : ?>
                 <div class="buy-btns">
-                  <?php if (in_array($course_details['id'], $this->session->userdata('cart_items'))) : ?>
-                    <button class="btn btn-buy-now active addedToCart" type="button" id="<?php echo $course_details['id']; ?>" onclick="handleCartItems(this)"><?php echo site_phrase('added_to_cart'); ?></button>
-                  <?php else : ?>
-                    <button class="btn btn-buy-now" type="button" id="<?php echo $course_details['id']; ?>" onclick="handleCartItems(this)"><?php echo site_phrase('invest_now'); ?></button>
-                  <?php endif; ?>
+                  <?php //if (in_array($course_details['id'], $this->session->userdata('cart_items'))) : ?>
+                    <!-- <button class="btn btn-buy-now active addedToCart" type="button" id="<?php echo $course_details['id']; ?>" onclick="handleCartItems(this)"><?php echo site_phrase('added_to_cart'); ?></button> -->
+                  <?php //else : ?>
+                    <button class="btn btn-primary" type="button" id="<?php echo $course_details['id']; ?>" onclick="handleCartItems(this)"><?php echo site_phrase('invest_now'); ?></button>
+                  <?php //endif; ?>
                 </div>
               <?php endif; ?>
             <?php } ?>
@@ -636,6 +635,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
 <script type="text/javascript">
   function handleCartItems(elem) {
     url1 = '<?php echo site_url('home/handleCartItems'); ?>';
+    url3 = '<?php echo site_url('payment'); ?>';
     url2 = '<?php echo site_url('home/refreshWishList'); ?>';
     $.ajax({
       url: url1,
@@ -645,13 +645,14 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
       },
       success: function(response) {
         $('#cart_items').html(response);
-        if ($(elem).hasClass('addedToCart')) {
-          $(elem).removeClass('addedToCart')
-          $(elem).text("<?php echo site_phrase('add_to_cart'); ?>");
-        } else {
-          $(elem).addClass('addedToCart')
-          $(elem).text("<?php echo site_phrase('added_to_cart'); ?>");
-        }
+        window.location.href = url3;
+        // if ($(elem).hasClass('addedToCart')) {
+        //   $(elem).removeClass('addedToCart')
+        //   $(elem).text("<?php echo site_phrase('add_to_cart'); ?>");
+        // } else {
+        //   $(elem).addClass('addedToCart')
+        //   $(elem).text("<?php echo site_phrase('added_to_cart'); ?>");
+        // }
         $.ajax({
           url: url2,
           type: 'POST',

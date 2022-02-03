@@ -87,7 +87,7 @@
                 } else if ("<?php echo $total_price; ?>" > 0) {
                     // $('#paymentModal').modal('show');
                     //$('.total_price_of_checking_out').val($('#total_price_of_checking_out').text());
-                    window.location.replace("<?php echo site_url('home/payment'); ?>");
+                    window.location.replace("<?php echo site_url('payment'); ?>");
                 } else {
                     toastr.error('<?php echo site_phrase('there_are_no_courses_on_your_cart'); ?>');
                 }

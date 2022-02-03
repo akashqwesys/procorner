@@ -127,7 +127,7 @@ function handleCheckOut() {
             if (!response) {
                 window.location.replace("<?php echo site_url('login'); ?>");
             }else if("<?php echo $this->session->userdata('total_price_of_checking_out'); ?>" > 0){
-                window.location.replace("<?php echo site_url('home/payment/'); ?>");
+                window.location.replace("<?php echo site_url('payment/'); ?>");
             }else{
                 toastr.error('<?php echo site_phrase('there_are_no_courses_on_your_cart');?>');
             }

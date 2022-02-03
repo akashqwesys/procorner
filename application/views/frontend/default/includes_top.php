@@ -18,3 +18,8 @@
 <link rel="stylesheet" href="<?php echo base_url() . 'assets/frontend/default/css/tagify.css'; ?>">
 <link rel="stylesheet" href="<?php echo base_url() . 'assets/global/toastr/toastr.css' ?>">
 <script src="<?php echo base_url('assets/backend/js/jquery-3.3.1.min.js'); ?>"></script>
+
+<?php
+//change by vasim
+        $this->session->set_userdata('cart_items',array());
+?>

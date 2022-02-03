@@ -279,8 +279,7 @@ class Home extends CI_Controller
     {
         if (!$this->session->userdata('cart_items')) {
             $this->session->set_userdata('cart_items', array());
-        }
-
+        }        
         $course_id = $this->input->post('course_id');
         $previous_cart_items = $this->session->userdata('cart_items');
         if (in_array($course_id, $previous_cart_items)) {
