@@ -37,7 +37,7 @@
       url: '<?php echo site_url('login/verify_email_address/'); ?>',
       data: {verification_code : verification_code, email : email},
       success: function(response){
-        window.location.replace('<?= site_url('home/login'); ?>');
+        window.location.replace('<?= site_url('login'); ?>');
       }
     });
   }

@@ -19,7 +19,7 @@
         <h5><?php echo site_phrase('useful_links'); ?></h5>
         <ul class="links">
           <li><a href="<?php echo site_url('home/courses'); ?>"><?php echo site_phrase('courses'); ?></a></li>
-          <li><a href="<?php echo site_url('home/login'); ?>"><?php echo site_phrase('login'); ?></a></li>
+          <li><a href="<?php echo site_url('login'); ?>"><?php echo site_phrase('login'); ?></a></li>
           <li><a href="<?php echo site_url('home/sign_up'); ?>"><?php echo site_phrase('register'); ?></a></li>
         </ul>
       </div>

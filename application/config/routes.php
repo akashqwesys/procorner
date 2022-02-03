@@ -84,6 +84,8 @@ $route['shopping-cart'] = "home/shopping_cart";
 $route['my-courses'] = "home/my_courses";
 $route['purchase-history'] = "home/purchase_history";
 $route['user-profile'] = "home/profile/user_profile";
+$route['login'] = "home/login";
+
 
 // $route['my-courses'] = "home/logmy_coursesin";
 

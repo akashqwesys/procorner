@@ -9,7 +9,7 @@
     <?php if ($this->session->userdata('user_login') == 1 || $this->session->userdata('admin_login') == 1): ?>
       <li class=""><a href="<?php echo site_url('login/logout'); ?>" class="btn_1 rounded"><?php echo site_phrase('log_out'); ?></a></li>
     <?php else: ?>
-      <li class=""><a href="<?php echo site_url('home/login'); ?>" class="btn_1 rounded"><?php echo site_phrase('login'); ?></a></li>
+      <li class=""><a href="<?php echo site_url('login'); ?>" class="btn_1 rounded"><?php echo site_phrase('login'); ?></a></li>
     <?php endif; ?>
   </ul>
   <!-- /top_menu -->

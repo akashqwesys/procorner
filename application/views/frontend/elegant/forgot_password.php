@@ -18,7 +18,7 @@
           <span class="input__label-content"><?php echo site_phrase('provide_email'); ?></span>
         </label>
       </span>
-      <small><a href="<?php echo site_url('home/login'); ?>"><?php echo site_phrase('back_to_login_page'); ?></a></small>
+      <small><a href="<?php echo site_url('login'); ?>"><?php echo site_phrase('back_to_login_page'); ?></a></small>
     </div>
 
     <?php if(get_frontend_settings('recaptcha_status')): ?>

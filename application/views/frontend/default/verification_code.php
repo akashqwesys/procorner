@@ -28,7 +28,7 @@
 
             <div class="form-group mt-4 mb-0 text-center">
               <?php echo site_phrase('want_to_go_back'); ?>?
-              <a class="text-15px fw-700" href="<?php echo site_url('home/login') ?>"><?php echo site_phrase('login'); ?></a>
+              <a class="text-15px fw-700" href="<?php echo site_url('login') ?>"><?php echo site_phrase('login'); ?></a>
             </div>
           </form>
         </div>
@@ -48,7 +48,7 @@
       data: {verification_code : verification_code, email : email},
       success: function(response){
         if(response){
-          window.location.replace('<?= site_url('home/login'); ?>');
+          window.location.replace('<?= site_url('login'); ?>');
         }else{
           location.reload();
         }

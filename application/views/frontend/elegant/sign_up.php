@@ -59,7 +59,7 @@
 
 	<?php include 'facebook_login.php'; ?>
 
-	<div class="text-center add_top_10"><?php echo site_phrase('already_have_an_account'); ?>? <strong><a href="<?php echo site_url('home/login'); ?>"><?php echo site_phrase('sign_in'); ?></a></strong></div>
+	<div class="text-center add_top_10"><?php echo site_phrase('already_have_an_account'); ?>? <strong><a href="<?php echo site_url('login'); ?>"><?php echo site_phrase('sign_in'); ?></a></strong></div>
 	<div class="text-center add_top_10"> <strong><a href="<?php echo site_url('home'); ?>"><?php echo site_phrase('back_to_home'); ?></a></strong> </div>
 
 	<div class="copy">© <?php echo get_settings('system_name'); ?></div>

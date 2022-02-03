@@ -64,7 +64,7 @@
 
                 <div class="form-group mt-4 mb-0 text-center">
                   <?php echo site_phrase('already_have_an_account'); ?>?
-                  <a class="text-15px fw-700" href="<?php echo site_url('home/login') ?>"><?php echo site_phrase('login'); ?></a>
+                  <a class="text-15px fw-700" href="<?php echo site_url('login') ?>"><?php echo site_phrase('login'); ?></a>
                 </div>
               </form>
             </div>
