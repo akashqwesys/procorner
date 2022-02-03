@@ -21,10 +21,10 @@
   </style>
   <ul class="mobile-main-nav">
     <div class="mobile-menu-helper-top"></div>
-    <a class="webmenu" href="#">Linkedin Mastery</a>
-    <a class="webmenu" href="#">Photoshop Mastery</a>
-    <a class="webmenu" href="#">Become a Youtuber</a>
-    <a class="webmenu" href="#">Become a Freelancer</a>
+    <a class="webmenu" href="<?php echo site_url('home/course/linkedin-mastery-course/2'); ?>">LinkedIn Mastery</a>
+    <a class="webmenu" href="<?php echo site_url('home/course/photoshop-mastery-course/5'); ?>">Photoshop Mastery</a>
+    <a class="webmenu" href="<?php echo site_url('home/course/youtube-mastery-course/3'); ?>">Become a YouTuber</a>
+    <a class="webmenu" href="<?php echo site_url('home/course/freelancer-mastery-course/6'); ?>">Become a Freelancer</a>
     <div class="mobile-menu-helper-bottom"></div>
   </ul>
 </div>

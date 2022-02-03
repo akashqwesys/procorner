@@ -113,30 +113,32 @@
                                     </div>
                                 </div>
 
-                                <div class="row mt-3">
+                                <!-- <div class="row mt-3">
                                     <div class="col-6">
                                         <span class="badge badge-sub-warning text-11px"><?php echo site_phrase($top_course['level']); ?></span>
                                     </div>
-                                    <div class="col-6 text-end">
+                                     <div class="col-6 text-end">
                                         <button class="brn-compare-sm" onclick="return check_action(this, '<?php echo site_url('home/compare?course-1=' . rawurlencode(slugify($top_course['title'])) . '&&course-id-1=' . $top_course['id']); ?>');"><i class="fas fa-balance-scale"></i> <?php echo site_phrase('compare'); ?></button>
-                                    </div>
-                                </div>
+                                    </div> 
+                                </div> -->
 
                                 <hr class="divider-1">
 
                                 <div class="d-block">
                                     <div class="floating-user d-inline-block">
-                                        <?php if ($top_course['multi_instructor']) :
-                                            $instructor_details = $this->user_model->get_multi_instructor_details_with_csv($top_course['user_id']);
-                                            $margin = 0;
-                                            foreach ($instructor_details as $key => $instructor_detail) { ?>
-                                                <img style="margin-left: <?php echo $margin; ?>px;" class="position-absolute" src="<?php echo $this->user_model->get_user_image_url($instructor_detail['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $instructor_detail['first_name'] . ' ' . $instructor_detail['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $instructor_detail['id']); ?>');">
-                                                <?php $margin = $margin + 17; ?>
-                                            <?php } ?>
-                                        <?php else : ?>
-                                            <?php $user_details = $this->user_model->get_all_user($top_course['user_id'])->row_array(); ?>
-                                            <img src="<?php echo $this->user_model->get_user_image_url($user_details['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user_details['first_name'] . ' ' . $user_details['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $user_details['id']); ?>');">
-                                        <?php endif; ?>
+                                        <?php //if ($top_course['multi_instructor']) :
+                                           // $instructor_details = $this->user_model->get_multi_instructor_details_with_csv($top_course['user_id']);
+                                           // $margin = 0;
+                                           // foreach ($instructor_details as $key => $instructor_detail) { ?>
+                                                <!-- <img style="margin-left: <?php echo $margin; ?>px;" class="position-absolute" src="<?php echo $this->user_model->get_user_image_url($instructor_detail['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $instructor_detail['first_name'] . ' ' . $instructor_detail['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $instructor_detail['id']); ?>');"> -->
+                                                <?php //$margin = $margin + 17; ?>
+                                            <?php //} ?>
+                                        <?php// else : ?>
+                                            <?php //$user_details = $this->user_model->get_all_user($top_course['user_id'])->row_array(); ?>
+                                            <!-- <img src="<?php echo $this->user_model->get_user_image_url($user_details['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user_details['first_name'] . ' ' . $user_details['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $user_details['id']); ?>');"> -->
+                                        <?php //endif; ?>
+
+                                        <span class="badge badge-sub-warning text-11px"><?php echo site_phrase($top_course['level']); ?></span>
                                     </div>
 
 
@@ -173,7 +175,7 @@
         <div class="content-grid">
             <div class="row content-grid-row">
                 <div class="col-md-6 content-grid-item flex-column p-5">
-                    <img src="assets/frontend/default/img/inside.png" class="img-fluid mb-2" alt="">
+                    <img src="assets/frontend/default/img/Pro-level-Hindi-Content.png" class="img-fluid mb-2" alt="">
                 </div>
                 <div class="col-md-6 content-grid-item flex-column p-5">
                     <h4 class="mb-3"><b>Pro-level Hindi Content</b></h4>
@@ -204,12 +206,12 @@
                     </ul>
                 </div>
                 <div class="col-md-6 content-grid-item flex-column p-5">
-                    <img src="assets/frontend/default/img/inside.png" class="img-fluid mb-2" alt="">
+                    <img src="assets/frontend/default/img/Queries-tab.png" class="img-fluid mb-2" alt="">
                 </div>
             </div>
             <div class="row content-grid-row">
                 <div class="col-md-6 content-grid-item flex-column p-5 pb-0">
-                    <img src="assets/frontend/default/img/inside.png" class="img-fluid mb-2" alt="">
+                    <img src="assets/frontend/default/img/Lifetime-subscription.png" class="img-fluid mb-2" alt="">
                 </div>
                 <div class="col-md-6 content-grid-item flex-column p-5 pb-0">
                     <h4 class="mb-3"><b>Lifetime subscription.</b></h4>
@@ -241,7 +243,7 @@ After purchasing the course if you don’t get the desired results, our team wil
 
                     </p>
                 </div>
-                <img src="assets/frontend/default/img/monyback.png" width="50%">
+                <img src="assets/frontend/default/img/Money-Back-Guarantee.png" width="50%">
             </div>
         </div>
         <div class="row text-center mt-5">
@@ -351,7 +353,7 @@ After purchasing the course if you don’t get the desired results, our team wil
         <div class="content-grid">
             <div class="row content-grid-row mb-5">
                 <div class="col-md-6 content-grid-item flex-column">
-                    <img src="assets/frontend/default/img/inside.png" class="img-fluid mb-2" alt="">
+                    <img src="assets/frontend/default/img/Download-our-app.png" class="img-fluid mb-2" alt="">
                 </div>
                 <div class="col-md-6 content-grid-item flex-column">
                     <h4 class="mb-2"><b>Download our app</b></h4>
