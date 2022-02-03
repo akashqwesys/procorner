@@ -329,7 +329,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                     <?php endforeach; ?>
                     
                     <div class="description">
-                      <?php echo ellipsis(strip_tags($instructor_details['biography']), 250); ?>
+                      <?php echo ellipsis(strip_tags($instructor_details['biography']), 500); ?>
                     </div>
                 </div>
             </div>
