@@ -161,6 +161,7 @@ $paypal = json_decode(get_settings('paypal'));
 $stripe = json_decode(get_settings('stripe_keys'));
 $razorpay = json_decode(get_settings('razorpay_keys'));
 $total_price_of_checking_out = $this->session->userdata('total_price_of_checking_out');
+print_r($total_price_of_checking_out);die;
 ?>
 
 <div class="container">
