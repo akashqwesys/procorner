@@ -68,11 +68,11 @@ $route['home/bundle_invoice/(:any)']                          = "addons/course_b
 
 
 
-$route['linkedin-mastery-course'] = "home/course/linkedin-mastery-course/2";
-$route['photoshop-mastery-course'] = "home/course/photoshop-mastery-course/5";
-$route['youtube-mastery-course'] = "home/course/youtube-mastery-course/3";
-$route['freelancer-mastery-course'] = "home/course/freelancer-mastery-course/6";
-$route['upwork-mastery-course'] = "home/course/upwork-mastery-course/4";
+$route['linkedin-mastery'] = "home/course/linkedin-mastery-course/2";
+$route['photoshop-mastery'] = "home/course/photoshop-mastery-course/5";
+$route['youtube-mastery'] = "home/course/youtube-mastery-course/3";
+$route['freelancer-mastery'] = "home/course/freelancer-mastery-course/6";
+$route['upwork-mastery'] = "home/course/upwork-mastery-course/4";
 
 $route['about-us'] = "home/about_us";
 $route['privacy-policy'] = "home/privacy_policy";
