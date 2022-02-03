@@ -133,7 +133,7 @@
                                                 <!-- <img style="margin-left: <?php echo $margin; ?>px;" class="position-absolute" src="<?php echo $this->user_model->get_user_image_url($instructor_detail['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $instructor_detail['first_name'] . ' ' . $instructor_detail['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $instructor_detail['id']); ?>');"> -->
                                                 <?php //$margin = $margin + 17; ?>
                                             <?php //} ?>
-                                        <?php// else : ?>
+                                        <?php // else : ?>
                                             <?php //$user_details = $this->user_model->get_all_user($top_course['user_id'])->row_array(); ?>
                                             <!-- <img src="<?php echo $this->user_model->get_user_image_url($user_details['id']); ?>" width="30px" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $user_details['first_name'] . ' ' . $user_details['last_name']; ?>" onclick="return check_action(this,'<?php echo site_url('home/instructor_page/' . $user_details['id']); ?>');"> -->
                                         <?php //endif; ?>
