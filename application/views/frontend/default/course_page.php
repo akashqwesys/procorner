@@ -305,7 +305,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                 </div>
                 <div class="col-md-8 top-instructor-details text-center text-md-start">
                     <h4 class="mb-1 fw-600 v"><a class="text-decoration-none" href="<?php echo site_url('home/instructor_page/'.$instructor_details['id']); ?>"><?php echo $instructor_details['first_name'].' '.$instructor_details['last_name']; ?></a></h4>
-                    <p class="fw-500 text-14px w-100"><b><?php echo $instructor_details['title']; ?></b></p>
+                    <!-- <p class="fw-500 text-14px w-100"><b><?php echo $instructor_details['title']; ?></b></p> -->
                     <!-- <div class="rating">
                       <div class="d-inline-block">
                         <span class="text-dark fw-800 text-muted ms-1 text-13px"><?php echo $this->crud_model->get_instructor_wise_course_ratings($instructor_details['id'], 'course')->num_rows().' '.site_phrase('reviews'); ?></span>
