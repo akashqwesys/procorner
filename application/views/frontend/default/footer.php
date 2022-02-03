@@ -5,8 +5,8 @@
       <div class="col-6 col-sm-6 col-md-3">
         <h5 class="">Join our community</h5>
         <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">LinkedIn Group</a></li>
-          <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Facebook Group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="https://www.linkedin.com/groups/14049489/">LinkedIn Group</a></li>
+          <li class="mb-1"><a class="link-secondary footer-hover-link" href="https://www.facebook.com/groups/enhanceyourskillwithprocorner/">Facebook Group</a></li>
           <li class="mb-1"><a class="link-secondary footer-hover-link" href="">Instagram Group</a></li>
           <li class="mb-1"><a class="link-secondary footer-hover-link" href="">WhatsApp Group</a></li>
         </ul>
@@ -70,23 +70,30 @@
           <?php //$linkedin = get_frontend_settings('linkedin'); ?>
           <?php //if($facebook): ?>
             <li class="mb-1">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.facebook.com/procorner.in"><i class="fab fa-facebook-f"></i></a>
             </li>
           <?php //endif; ?>
           <?php //if($twitter): ?>
             <li class="mb-1">
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.instagram.com/procorner.in/"><i class="fab fa-instagram"></i></a>
             </li>
           <?php //endif; ?>
           <?php //if($linkedin): ?>
             <li class="mb-1">
-              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.linkedin.com/company/procorner-elearning/"><i class="fab fa-linkedin"></i></a>
             </li>
           <?php //endif; ?>
 
           <li class="mb-1">
-              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.youtube.com/channel/UCzZhPoL0VwsZQTZxl0sqGNA"><i class="fab fa-youtube"></i></a>
             </li>
+            <li class="mb-1">
+              <a href="https://twitter.com/procorner_in"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="mb-1">
+              <a href="https://in.pinterest.com/procorner_in/"><i class="fab fa-pinterest"></i></a>
+            </li>
+            
         </ul>
       </div>
     </div>
