@@ -42,10 +42,11 @@ class Home extends CI_Controller
     }
 
     public function shopping_cart()
-    {
+    {        
+        
         if (!$this->session->userdata('cart_items')) {
             $this->session->set_userdata('cart_items', array());
-        }
+        }        
         $page_data['page_name'] = "shopping_cart";
         $page_data['page_title'] = site_phrase('shopping_cart');
         $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
@@ -347,8 +348,10 @@ class Home extends CI_Controller
     public function payment()
     {
         if ($this->session->userdata('user_login') != 1)
-            redirect('login', 'refresh');
-
+            redirect('login', 'refresh');   
+        
+        // echo $this->session->userdata('total_price_of_checking_out');die;    
+            
         $page_data['total_price_of_checking_out'] = $this->session->userdata('total_price_of_checking_out');
         $page_data['page_title'] = site_phrase("payment_gateway");
         $this->load->view('payment/index', $page_data);

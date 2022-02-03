@@ -21,5 +21,7 @@
 
 <?php
 //change by vasim
-        $this->session->set_userdata('cart_items',array());
+if ($page_name != "shopping cart"){
+    $this->session->set_userdata('cart_items',array());
+}
 ?>
