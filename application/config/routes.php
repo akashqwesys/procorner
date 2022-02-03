@@ -50,6 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
+$route['(:any)'] = 'home/$1';
 $route['404_override'] = 'home/page_not_found';
 $route['certificate/(:any)']        = "addons/certificate/generate_certificate/$1";
 
@@ -64,5 +65,12 @@ $route['course_bundles/buy/(:any)']                          = "addons/course_bu
 $route['home/my_bundles']                                      = "addons/course_bundles/my_bundles";
 $route['home/bundle_invoice/(:any)']                          = "addons/course_bundles/invoice/$1";
 //end course bundles
+
+
+$route['linkedin-mastery-course'] = "home/course/linkedin-mastery-course/2";
+$route['photoshop-mastery-course'] = "home/course/photoshop-mastery-course/5";
+$route['youtube-mastery-course'] = "home/course/youtube-mastery-course/3";
+$route['freelancer-mastery-course'] = "home/course/freelancer-mastery-course/3";
+$route['upwork-mastery-course'] = "home/course/upwork-mastery-course/4";
 
 $route['translate_uri_dashes'] = FALSE;

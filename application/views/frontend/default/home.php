@@ -14,7 +14,7 @@
                 </form> -->
             </div>
             <div class="col-md-6">
-                <img src="assets/frontend/default/img/tutor.png" width="100%">
+                <img src="assets/frontend/default/img/tutor.png" width="80%">
             </div>
         </div>
     </div>

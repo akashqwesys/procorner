@@ -500,7 +500,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
             </div>
             <?php if (is_purchased($course_details['id'])) { ?>
               <div class="already_purchased">
-                <a href="<?php echo site_url('home/my_courses'); ?>"><?php echo site_phrase('already_purchased'); ?></a>
+                <a href="<?php echo site_url('home/my_courses'); ?>"><?php echo site_phrase('already_invested'); ?></a>
               </div>
             <?php } else { ?>
 
