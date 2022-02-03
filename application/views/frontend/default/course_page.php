@@ -81,7 +81,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
           </div>
         </div>
 
-        <h4 class="py-3"><?php echo site_phrase('what_will_i_learn'); ?>?</h4>
+        <h4 class="py-3"><?php echo site_phrase('what_will_I_learn'); ?>?</h4>
         <div class="what-you-get-box">
           <ul class="what-you-get__items">
             <?php foreach (json_decode($course_details['outcomes']) as $outcome) : ?>
