@@ -14,7 +14,7 @@
 							<div class="info">
 								<p><strong><?php echo $this->crud_model->get_lessons('course', $latest_course['id'])->num_rows(); ?></strong> <?php echo site_phrase('lessons'); ?></p>
 							</div>
-							<a href="<?php echo site_url('home/course/'.slugify($latest_course['title']).'/'.$latest_course['id']); ?>" class="btn_1"><?php echo site_phrase('view_course'); ?></a>
+							<a href="<?php echo site_url(slugify($latest_course['title'])); ?>" class="btn_1"><?php echo site_phrase('view_course'); ?></a>
 						</div>
 					</li>
 				<?php endif; ?>

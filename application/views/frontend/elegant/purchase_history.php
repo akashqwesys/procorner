@@ -68,7 +68,7 @@ $purchase_history_banner = $banners['purchase_history_banner'];
                         <img src="<?php echo $this->crud_model->get_course_thumbnail_url($each_purchase['course_id']);?>" alt="Image">
                       </div>
                       <span class="item_cart">
-                        <a href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$course_details['id']); ?>" style="color: unset;"> <?php echo ellipsis($course_details['title']); ?> </a>
+                        <a href="<?php echo site_url(slugify($course_details['title'])); ?>" style="color: unset;"> <?php echo ellipsis($course_details['title']); ?> </a>
                       </span>
                     </td>
                     <td>

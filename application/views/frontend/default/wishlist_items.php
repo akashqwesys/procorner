@@ -23,7 +23,7 @@ $cart_items = $this->session->userdata('cart_items');
                                 </a>
                             </div>
                             <div class="item-details">
-                                <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($course_details['title'])) . '/' . $course_details['id']); ?>">
+                                <a href="<?php echo site_url(rawurlencode(slugify($course_details['title']))); ?>">
                                     <div class="course-name"><?php echo $course_details['title']; ?></div>
                                     <div class="instructor-name">
                                         <?php if ($course_details['multi_instructor']) : ?>

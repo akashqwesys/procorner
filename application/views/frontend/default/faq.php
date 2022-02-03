@@ -3,7 +3,7 @@
     <div class="container-lg">
         <div class="row">
         <div class="col-md-12 text-center">
-        <img src="../assets/frontend/default/img/faq.png" class="img-fluid" style="width:40rem;">
+        <img src="<?php echo site_url('assets/frontend/default/img'); ?>/faq.png" class="img-fluid" style="width:40rem;">
     </div>
             <!-- ***** FAQ Start ***** -->
             <div class="col-md-8 offset-md-2">

@@ -4,7 +4,7 @@
     <a href="<?php echo site_url('home'); ?>"><img src="<?php echo base_url().'uploads/system/'.get_frontend_settings('light_logo'); ?>" height="42" data-retina="true" alt=""></a>
   </div>
   <ul id="top_menu">
-    <li><a href="<?php echo site_url('home/shopping_cart'); ?>" class="shopping_cart"><?php echo site_phrase('shopping_cart'); ?></a></li>
+    <li><a href="<?php echo site_url('shopping-cart'); ?>" class="shopping_cart"><?php echo site_phrase('shopping_cart'); ?></a></li>
     <li><a href="#0" class="search-overlay-menu-btn"><?php echo site_phrase('search'); ?></a></li>
     <?php if ($this->session->userdata('user_login') == 1 || $this->session->userdata('admin_login') == 1): ?>
       <li class=""><a href="<?php echo site_url('login/logout'); ?>" class="btn_1 rounded"><?php echo site_phrase('log_out'); ?></a></li>
@@ -48,14 +48,14 @@
       <li>
         <span><a href="javascript::"><?php echo site_phrase('manage_account'); ?></a></span>
         <ul>
-          <li><a href="<?php echo site_url('home/my_courses'); ?>"><?php echo site_phrase('my_courses'); ?></a></li>
+          <li><a href="<?php echo site_url('my-courses'); ?>"><?php echo site_phrase('my_courses'); ?></a></li>
           <?php if(addon_status('course_bundle')): ?>
             <li><a href="<?php echo site_url('home/my_bundles'); ?>"><?php echo site_phrase('my_bundles'); ?></a></li>
           <?php endif; ?>
           <li><a href="<?php echo site_url('home/my_wishlist'); ?>"><?php echo site_phrase('my_wishlist'); ?></a></li>
           <li><a href="<?php echo site_url('home/my_messages'); ?>"><?php echo site_phrase('my_messages'); ?></a></li>
-          <li><a href="<?php echo site_url('home/purchase_history'); ?>"><?php echo site_phrase('purchase_history'); ?></a></li>
-          <li><a href="<?php echo site_url('home/profile/user_profile'); ?>"><?php echo site_phrase('user_profile'); ?></a></li>
+          <li><a href="<?php echo site_url('purchase-history'); ?>"><?php echo site_phrase('purchase_history'); ?></a></li>
+          <li><a href="<?php echo site_url('user-profile'); ?>"><?php echo site_phrase('user_profile'); ?></a></li>
         </ul>
       </li>
     <?php endif; ?>

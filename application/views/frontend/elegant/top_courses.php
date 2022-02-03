@@ -22,7 +22,7 @@
               <?php endif; ?>
             </span>
           </a>
-          <a href="<?php echo site_url('home/course/'.slugify($top_course['title']).'/'.$top_course['id']); ?>">
+          <a href="<?php echo site_url(slugify($top_course['title'])); ?>">
             <div class="preview"><span><?php echo site_phrase('preview_course'); ?></span></div><img src="<?php echo $this->crud_model->get_course_thumbnail_url($top_course['id']); ?>" class="img-fluid" alt=""></a>
             <?php if ($top_course['is_free_course'] == 1): ?>
               <div class="price"><?php echo site_phrase('free'); ?></div>
@@ -89,7 +89,7 @@
           </li>
           <li>
             <?php if (is_purchased($top_course['id'])): ?>
-              <a href="<?php echo site_url('home/my_courses'); ?>"><i class="icon-check-1"></i> <?php echo site_phrase('purchased'); ?></a>
+              <a href="<?php echo site_url('my-courses'); ?>"><i class="icon-check-1"></i> <?php echo site_phrase('purchased'); ?></a>
             <?php else: ?>
               <?php if ($top_course['is_free_course'] == 1):
                 if($this->session->userdata('user_login') != 1) {

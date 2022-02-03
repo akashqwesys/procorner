@@ -13,12 +13,12 @@
                     <li>
                         <div class="cart-course-wrapper">
                             <div class="image d-none d-md-block">
-                                <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($course_details['title'])) . '/' . $course_details['id']); ?>">
+                                <a href="<?php echo site_url(rawurlencode(slugify($course_details['title']))); ?>">
                                     <img src="<?php echo $this->crud_model->get_course_thumbnail_url($cart_item); ?>" alt="" class="img-fluid">
                                 </a>
                             </div>
                             <div class="details">
-                                <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($course_details['title'])) . '/' . $course_details['id']); ?>">
+                                <a href="<?php echo site_url(rawurlencode(slugify($course_details['title']))); ?>">
                                     <div class="name"><?php echo $course_details['title']; ?></div>
                                 </a>
 

@@ -2,7 +2,7 @@
 $total_price = 0;
 ?>
 <div class="icon">
-	<a href="<?php echo site_url('home/shopping_cart'); ?>"><i class="fas fa-shopping-cart"></i></a>
+	<a href="<?php echo site_url('shopping-cart'); ?>"><i class="fas fa-shopping-cart"></i></a>
 	<span class="number"><?php echo sizeof($this->session->userdata('cart_items')); ?></span>
 </div>
 
@@ -51,7 +51,7 @@ $total_price = 0;
 					<!-- <span class="original-price">$94.99</span> -->
 				</div>
 			</div>
-			<a href = "<?php echo site_url('home/shopping_cart'); ?>"><?php echo site_phrase('go_to_cart'); ?></a>
+			<a href = "<?php echo site_url('shopping-cart'); ?>"><?php echo site_phrase('go_to_cart'); ?></a>
 		</div>
 	</div>
 	<div class="empty-box text-center d-none">

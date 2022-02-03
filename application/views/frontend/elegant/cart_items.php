@@ -44,7 +44,7 @@
                     <div class="thumb_cart">
                       <img src="<?php echo $this->crud_model->get_course_thumbnail_url($course_details['id']); ?>" alt="Image">
                     </div>
-                    <span class="item_cart"><a href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$course_details['id']); ?>"><?php echo ellipsis($course_details['title'], 30); ?></a></span>
+                    <span class="item_cart"><a href="<?php echo site_url(slugify($course_details['title'])); ?>"><?php echo ellipsis($course_details['title'], 30); ?></a></span>
                   </td>
                   <?php if ($course_details['is_free_course'] == 1): ?>
                     <td>

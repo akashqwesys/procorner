@@ -2,7 +2,7 @@
     <div class="container-lg">
         <div class="row">
             <div class="col-md-12 text-center">
-                <img src="../assets/frontend/default/img/terms-and-condition.jpg" class="img-fluid" style="width:30rem;">
+                <img src="<?php echo site_url('assets/frontend/default/img'); ?>/terms-and-condition.jpg" class="img-fluid" style="width:30rem;">
             </div>
             <div class="col-md-8 offset-md-2">
                 <div class="faq-title text-center pb-3">

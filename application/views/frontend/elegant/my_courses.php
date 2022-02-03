@@ -101,8 +101,8 @@ $my_courses_banner = $banners['my_courses_banner'];
 					</div>
 				</div>
 				<ul>
-					<li><a href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$my_course['course_id']); ?>"><?php echo site_phrase('course_detail'); ?></a></li>
-					<li><a href="<?php echo site_url('home/lesson/'.slugify($course_details['title']).'/'.$my_course['course_id']); ?>"><?php echo site_phrase('start_lesson'); ?></a></li>
+					<li><a href="<?php echo site_url(slugify($course_details['title'])); ?>"><?php echo site_phrase('course_detail'); ?></a></li>
+					<li><a href="<?php echo site_url(slugify($course_details['title'])); ?>"><?php echo site_phrase('start_lesson'); ?></a></li>
 				</ul>
 			</div>
 		</div>

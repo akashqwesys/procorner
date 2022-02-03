@@ -101,7 +101,7 @@
                             <?php endif; ?>
 
                             <br>
-                            <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($course_1_details['title'])) . '/' . $course['id']) ?>" class="text-danger fw-500 pt-3 d-inline-block"><?php echo site_phrase('learn_more'); ?> <i class="fas fa-angle-right"></i></a>
+                            <a href="<?php echo site_url(rawurlencode(slugify($course_1_details['title']))) ?>" class="text-danger fw-500 pt-3 d-inline-block"><?php echo site_phrase('learn_more'); ?> <i class="fas fa-angle-right"></i></a>
                         <?php endif; ?>
                     </div>
                     <div class="col-md-3 text-center fw-500 text-14px">
@@ -139,7 +139,7 @@
                                 <?php endif; ?>
                             <?php endif; ?>
                             <br>
-                            <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($course_2_details['title'])) . '/' . $course['id']) ?>" class="text-danger fw-500 pt-3 d-inline-block"><?php echo site_phrase('learn_more'); ?> <i class="fas fa-angle-right"></i></a>
+                            <a href="<?php echo site_url(rawurlencode(slugify($course_2_details['title']))) ?>" class="text-danger fw-500 pt-3 d-inline-block"><?php echo site_phrase('learn_more'); ?> <i class="fas fa-angle-right"></i></a>
                         <?php endif; ?>
                     </div>
                     <div class="col-md-3 text-center fw-500 text-14px">
@@ -177,7 +177,7 @@
                                 <?php endif; ?>
                             <?php endif; ?>
                             <br>
-                            <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($course_3_details['title'])) . '/' . $course['id']) ?>" class="text-danger fw-500 pt-3 d-inline-block"><?php echo site_phrase('learn_more'); ?> <i class="fas fa-angle-right"></i></a>
+                            <a href="<?php echo site_url(rawurlencode(slugify($course_3_details['title']))) ?>" class="text-danger fw-500 pt-3 d-inline-block"><?php echo site_phrase('learn_more'); ?> <i class="fas fa-angle-right"></i></a>
                         <?php endif; ?>
                     </div>
                     <div class="col-md-1"></div>
@@ -459,7 +459,7 @@
         
         url1 = '<?php echo site_url('home/handleCartItemForBuyNowButton'); ?>';
         url2 = '<?php echo site_url('home/refreshWishList'); ?>';
-        urlToRedirect = '<?php echo site_url('home/shopping_cart'); ?>';
+        urlToRedirect = '<?php echo site_url('shopping-cart'); ?>';
         var explodedArray = elem.id.split("_");
         var course_id = explodedArray[1];
 

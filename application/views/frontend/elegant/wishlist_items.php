@@ -30,7 +30,7 @@ $my_wishlist_banner = $banners['my_wishlist_banner'];
 		                <span class="tooltiptext" id = "tooltiptext-<?php echo $course_details['id']; ?>"><?php echo site_phrase('add_to_wishlist'); ?></span>
 		              <?php endif; ?>
 			          </a>
-								<a href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$course_details['id']); ?>"><img src="<?php echo $this->crud_model->get_course_thumbnail_url($course_details['id']); ?>" class="img-fluid" alt=""></a>
+								<a href="<?php echo site_url(slugify($course_details['title'])); ?>"><img src="<?php echo $this->crud_model->get_course_thumbnail_url($course_details['id']); ?>" class="img-fluid" alt=""></a>
 								<?php if ($course_details['is_free_course'] == 1): ?>
 		              <div class="price"><?php echo site_phrase('free'); ?></div>
 		            <?php else: ?>
@@ -79,7 +79,7 @@ $my_wishlist_banner = $banners['my_wishlist_banner'];
 			          </li>
 			          <li>
 									<?php if (is_purchased($course_details['id'])): ?>
-		                <a href="<?php echo site_url('home/my_courses'); ?>"><i class="icon-check-1"></i> <?php echo site_phrase('purchased'); ?></a>
+		                <a href="<?php echo site_url('my-courses'); ?>"><i class="icon-check-1"></i> <?php echo site_phrase('purchased'); ?></a>
 		              <?php else: ?>
 		                <?php if ($course_details['is_free_course'] == 1):
 		                  if($this->session->userdata('user_login') != 1) {

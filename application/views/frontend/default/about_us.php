@@ -1,6 +1,6 @@
 <section class="p-0">
     <div class="container-md">
-        <div class="row align-items-center pb-0 mb-0">
+        <div class="row align-items-center">
             <div class="col-md-6 banner-title">
                 <h2 class="fw-bold">Our<span> Story</span></h2>
                 <p><b>Impeccable skill-building courses for IT Professionals, Women, and Businesses.</b></p>
@@ -16,7 +16,7 @@
                 </form> -->
             </div>
             <div class="col-md-6">
-                <img src="../assets/frontend/default/img/About-us.png" width="100%">
+                <img src="<?php echo site_url('assets/frontend/default/img'); ?>/tutor.png" width="80%">
             </div>
         </div>
     </div>

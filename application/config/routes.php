@@ -50,9 +50,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
-$route['(:any)'] = 'home/$1';
 $route['404_override'] = 'home/page_not_found';
 $route['certificate/(:any)']        = "addons/certificate/generate_certificate/$1";
+// $route['(:any)'] = "home/$1;
 
 //course bundles
 $route['course_bundles/(:any)']                                = "addons/course_bundles/index/$1";
@@ -67,10 +67,25 @@ $route['home/bundle_invoice/(:any)']                          = "addons/course_b
 //end course bundles
 
 
+
 $route['linkedin-mastery-course'] = "home/course/linkedin-mastery-course/2";
 $route['photoshop-mastery-course'] = "home/course/photoshop-mastery-course/5";
 $route['youtube-mastery-course'] = "home/course/youtube-mastery-course/3";
 $route['freelancer-mastery-course'] = "home/course/freelancer-mastery-course/3";
 $route['upwork-mastery-course'] = "home/course/upwork-mastery-course/4";
+
+$route['about-us'] = "home/about_us";
+$route['privacy-policy'] = "home/privacy_policy";
+$route['terms-and-condition'] = "home/terms_and_condition";
+$route['refund-policy'] = "home/refund_policy";
+$route['faq'] = "home/faq";
+$route['login'] = "home/login";
+$route['shopping-cart'] = "home/shopping_cart";
+$route['my-courses'] = "home/my_courses";
+$route['purchase-history'] = "home/purchase_history";
+$route['user-profile'] = "home/profile/user_profile";
+
+// $route['my-courses'] = "home/logmy_coursesin";
+
 
 $route['translate_uri_dashes'] = FALSE;

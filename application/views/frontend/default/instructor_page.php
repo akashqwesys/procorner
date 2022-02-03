@@ -102,7 +102,7 @@ $total_students = $this->db->get('enrol')->num_rows();
                     $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($top_course['id']);
                     ?>
                     <div class="course-box-wrap">
-                        <a onclick="$(location).attr('href', '<?php echo site_url('home/course/' . rawurlencode(slugify($top_course['title'])) . '/' . $top_course['id']); ?>');" href="javascript:;" class="has-popover">
+                        <a onclick="$(location).attr('href', '<?php echo site_url(rawurlencode(slugify($top_course['title']))); ?>');" href="javascript:;" class="has-popover">
                             <div class="course-box">
                                 <div class="course-image">
                                     <img src="<?php echo $this->crud_model->get_course_thumbnail_url($top_course['id']); ?>" alt="" class="img-fluid">

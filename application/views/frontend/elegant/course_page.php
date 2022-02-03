@@ -315,7 +315,7 @@ $cart_items = $this->session->userdata('cart_items');
 
 
 			<?php if (is_purchased($course_details['id'])): ?>
-				<a href="<?php echo site_url('home/my_courses'); ?>" class="btn_1 full-width outline"><i class="icon-check-1"></i> <?php echo site_phrase('purchased'); ?></a>
+				<a href="<?php echo site_url('my-courses'); ?>" class="btn_1 full-width outline"><i class="icon-check-1"></i> <?php echo site_phrase('purchased'); ?></a>
 			<?php else: ?>
 				<?php if ($course_details['is_free_course'] == 1):
 					if($this->session->userdata('user_login') != 1) {

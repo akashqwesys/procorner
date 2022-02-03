@@ -196,11 +196,11 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                 <div class="course-comparism-item-container this-course">
                   <div class="course-comparism-item clearfix">
                     <div class="item-image float-start  mt-4 mt-md-0">
-                      <a href="<?php echo site_url('home/course/' . slugify($other_realted_course['title']) . '/' . $other_realted_course['id']); ?>"><img src="<?php $this->crud_model->get_course_thumbnail_url($other_realted_course['id']); ?>" alt="" class="img-fluid"></a>
+                      <a href="<?php echo site_url(slugify($other_realted_course['title'])); ?>"><img src="<?php $this->crud_model->get_course_thumbnail_url($other_realted_course['id']); ?>" alt="" class="img-fluid"></a>
                       <div class="item-duration"><b><?php echo $this->crud_model->get_total_duration_of_lesson_by_course_id($other_realted_course['id']); ?></b></div>
                     </div>
                     <div class="item-title float-start">
-                      <div class="title"><a href="<?php echo site_url('home/course/' . slugify($other_realted_course['title']) . '/' . $other_realted_course['id']); ?>"><?php echo $other_realted_course['title']; ?></a></div>
+                      <div class="title"><a href="<?php echo site_url(slugify($other_realted_course['title'])); ?>"><?php echo $other_realted_course['title']; ?></a></div>
                       <?php if ($other_realted_course['last_modified'] > 0) : ?>
                         <div class="updated-time"><?php echo site_phrase('updated') . ' ' . date('D, d-M-Y', $other_realted_course['last_modified']); ?></div>
                       <?php else : ?>
@@ -500,7 +500,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
             </div>
             <?php if (is_purchased($course_details['id'])) { ?>
               <div class="already_purchased">
-                <a href="<?php echo site_url('home/my_courses'); ?>"><?php echo site_phrase('already_invested'); ?></a>
+                <a href="<?php echo site_url('my-courses'); ?>"><?php echo site_phrase('already_invested'); ?></a>
               </div>
             <?php } else { ?>
 

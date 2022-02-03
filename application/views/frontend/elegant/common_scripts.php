@@ -114,7 +114,7 @@ function handleBuyNow(course_id) {
         data : {course_id : course_id},
         success: function(response)
         {
-            window.location.replace("<?php echo site_url('home/shopping_cart'); ?>");
+            window.location.replace("<?php echo site_url('shopping-cart'); ?>");
         }
     });
 }

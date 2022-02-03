@@ -34,7 +34,7 @@ foreach ($my_courses as $my_course) {
                         </div>
                         
                         <div class="btn-group">
-                            <a href="<?php echo site_url('home/my_courses'); ?>" class="btn bg-background" disabled><?php echo site_phrase('reset'); ?></a>
+                            <a href="<?php echo site_url('my-courses'); ?>" class="btn bg-background" disabled><?php echo site_phrase('reset'); ?></a>
                         </div>
                     <!-- </div> -->
                 </div>
@@ -78,7 +78,7 @@ foreach ($my_courses as $my_course) {
 
                                 <div class="" id = "course_info_view_<?php echo $my_course['course_id'];  ?>">
                                   <div class="course-details">
-                                      <a href="<?php echo site_url('home/course/'.rawurlencode(slugify($course_details['title'])).'/'.$my_course['course_id']); ?>"><h5 class="title"><?php echo ellipsis($course_details['title']); ?></h5></a>
+                                      <a href="<?php echo site_url(rawurlencode(slugify($course_details['title']))); ?>"><h5 class="title"><?php echo ellipsis($course_details['title']); ?></h5></a>
                                       <div class="progress" style="height: 5px;">
                                         <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: <?php echo course_progress($my_course['course_id']); ?>%" aria-valuenow="<?php echo course_progress($my_course['course_id']); ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                       </div>
@@ -107,7 +107,7 @@ foreach ($my_courses as $my_course) {
                                   </div>
                                   <div class="row">
                                       <div class="col-md-12 px-4 py-2">
-                                          <a href="<?php echo site_url('home/course/'.rawurlencode(slugify($course_details['title'])).'/'.$my_course['course_id']); ?>" class="btn red radius-10 w-100"><?php echo site_phrase('course_detail'); ?></a>
+                                          <a href="<?php echo site_url(rawurlencode(slugify($course_details['title']))); ?>" class="btn red radius-10 w-100"><?php echo site_phrase('course_detail'); ?></a>
                                       </div>
                                       <div class="col-md-12 px-4 py-2">
                                            <a href="<?php echo site_url('home/lesson/'.rawurlencode(slugify($course_details['title'])).'/'.$my_course['course_id']); ?>" class="btn red radius-10 w-100"><?php echo site_phrase('start_lesson'); ?></a>
@@ -116,7 +116,7 @@ foreach ($my_courses as $my_course) {
                                 </div>
 
                                 <div class="course-details" style="display: none; padding-bottom: 10px;" id = "course_rating_view_<?php echo $course_details['id']; ?>">
-                                  <a href="<?php echo site_url('home/course/'.rawurlencode(slugify($course_details['title'])).'/'.$my_course['course_id']); ?>"><h5 class="title"><?php echo ellipsis($course_details['title']); ?></h5></a>
+                                  <a href="<?php echo site_url(rawurlencode(slugify($course_details['title']))); ?>"><h5 class="title"><?php echo ellipsis($course_details['title']); ?></h5></a>
                                   <?php
                     								$user_specific_rating = $this->crud_model->get_user_specific_rating('course', $course_details['id']);                                                    
                     							?>

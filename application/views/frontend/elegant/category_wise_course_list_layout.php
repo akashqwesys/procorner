@@ -9,7 +9,7 @@
         <div class="col-lg-5">
           <figure class="block-reveal">
             <div class="block-horizzontal"></div>
-            <a href="<?php echo site_url('home/course/'.slugify($course['title']).'/'.$course['id']); ?>"><img src="<?php echo $this->crud_model->get_course_thumbnail_url($course['id']); ?>" alt=""></a>
+            <a href="<?php echo site_url(slugify($course['title'])); ?>"><img src="<?php echo $this->crud_model->get_course_thumbnail_url($course['id']); ?>" alt=""></a>
             <div class="preview"><span><?php echo site_phrase('preview_course'); ?></span></div>
           </figure>
         </div>
@@ -85,7 +85,7 @@
           </li>
           <li>
             <?php if (is_purchased($course['id'])): ?>
-              <a href="<?php echo site_url('home/my_courses'); ?>"><i class="icon-check-1"></i> <?php echo site_phrase('purchased'); ?></a>
+              <a href="<?php echo site_url('my-courses'); ?>"><i class="icon-check-1"></i> <?php echo site_phrase('purchased'); ?></a>
             <?php else: ?>
               <?php if ($course['is_free_course'] == 1):
                 if($this->session->userdata('user_login') != 1) {

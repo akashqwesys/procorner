@@ -4,10 +4,10 @@
             <div class="col">
                 <h1 class="page-title"><?php echo site_phrase('purchase_history'); ?></h1>
                 <ul>
-                    <li><a href="<?php echo site_url('home/my_courses'); ?>"><?php echo site_phrase('all_courses'); ?></a></li>
+                    <li><a href="<?php echo site_url('my-courses'); ?>"><?php echo site_phrase('all_courses'); ?></a></li>
                     <li><a href="<?php echo site_url('home/my_wishlist'); ?>"><?php echo site_phrase('wishlists'); ?></a></li>
                     <li><a href="<?php echo site_url('home/my_messages'); ?>"><?php echo site_phrase('my_messages'); ?></a></li>
-                    <li><a href="<?php echo site_url('home/purchase_history'); ?>"><?php echo site_phrase('purchase_history'); ?></a></li>
+                    <li><a href="<?php echo site_url('purchase-history'); ?>"><?php echo site_phrase('purchase_history'); ?></a></li>
                     <li class="active"><a href=""><?php echo site_phrase('user_profile'); ?></a></li>
                 </ul>
             </div>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="user-dashboard-menu">
                             <ul>
-                                <li><a href="<?php echo site_url('home/profile/user_profile'); ?>"><?php echo site_phrase('profile'); ?></a></li>
+                                <li><a href="<?php echo site_url('user-profile'); ?>"><?php echo site_phrase('profile'); ?></a></li>
                                 <li class="active"><a href="<?php echo site_url('home/profile/user_credentials'); ?>"><?php echo site_phrase('account'); ?></a></li>
                                 <li><a href="<?php echo site_url('home/profile/user_photo'); ?>"><?php echo site_phrase('photo'); ?></a></li>
                             </ul>

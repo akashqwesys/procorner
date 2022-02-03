@@ -91,7 +91,7 @@ $instructor_banner = $banners['instructor_banner'];
 										echo $sub_category_details['name'];
 										?>
 									</td>
-									<td><a href="<?php echo site_url('home/course/'.slugify($course['title']).'/'.$course['id']); ?>"><?php echo $course['title']; ?></a></td>
+									<td><a href="<?php echo site_url(slugify($course['title'])); ?>"><?php echo $course['title']; ?></a></td>
 									<td class="rating">
 										<?php
 										$total_rating =  $this->crud_model->get_ratings('course', $course['id'], true)->row()->rating;

@@ -73,7 +73,7 @@
                 $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($top_course['id']);
                 ?>
                 <div class="col-md-4 col col-12 boxshadow-course mb-5">
-                    <a onclick="return check_action(this);" href="<?php echo site_url('home/course/' . rawurlencode(slugify($top_course['title'])) . '/' . $top_course['id']); ?>">
+                    <a onclick="return check_action(this);" href="<?php echo site_url(rawurlencode(slugify($top_course['title']))); ?>">
                         <div class="course-box">
                             <div class="course-image">
                                 <img src="<?php echo $this->crud_model->get_course_thumbnail_url($top_course['id']); ?>" alt="" class="img-fluid">

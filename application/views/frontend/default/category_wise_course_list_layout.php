@@ -4,12 +4,12 @@
         <li>
             <div class="course-box-2">
                 <div class="course-image">
-                    <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($course['title'])) . '/' . $course['id']) ?>">
+                    <a href="<?php echo site_url(rawurlencode(slugify($course['title']))) ?>">
                         <img src="<?php echo $this->crud_model->get_course_thumbnail_url($course['id']); ?>" alt="" class="img-fluid">
                     </a>
                 </div>
                 <div class="course-details">
-                    <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($course['title'])) . '/' . $course['id']); ?>" class="course-title"><?php echo $course['title']; ?></a>
+                    <a href="<?php echo site_url(rawurlencode(slugify($course['title']))); ?>" class="course-title"><?php echo $course['title']; ?></a>
 
                     <div class="course-subtitle d-none d-md-block">
                         <?php echo ellipsis($course['short_description'], 60); ?>

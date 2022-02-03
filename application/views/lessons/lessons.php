@@ -115,7 +115,7 @@ else:
     $my_course_url = strtolower($this->session->userdata('role')) == 'user' ? site_url('home/my_courses') : 'javascript::';
     $btn_title = 'my_courses';
 endif;
-$course_details_url = site_url("home/course/".slugify($course_details['title'])."/".$course_id);
+$course_details_url = site_url(slugify($course_details['title']));
 ?>
 <div class="container-fluid course_container">
     <!-- Top bar -->

@@ -10,11 +10,11 @@
                             <img src="<?php echo $this->crud_model->get_course_thumbnail_url($my_course['id']); ?>" alt="" class="img-fluid">
                         </div>
                         <div class="course-details">
-                            <a href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$my_course['id']); ?>"><h5 class="title"><?php echo $course_details['title']; ?></h5></a>
+                            <a href="<?php echo site_url(slugify($course_details['title'])) ?>"><h5 class="title"><?php echo $course_details['title']; ?></h5></a>
                         </div>
                         <div class="row" style="padding: 5px;">
                             <div class="col-md-12" style="margin-bottom: 5px;">
-                                <a href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$my_course['id']); ?>" class="btn btn-block"><?php echo site_phrase('course_details'); ?></a>
+                                <a href="<?php echo site_url(slugify($course_details['title'])) ?>" class="btn btn-block"><?php echo site_phrase('course_details'); ?></a>
                             </div>
 
                             <div class="col-md-12" style="margin-bottom: 5px;">

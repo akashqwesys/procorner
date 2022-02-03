@@ -28,7 +28,7 @@ if (sizeof($my_courses) > 0) :
                         </div>
                     </div>
                     <div class="course-details">
-                        <a href="<?php echo site_url('home/course/' . rawurlencode(slugify($my_course['title'])) . '/' . $my_course['id']); ?>">
+                        <a href="<?php echo site_url(rawurlencode(slugify($my_course['title']))); ?>">
                             <h5 class="title"><?php echo $my_course['title']; ?></h5>
                         </a>
                         <p class="instructors">
