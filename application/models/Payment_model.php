@@ -173,12 +173,13 @@ class Payment_model extends CI_Model {
       }
     }
 
-
-
-
-  public function razorpayPrepareData($user_id = "")
+  public function razorpayPrepareData($user_id = "",$amount_to_pay=0)
   {
-    $payable_amount = $this->session->userdata('total_price_of_checking_out');
+    if($amount_to_pay==0){
+      $payable_amount = $this->session->userdata('total_price_of_checking_out');
+    }else{
+      $payable_amount=$amount_to_pay;
+    }
     $user_details = $this->user_model->get_user($user_id)->row_array();
 
 

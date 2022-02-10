@@ -10,6 +10,7 @@ class Home extends CI_Controller
         // Your own constructor code
         $this->load->database();
         $this->load->library('session');
+        $this->load->model('addons/course_bundle_model');
         // $this->load->library('stripe');
         /*cache control*/
         $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
@@ -36,6 +37,16 @@ class Home extends CI_Controller
 
     public function home()
     {
+
+
+        $rows = $this->course_bundle_model->get_active_bundle();
+        $config = array();
+        $config = pagintaion($rows->num_rows(), 6);
+        $config['base_url']  = site_url('course_bundles/');
+        $this->pagination->initialize($config);
+        $this->db->where('status', 1);
+        $page_data['course_bundles'] = $this->db->get('course_bundle', $config['per_page'], $this->uri->segment(2));
+
         $page_data['page_name'] = "home";
         $page_data['page_title'] = site_phrase('home');
         $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
@@ -278,9 +289,11 @@ class Home extends CI_Controller
     }
     public function handleCartItems($return_number = "")
     {
-        if (!$this->session->userdata('cart_items')) {
+        // echo 'hi';die;
+        if (!$this->session->userdata('cart_items')) {           
             $this->session->set_userdata('cart_items', array());
-        }        
+        } 
+
         $course_id = $this->input->post('course_id');
         $previous_cart_items = $this->session->userdata('cart_items');
         if (in_array($course_id, $previous_cart_items)) {
@@ -291,6 +304,8 @@ class Home extends CI_Controller
         }
 
         $this->session->set_userdata('cart_items', $previous_cart_items);
+
+        // print_r($this->session->userdata('total_price_of_checking_out'));die;
         if ($return_number == 'true') {
             echo sizeof($previous_cart_items);
         } else {
@@ -469,7 +484,7 @@ class Home extends CI_Controller
             redirect('home', 'refresh');
 
 
-        $total_price_of_checking_out = $this->session->userdata('total_price_of_checking_out');
+        $total_price_of_checking_out = $this->input->post('total_price_of_checking_out');
         $page_data['payment_request'] = $payment_request;
         $page_data['user_details']    = $this->user_model->get_user($this->session->userdata('user_id'))->row_array();
         $page_data['amount_to_pay']   = $total_price_of_checking_out;

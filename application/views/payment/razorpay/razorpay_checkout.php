@@ -24,7 +24,7 @@
 
 			<button id="rzp-button1" style="padding: 5px; float: none !important; cursor: pointer; background-color: rgb(43, 131, 234); margin-left: auto !important; margin-right: auto !important; width: 200px; padding: 0px; height: 35px; line-height: 35px;"><?php echo get_phrase('pay'); ?></button>
 		</div>
-		<?php $preparedData = $this->payment_model->razorpayPrepareData($user_details['id']); ?>
+		<?php $preparedData = $this->payment_model->razorpayPrepareData($user_details['id'],$amount_to_pay); ?>
 
 		<script>
 			var options = {

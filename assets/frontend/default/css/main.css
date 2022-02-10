@@ -4759,7 +4759,7 @@ border: none;
 }
 
 .course-bundle-header {
-    background-color: #087791;
+    background-color: #1d56fe;
     color: white;
 }
 
@@ -4797,7 +4797,7 @@ border: none;
 
 .btn-bundle-details {
     background-color: #fff;
-    border: 1px solid #087791;
+    border: 1px solid #1d56fe;
     color: #000 !important;
     padding: 10px;
     /*border-radius: 5px;*/
@@ -4807,8 +4807,8 @@ border: none;
 }
 
 .btn-bundle-details:hover {
-    background-color: #087791;
-    border: 1px solid #087791;
+    background-color: #1d56fe;
+    border: 1px solid #1d56fe;
     color: #fff !important;
     padding: 10px;
     /*border-radius: 5px;*/
@@ -4819,7 +4819,7 @@ border: none;
 
 .btn-buy-bundle {
     background-color: #fff;
-    border: 1px solid #087791;
+    border: 1px solid #1d56fe;
     color: #000 !important;
     padding: 10px;
     /*border-radius: 5px;*/
@@ -4829,8 +4829,8 @@ border: none;
 }
 
 .btn-buy-bundle:hover {
-    background-color: #087791;
-    border: 1px solid #087791;
+    background-color: #1d56fe;
+    border: 1px solid #1d56fe;
     color: #fff !important;
     padding: 10px;
     /*border-radius: 5px;*/
@@ -4840,7 +4840,7 @@ border: none;
 }
 
 .bundle-arrow-down:hover {
-    color: #087791;
+    color: #1d56fe;
 }
 
 .bundle-bg-image {

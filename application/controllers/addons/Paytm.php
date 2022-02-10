@@ -70,11 +70,11 @@ class Paytm extends CI_Controller
         }
 
         //checking price
-        if ($this->session->userdata('total_price_of_checking_out') == $this->input->post('total_price_of_checking_out')) :
+        // if ($this->session->userdata('total_price_of_checking_out') == $this->input->post('total_price_of_checking_out')) :
             $total_price_of_checking_out = $this->input->post('total_price_of_checking_out');
-        else :
-            $total_price_of_checking_out = $this->session->userdata('total_price_of_checking_out');
-        endif;
+        // else :
+            // $total_price_of_checking_out = $this->session->userdata('total_price_of_checking_out');
+        // endif;
 
         if ($total_price_of_checking_out > 0) {
             $page_data['payment_request'] = $payment_request;

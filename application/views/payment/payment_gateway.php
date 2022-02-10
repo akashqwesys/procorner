@@ -160,8 +160,9 @@ body {
 $paypal = json_decode(get_settings('paypal'));
 $stripe = json_decode(get_settings('stripe_keys'));
 $razorpay = json_decode(get_settings('razorpay_keys'));
-$total_price_of_checking_out = $this->session->userdata('total_price_of_checking_out');
-// print_r($total_price_of_checking_out);die;
+
+$total_price_of_checking_out = 0;
+// $this->session->userdata('cart_items');
 ?>
 
 <div class="container">
@@ -284,8 +285,10 @@ $total_price_of_checking_out = $this->session->userdata('total_price_of_checking
 								<span class="item-price">
 									<?php if ($course_details['discount_flag'] == 1) :
 										echo currency($course_details['discounted_price']);
+										$total_price_of_checking_out=$total_price_of_checking_out+$course_details['discounted_price'];
 										else :
 											echo currency($course_details['price']);
+											$total_price_of_checking_out=$total_price_of_checking_out+$course_details['price'];
 										endif; ?>
 									</span>
 								</span>

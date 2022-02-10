@@ -21,7 +21,6 @@ class Course_bundles extends CI_Controller {
         $config = pagintaion($rows->num_rows(), 6);
         $config['base_url']  = site_url('course_bundles/');
         $this->pagination->initialize($config);
-
         $this->db->where('status', 1);
         $page_data['course_bundles'] = $this->db->get('course_bundle', $config['per_page'], $this->uri->segment(2));
 

@@ -83,6 +83,7 @@ class Api extends REST_Controller
     $user_id = 0;
     $enroll_result = array();
     $response_result = array();
+    $return_array = array();
     if (!empty($_GET['auth_token'])) {
       $auth_token = $_GET['auth_token'];
       $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
@@ -104,8 +105,27 @@ class Api extends REST_Controller
       }
       array_push($response_result, $row);
     }
+    $return_array['top_course']=$response_result;
+    $return_array['section_quick_feature']['main_title']='Quick Feature';
+    $return_array['section_quick_feature']['sub_title']='What makes our courses so unique and why should you invest in them?';
+    
+    $return_array['section_quick_feature']['img_1']='https://procorner.in/assets/frontend/default/img/study.png';
+    $return_array['section_quick_feature']['img_1_main_title']='5 Online courses';
+    $return_array['section_quick_feature']['img_1_sub_title']='Courses on trending, impactful topics';
 
-    $this->set_response($response_result, REST_Controller::HTTP_OK);
+    $return_array['section_quick_feature']['img_2']='https://procorner.in/assets/frontend/default/img/qa.png';
+    $return_array['section_quick_feature']['img_2_main_title']='Expert instruction';
+    $return_array['section_quick_feature']['img_2_sub_title']='A Step-by-step help guide';
+
+    $return_array['section_quick_feature']['img_3']='https://procorner.in/assets/frontend/default/img/access.png';
+    $return_array['section_quick_feature']['img_3_main_title']='Lifetime access';
+    $return_array['section_quick_feature']['img_3_sub_title']='Learn whenever you want to';
+
+
+    $return_array['section_inside_courses']['main_title']='Inside the courses you’ll get';
+    $return_array['section_inside_courses']['sub_title']='All the amazing perks that we offer so that you are satisfied with the course materials!';
+    print_r($return_array);die;    
+    $this->set_response($return_array, REST_Controller::HTTP_OK);
   }
 
   public function app_logo_get()
@@ -288,7 +308,6 @@ class Api extends REST_Controller
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
 
-
   // video otp playbackinfo
   public function video_otp_playbackinfo_get()
   {
@@ -322,7 +341,7 @@ class Api extends REST_Controller
 
   // Course Details
   public function course_details_by_id_get()
-  {
+  {    
     $response = array();
     $course_id = $_GET['course_id'];
     if (isset($_GET['auth_token']) && !empty($_GET['auth_token'])) {
