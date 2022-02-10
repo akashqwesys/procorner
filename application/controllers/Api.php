@@ -124,6 +124,49 @@ class Api extends REST_Controller
 
     $return_array['section_inside_courses']['main_title']='Inside the courses you’ll get';
     $return_array['section_inside_courses']['sub_title']='All the amazing perks that we offer so that you are satisfied with the course materials!';
+    $return_array['section_inside_courses']['boolet_img']='https://procorner.in/assets/frontend/default/img/check-mark.png';
+
+
+    $return_array['section_inside_courses']['sub_content'][0]['img']='https://procorner.in/assets/frontend/default/img/Pro-level-Hindi-Content.png';
+    $return_array['section_inside_courses']['sub_content'][0]['main_title']='Pro-level Hindi Content';
+    $return_array['section_inside_courses']['sub_content'][0]['sub_title']='Want to learn in your regional language? You can do that with us along with some features';
+    
+        
+    $return_array['section_inside_courses']['sub_content'][0]['list'][0]='Crisp understanding of difficult concepts.';
+    $return_array['section_inside_courses']['sub_content'][0]['list'][1]='A detailed breakdown of topics.';
+    $return_array['section_inside_courses']['sub_content'][0]['list'][2]='Content in video format.';
+    $return_array['section_inside_courses']['sub_content'][0]['list'][3]='Actionable steps and strategies.';
+    $return_array['section_inside_courses']['sub_content'][0]['list'][4]='Network and connect with like-minded learners.';
+    $return_array['section_inside_courses']['sub_content'][0]['list'][5]='Pre-recorded content will be provided.';
+    $return_array['section_inside_courses']['sub_content'][0]['list'][5]='Watch at your own pace, anytime, anywhere.';
+
+
+    $return_array['section_inside_courses']['sub_content'][1]['img']='https://procorner.in/assets/frontend/default/img/Queries-tab.png';
+    $return_array['section_inside_courses']['sub_content'][1]['main_title']='Queries tab';
+    $return_array['section_inside_courses']['sub_content'][1]['sub_title']='Satisfy all the lingering questions that arise due to your curiosity while you are learning something new';    
+        
+    $return_array['section_inside_courses']['sub_content'][1]['list'][0]='Don’t take your doubts to the next step of your professional ladder.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][1]='Clear your doubts with our top educators.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][2]='Use our Doubts Tab for your queries.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][3]='Drop your questions at any time of the day.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][4]='Clear your doubts and satisfy your curiosity.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Grow with us as you tweak your mistakes.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Ask your doubts in our community group as well.';
+
+
+    $return_array['section_inside_courses']['sub_content'][1]['img']='https://procorner.in/assets/frontend/default/img/Lifetime-subscription.png';
+    $return_array['section_inside_courses']['sub_content'][1]['main_title']='Lifetime subscription.';
+    $return_array['section_inside_courses']['sub_content'][1]['sub_title']='Get this super-feature too along with the purchase of our courses! Check them below';    
+        
+    $return_array['section_inside_courses']['sub_content'][1]['list'][0]='Get unlimited access to your purchased courses.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][1]='Zero extra fees for any future additions to the course.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][2]='Revise by going through the courses multiple times.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][3]='Get lifetime access to the community group as well.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][4]='Any upgrades that are made will be provided for free.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Learn and prosper at your pace.';
+    $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Rewatch topics for better retention of knowledge.';
+    
+
     // print_r($return_array);die;    
     $this->set_response($return_array, REST_Controller::HTTP_OK);
   }
