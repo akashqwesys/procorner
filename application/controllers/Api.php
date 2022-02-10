@@ -124,7 +124,7 @@ class Api extends REST_Controller
 
     $return_array['section_inside_courses']['main_title']='Inside the courses you’ll get';
     $return_array['section_inside_courses']['sub_title']='All the amazing perks that we offer so that you are satisfied with the course materials!';
-    print_r($return_array);die;    
+    // print_r($return_array);die;    
     $this->set_response($return_array, REST_Controller::HTTP_OK);
   }
 
