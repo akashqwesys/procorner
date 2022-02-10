@@ -167,7 +167,72 @@ class Api extends REST_Controller
     $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Rewatch topics for better retention of knowledge.';
     
 
-    // print_r($return_array);die;    
+
+    $return_array['section_money_back']['img']='https://procorner.in/assets/frontend/default/img/Money-Back-Guarantee.png';
+    $return_array['section_money_back']['main_title']='45 DAYS MONEY-BACK GUARANTEE';
+    $return_array['section_money_back']['paragraphe']='45 days money-back guarantee After purchasing the course if you don’t get the desired results, our team will personally help you. If still, you are unhappy with the course in any way, you can cancel anytime within 45 days of purchase and a full refund will be made.';
+
+    $return_array['section_money_back']['block'][0]['icon']='fa-door-open';
+    $return_array['section_money_back']['block'][0]['title']='Inception in';
+    $return_array['section_money_back']['block'][0]['numbers']='2016';
+
+    $return_array['section_money_back']['block'][1]['icon']='fa-history';
+    $return_array['section_money_back']['block'][1]['title']='Experience';
+    $return_array['section_money_back']['block'][1]['numbers']='12+ Years';
+
+    $return_array['section_money_back']['block'][2]['icon']='fa-chalkboard-teacher';
+    $return_array['section_money_back']['block'][2]['title']='Learning';
+    $return_array['section_money_back']['block'][2]['numbers']='40+ Hours';
+
+    $return_array['section_money_back']['block'][3]['icon']='fa-smile';
+    $return_array['section_money_back']['block'][3]['title']='Course satisfaction';
+    $return_array['section_money_back']['block'][3]['numbers']='100%';
+
+    $return_array['section_resourses']['main_title']='45 DAYS MONEY-BACK GUARANTEE';
+    $return_array['section_resourses']['sub_title']='We have resources for everyone. Whether, you are a working professional, student, or a business. We have something specific for emerging women too';
+
+    $return_array['section_resourses']['block'][0]['img']='https://procorner.in/assets/frontend/default/img/idea.png';
+    $return_array['section_resourses']['block'][0]['main_title']='For learners';
+    $return_array['section_resourses']['block'][0]['sub_text']='Skyrocket your career with your sharp skillset. Or learn for expanding your wit.';
+    $return_array['section_resourses']['block'][0]['see_more_link']='#';
+
+    $return_array['section_resourses']['block'][1]['img']='https://procorner.in/assets/frontend/default/img/businessman.png';
+    $return_array['section_resourses']['block'][1]['main_title']='For businesses';
+    $return_array['section_resourses']['block'][1]['sub_text']='Incorporate a growth mindset in your employees through our stackable courses.';
+    $return_array['section_resourses']['block'][1]['see_more_link']='#';
+
+    $return_array['section_resourses']['block'][2]['img']='https://procorner.in/assets/frontend/default/img/cap.png';
+    $return_array['section_resourses']['block'][2]['main_title']='For emerging women';
+    $return_array['section_resourses']['block'][2]['sub_text']='We help women in achieving their dreams by providing certified courses that will empower them.';
+    $return_array['section_resourses']['block'][2]['see_more_link']='#';
+
+    $return_array['section_learners_across']['main_title']='Learners across 160+ countries';
+    $return_array['section_learners_across']['sub_title']='We have a global footprint of 160+ countries. Our students learn from the comfort of their homes and develop incredible skills.';
+    $return_array['section_learners_across']['img']='https://procorner.in/assets/frontend/default/img/globalpresence-map.jpg';
+    
+    $return_array['section_learners_across']['list'][0]['title']='CourseReport.com';
+    $return_array['section_learners_across']['list'][0]['rating']='4.8';
+    $return_array['section_learners_across']['list'][0]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
+
+    $return_array['section_learners_across']['list'][1]['title']='CourseReport.com';
+    $return_array['section_learners_across']['list'][1]['rating']='4.8';
+    $return_array['section_learners_across']['list'][1]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
+
+    $return_array['section_learners_across']['list'][2]['title']='CourseReport.com';
+    $return_array['section_learners_across']['list'][2]['rating']='4.8';
+    $return_array['section_learners_across']['list'][2]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
+
+
+    $return_array['section_testimonial'] = $this->crud_model->get_testimonial(10);
+    // $return_array['section_download_our_app']['sub_title']='Procorner Eduflex just got a NEW app! We have created this app with some great features. Download the app to see it for yourself!';
+    // $return_array['section_download_our_app']['list'][0]='Get productive in your free time.';
+    // $return_array['section_download_our_app']['list'][1]='Bite-sized knowledge to make you smarter.';
+    // $return_array['section_download_our_app']['list'][2]='Join our community of avid learners.';
+    // $return_array['section_download_our_app']['list'][3]='Stay up-to-date with our new courses.';
+    // $return_array['section_download_our_app']['list'][4]='Get better with each passing day.';
+    // $return_array['section_download_our_app']['list'][5]='Network and connect with like-minded individuals.';
+
+
     $this->set_response($return_array, REST_Controller::HTTP_OK);
   }
 
