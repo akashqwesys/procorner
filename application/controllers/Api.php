@@ -223,6 +223,7 @@ class Api extends REST_Controller
     $return_array['section_learners_across']['list'][2]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
 
 
+    $return_array['section_blog']=$this->crud_model->get_blogs_home(4);
     $return_array['section_testimonial'] = $this->crud_model->get_testimonial(10);
     // $return_array['section_download_our_app']['sub_title']='Procorner Eduflex just got a NEW app! We have created this app with some great features. Download the app to see it for yourself!';
     // $return_array['section_download_our_app']['list'][0]='Get productive in your free time.';
