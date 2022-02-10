@@ -85,5 +85,5 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 // define('API_SECRET', 'WdTTrlSptcivk9XUNGaRpxDBEM1pIjieRZzLtHT3C69TMmk0YBUgiKiIUSXMTyc4');
-define('API_SECRET', 'CGcTyuMrKIaXVqv9S6waKe4bbZNNFONhL1DhxfACJoDVTND1dMuGkla87aN6196c');
+define('API_SECRET', 'X3qRrmirjLxYNLUX2tKbDqIE8g7oSc5etwB0tOKDMOC018qLTByM3NCBvSL7aJIL');
 
