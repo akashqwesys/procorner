@@ -109,17 +109,17 @@ class Api extends REST_Controller
     $return_array['section_quick_feature']['main_title']='Quick Feature';
     $return_array['section_quick_feature']['sub_title']='What makes our courses so unique and why should you invest in them?';
     
-    $return_array['section_quick_feature']['img_1']='https://procorner.in/assets/frontend/default/img/study.png';
-    $return_array['section_quick_feature']['img_1_main_title']='5 Online courses';
-    $return_array['section_quick_feature']['img_1_sub_title']='Courses on trending, impactful topics';
+    $return_array['section_quick_feature']['sub_content'][0]['img']='https://procorner.in/assets/frontend/default/img/study.png';
+    $return_array['section_quick_feature']['sub_content'][0]['img_main_title']='5 Online courses';
+    $return_array['section_quick_feature']['sub_content'][0]['img_sub_title']='Courses on trending, impactful topics';
 
-    $return_array['section_quick_feature']['img_2']='https://procorner.in/assets/frontend/default/img/qa.png';
-    $return_array['section_quick_feature']['img_2_main_title']='Expert instruction';
-    $return_array['section_quick_feature']['img_2_sub_title']='A Step-by-step help guide';
+    $return_array['section_quick_feature']['sub_content'][1]['img']='https://procorner.in/assets/frontend/default/img/qa.png';
+    $return_array['section_quick_feature']['sub_content'][1]['img_main_title']='Expert instruction';
+    $return_array['section_quick_feature']['sub_content'][1]['img_sub_title']='A Step-by-step help guide';
 
-    $return_array['section_quick_feature']['img_3']='https://procorner.in/assets/frontend/default/img/access.png';
-    $return_array['section_quick_feature']['img_3_main_title']='Lifetime access';
-    $return_array['section_quick_feature']['img_3_sub_title']='Learn whenever you want to';
+    $return_array['section_quick_feature']['sub_content'][2]['img']='https://procorner.in/assets/frontend/default/img/access.png';
+    $return_array['section_quick_feature']['sub_content'][2]['img_main_title']='Lifetime access';
+    $return_array['section_quick_feature']['sub_content'][2]['img_sub_title']='Learn whenever you want to';
 
 
     $return_array['section_inside_courses']['main_title']='Inside the courses you’ll get';
