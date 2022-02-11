@@ -106,6 +106,13 @@ class Api extends REST_Controller
       array_push($response_result, $row);
     }
     $return_array['top_course']=$response_result;
+
+    $return_array['section_top']['main_title']='India’s coming-of-age platform for all your learning needs.';
+    $return_array['section_top']['sub_title']='The perfect place to hone your skills and turn them into forces that will guide you in your career journey. All it takes is a single step to turn your dreams into reality. Join us today to give your career the much-needed boost it deserves.';
+    $return_array['section_top']['img']='https://procorner.in/assets/frontend/default/img/tutor.png';
+    
+
+
     $return_array['section_quick_feature']['main_title']='Quick Feature';
     $return_array['section_quick_feature']['sub_title']='What makes our courses so unique and why should you invest in them?';
     
@@ -122,49 +129,49 @@ class Api extends REST_Controller
     $return_array['section_quick_feature']['sub_content'][2]['img_sub_title']='Learn whenever you want to';
 
 
-    $return_array['section_inside_courses']['main_title']='Inside the courses you’ll get';
-    $return_array['section_inside_courses']['sub_title']='All the amazing perks that we offer so that you are satisfied with the course materials!';
-    $return_array['section_inside_courses']['boolet_img']='https://procorner.in/assets/frontend/default/img/check-mark.png';
+    // $return_array['section_inside_courses']['main_title']='Inside the courses you’ll get';
+    // $return_array['section_inside_courses']['sub_title']='All the amazing perks that we offer so that you are satisfied with the course materials!';
+    // $return_array['section_inside_courses']['boolet_img']='https://procorner.in/assets/frontend/default/img/check-mark.png';
 
 
-    $return_array['section_inside_courses']['sub_content'][0]['img']='https://procorner.in/assets/frontend/default/img/Pro-level-Hindi-Content.png';
-    $return_array['section_inside_courses']['sub_content'][0]['main_title']='Pro-level Hindi Content';
-    $return_array['section_inside_courses']['sub_content'][0]['sub_title']='Want to learn in your regional language? You can do that with us along with some features';
+    // $return_array['section_inside_courses']['sub_content'][0]['img']='https://procorner.in/assets/frontend/default/img/Pro-level-Hindi-Content.png';
+    // $return_array['section_inside_courses']['sub_content'][0]['main_title']='Pro-level Hindi Content';
+    // $return_array['section_inside_courses']['sub_content'][0]['sub_title']='Want to learn in your regional language? You can do that with us along with some features';
     
         
-    $return_array['section_inside_courses']['sub_content'][0]['list'][0]='Crisp understanding of difficult concepts.';
-    $return_array['section_inside_courses']['sub_content'][0]['list'][1]='A detailed breakdown of topics.';
-    $return_array['section_inside_courses']['sub_content'][0]['list'][2]='Content in video format.';
-    $return_array['section_inside_courses']['sub_content'][0]['list'][3]='Actionable steps and strategies.';
-    $return_array['section_inside_courses']['sub_content'][0]['list'][4]='Network and connect with like-minded learners.';
-    $return_array['section_inside_courses']['sub_content'][0]['list'][5]='Pre-recorded content will be provided.';
-    $return_array['section_inside_courses']['sub_content'][0]['list'][5]='Watch at your own pace, anytime, anywhere.';
+    // $return_array['section_inside_courses']['sub_content'][0]['list'][0]='Crisp understanding of difficult concepts.';
+    // $return_array['section_inside_courses']['sub_content'][0]['list'][1]='A detailed breakdown of topics.';
+    // $return_array['section_inside_courses']['sub_content'][0]['list'][2]='Content in video format.';
+    // $return_array['section_inside_courses']['sub_content'][0]['list'][3]='Actionable steps and strategies.';
+    // $return_array['section_inside_courses']['sub_content'][0]['list'][4]='Network and connect with like-minded learners.';
+    // $return_array['section_inside_courses']['sub_content'][0]['list'][5]='Pre-recorded content will be provided.';
+    // $return_array['section_inside_courses']['sub_content'][0]['list'][5]='Watch at your own pace, anytime, anywhere.';
 
 
-    $return_array['section_inside_courses']['sub_content'][1]['img']='https://procorner.in/assets/frontend/default/img/Queries-tab.png';
-    $return_array['section_inside_courses']['sub_content'][1]['main_title']='Queries tab';
-    $return_array['section_inside_courses']['sub_content'][1]['sub_title']='Satisfy all the lingering questions that arise due to your curiosity while you are learning something new';    
+    // $return_array['section_inside_courses']['sub_content'][1]['img']='https://procorner.in/assets/frontend/default/img/Queries-tab.png';
+    // $return_array['section_inside_courses']['sub_content'][1]['main_title']='Queries tab';
+    // $return_array['section_inside_courses']['sub_content'][1]['sub_title']='Satisfy all the lingering questions that arise due to your curiosity while you are learning something new';    
         
-    $return_array['section_inside_courses']['sub_content'][1]['list'][0]='Don’t take your doubts to the next step of your professional ladder.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][1]='Clear your doubts with our top educators.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][2]='Use our Doubts Tab for your queries.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][3]='Drop your questions at any time of the day.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][4]='Clear your doubts and satisfy your curiosity.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Grow with us as you tweak your mistakes.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Ask your doubts in our community group as well.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][0]='Don’t take your doubts to the next step of your professional ladder.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][1]='Clear your doubts with our top educators.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][2]='Use our Doubts Tab for your queries.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][3]='Drop your questions at any time of the day.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][4]='Clear your doubts and satisfy your curiosity.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Grow with us as you tweak your mistakes.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Ask your doubts in our community group as well.';
 
 
-    $return_array['section_inside_courses']['sub_content'][1]['img']='https://procorner.in/assets/frontend/default/img/Lifetime-subscription.png';
-    $return_array['section_inside_courses']['sub_content'][1]['main_title']='Lifetime subscription.';
-    $return_array['section_inside_courses']['sub_content'][1]['sub_title']='Get this super-feature too along with the purchase of our courses! Check them below';    
+    // $return_array['section_inside_courses']['sub_content'][1]['img']='https://procorner.in/assets/frontend/default/img/Lifetime-subscription.png';
+    // $return_array['section_inside_courses']['sub_content'][1]['main_title']='Lifetime subscription.';
+    // $return_array['section_inside_courses']['sub_content'][1]['sub_title']='Get this super-feature too along with the purchase of our courses! Check them below';    
         
-    $return_array['section_inside_courses']['sub_content'][1]['list'][0]='Get unlimited access to your purchased courses.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][1]='Zero extra fees for any future additions to the course.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][2]='Revise by going through the courses multiple times.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][3]='Get lifetime access to the community group as well.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][4]='Any upgrades that are made will be provided for free.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Learn and prosper at your pace.';
-    $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Rewatch topics for better retention of knowledge.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][0]='Get unlimited access to your purchased courses.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][1]='Zero extra fees for any future additions to the course.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][2]='Revise by going through the courses multiple times.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][3]='Get lifetime access to the community group as well.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][4]='Any upgrades that are made will be provided for free.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Learn and prosper at your pace.';
+    // $return_array['section_inside_courses']['sub_content'][1]['list'][5]='Rewatch topics for better retention of knowledge.';
     
 
 
@@ -188,43 +195,43 @@ class Api extends REST_Controller
     $return_array['section_money_back']['block'][3]['title']='Course satisfaction';
     $return_array['section_money_back']['block'][3]['numbers']='100%';
 
-    $return_array['section_resourses']['main_title']='45 DAYS MONEY-BACK GUARANTEE';
-    $return_array['section_resourses']['sub_title']='We have resources for everyone. Whether, you are a working professional, student, or a business. We have something specific for emerging women too';
+    // $return_array['section_resourses']['main_title']='45 DAYS MONEY-BACK GUARANTEE';
+    // $return_array['section_resourses']['sub_title']='We have resources for everyone. Whether, you are a working professional, student, or a business. We have something specific for emerging women too';
 
-    $return_array['section_resourses']['block'][0]['img']='https://procorner.in/assets/frontend/default/img/idea.png';
-    $return_array['section_resourses']['block'][0]['main_title']='For learners';
-    $return_array['section_resourses']['block'][0]['sub_text']='Skyrocket your career with your sharp skillset. Or learn for expanding your wit.';
-    $return_array['section_resourses']['block'][0]['see_more_link']='#';
+    // $return_array['section_resourses']['block'][0]['img']='https://procorner.in/assets/frontend/default/img/idea.png';
+    // $return_array['section_resourses']['block'][0]['main_title']='For learners';
+    // $return_array['section_resourses']['block'][0]['sub_text']='Skyrocket your career with your sharp skillset. Or learn for expanding your wit.';
+    // $return_array['section_resourses']['block'][0]['see_more_link']='#';
 
-    $return_array['section_resourses']['block'][1]['img']='https://procorner.in/assets/frontend/default/img/businessman.png';
-    $return_array['section_resourses']['block'][1]['main_title']='For businesses';
-    $return_array['section_resourses']['block'][1]['sub_text']='Incorporate a growth mindset in your employees through our stackable courses.';
-    $return_array['section_resourses']['block'][1]['see_more_link']='#';
+    // $return_array['section_resourses']['block'][1]['img']='https://procorner.in/assets/frontend/default/img/businessman.png';
+    // $return_array['section_resourses']['block'][1]['main_title']='For businesses';
+    // $return_array['section_resourses']['block'][1]['sub_text']='Incorporate a growth mindset in your employees through our stackable courses.';
+    // $return_array['section_resourses']['block'][1]['see_more_link']='#';
 
-    $return_array['section_resourses']['block'][2]['img']='https://procorner.in/assets/frontend/default/img/cap.png';
-    $return_array['section_resourses']['block'][2]['main_title']='For emerging women';
-    $return_array['section_resourses']['block'][2]['sub_text']='We help women in achieving their dreams by providing certified courses that will empower them.';
-    $return_array['section_resourses']['block'][2]['see_more_link']='#';
+    // $return_array['section_resourses']['block'][2]['img']='https://procorner.in/assets/frontend/default/img/cap.png';
+    // $return_array['section_resourses']['block'][2]['main_title']='For emerging women';
+    // $return_array['section_resourses']['block'][2]['sub_text']='We help women in achieving their dreams by providing certified courses that will empower them.';
+    // $return_array['section_resourses']['block'][2]['see_more_link']='#';
 
-    $return_array['section_learners_across']['main_title']='Learners across 160+ countries';
-    $return_array['section_learners_across']['sub_title']='We have a global footprint of 160+ countries. Our students learn from the comfort of their homes and develop incredible skills.';
-    $return_array['section_learners_across']['img']='https://procorner.in/assets/frontend/default/img/globalpresence-map.jpg';
+    // $return_array['section_learners_across']['main_title']='Learners across 160+ countries';
+    // $return_array['section_learners_across']['sub_title']='We have a global footprint of 160+ countries. Our students learn from the comfort of their homes and develop incredible skills.';
+    // $return_array['section_learners_across']['img']='https://procorner.in/assets/frontend/default/img/globalpresence-map.jpg';
     
-    $return_array['section_learners_across']['list'][0]['title']='CourseReport.com';
-    $return_array['section_learners_across']['list'][0]['rating']='4.8';
-    $return_array['section_learners_across']['list'][0]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
+    // $return_array['section_learners_across']['list'][0]['title']='CourseReport.com';
+    // $return_array['section_learners_across']['list'][0]['rating']='4.8';
+    // $return_array['section_learners_across']['list'][0]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
 
-    $return_array['section_learners_across']['list'][1]['title']='CourseReport.com';
-    $return_array['section_learners_across']['list'][1]['rating']='4.8';
-    $return_array['section_learners_across']['list'][1]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
+    // $return_array['section_learners_across']['list'][1]['title']='CourseReport.com';
+    // $return_array['section_learners_across']['list'][1]['rating']='4.8';
+    // $return_array['section_learners_across']['list'][1]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
 
-    $return_array['section_learners_across']['list'][2]['title']='CourseReport.com';
-    $return_array['section_learners_across']['list'][2]['rating']='4.8';
-    $return_array['section_learners_across']['list'][2]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
+    // $return_array['section_learners_across']['list'][2]['title']='CourseReport.com';
+    // $return_array['section_learners_across']['list'][2]['rating']='4.8';
+    // $return_array['section_learners_across']['list'][2]['img']='https://procorner.in/assets/frontend/default/img/course-report.png';
 
 
-    $return_array['section_blog']=$this->crud_model->get_blogs_home(4);
-    $return_array['section_testimonial'] = $this->crud_model->get_testimonial(10);
+    // $return_array['section_blog']=$this->crud_model->get_blogs_home(4);
+    // $return_array['section_testimonial'] = $this->crud_model->get_testimonial(10);
     // $return_array['section_download_our_app']['sub_title']='Procorner Eduflex just got a NEW app! We have created this app with some great features. Download the app to see it for yourself!';
     // $return_array['section_download_our_app']['list'][0]='Get productive in your free time.';
     // $return_array['section_download_our_app']['list'][1]='Bite-sized knowledge to make you smarter.';
