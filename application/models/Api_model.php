@@ -623,10 +623,15 @@ class Api_model extends CI_Model
 	{
 		$course_details = $this->crud_model->get_course_by_id($course_id)->result_array();
 		$response = $this->course_data($course_details);
+
+		// echo '<pre>';print_r($response);die;
+
 		foreach ($response as $key => $resp) {
 			$response[$key]['sections'] = $this->sections_get($course_id);
 			$response[$key]['is_wishlisted'] = $this->is_added_to_wishlist($user_id, $course_id);
 			$response[$key]['is_purchased'] = $this->is_purchased($user_id, $course_id);
+			$purchased_date= $this->db->get_where('enrol', array('user_id' => $user_id, 'course_id' => $course_id))->row_array();
+			$response[$key]['purchased_date']=date('D, d-M-Y', $purchased_date['date_added']);
 			$response[$key]['includes'] = array(
 				$this->crud_model->get_total_duration_of_lesson_by_course_id($course_id) . ' ' . get_phrase('on_demand_videos'),
 				$this->crud_model->get_lessons('course', $course_id)->num_rows() . ' ' . get_phrase('lessons'),

@@ -111,8 +111,6 @@ class Api extends REST_Controller
     $return_array['section_top']['sub_title']='The perfect place to hone your skills and turn them into forces that will guide you in your career journey. All it takes is a single step to turn your dreams into reality. Join us today to give your career the much-needed boost it deserves.';
     $return_array['section_top']['img']='https://procorner.in/assets/frontend/default/img/tutor.png';
     
-
-
     $return_array['section_quick_feature']['main_title']='Quick Feature';
     $return_array['section_quick_feature']['sub_title']='What makes our courses so unique and why should you invest in them?';
     
@@ -477,8 +475,21 @@ class Api extends REST_Controller
       $res=$this->api_model->get_percentage_of_specific_rating($i, 'course', $course_id);
       $percentage_ratings['rating_'.$i]=$res;
     }
-    $response['ratings']=$ratings;
-    $response['percentage_ratings']=$percentage_ratings;
+
+    $response_array=array();
+    foreach($response as $row){
+      $row['date_added']=date('D, d-M-Y', $row['date_added']);
+      $row['last_modified']=date('D, d-M-Y', $row['last_modified']);
+      array_push($response_array,$row);
+    }
+    $response=$response_array;
+
+    $response['ratings']=array();
+    foreach($ratings as $row){
+      $row['date_added']=date('D, d-M-Y', $row['date_added']);
+      array_push($response['ratings'],$row);
+    }
+    $response['percentage_ratings']=$percentage_ratings;    
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
 
