@@ -40,6 +40,34 @@
   		});
 	}
 
+	function load_notes_form(course_id){
+		$.ajax({
+			url: '<?= site_url('addons/course_forum/add_new_question_form/'); ?>'+course_id,
+			success: function(response){
+				$('#load-tabs-body').html(response);
+			}
+  		});
+	}
+
+	function load_notse(){
+		alert('hi');
+		$('.remove-active').removeClass('active');
+		$('#qAndA').addClass('active');
+
+		$('#load-tabs-body').hide();
+		$('#show_questions').show();
+		$.ajax({
+			url: '<?= site_url('addons/course_forum/load_question_with_ajax/'); ?>'+course_id,
+			success: function(response){
+				setTimeout(function(){
+					$('#show_questions').hide();
+					$('#load-tabs-body').show();
+					$('#load-tabs-body').html(response);
+				},200);
+			}
+  		});
+	}
+
 	function publish_question(course_id){
 		var question_title = $('#questionTitle').val();
 		var question_description = $('#questionDescription').val();

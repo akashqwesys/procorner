@@ -28,6 +28,14 @@ class Course_forum_model extends CI_Model {
         return $this->db->get('course_forum');
     }
     
+
+    function get_course_wise_questions($course_id = ""){
+        $this->db->order_by('id', 'desc');
+        $this->db->where('course_id', $course_id);
+        $this->db->where('is_parent', 0);
+        return $this->db->get('course_forum');
+    }
+
     function get_course_wise_limited_questions($course_id = "", $limit = 10, $starting_value = 0){
         $this->db->order_by('id', 'desc');
         $this->db->where('course_id', $course_id);

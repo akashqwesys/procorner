@@ -489,7 +489,13 @@ class Api extends REST_Controller
       $row['date_added']=date('D, d-M-Y', $row['date_added']);
       array_push($response['ratings'],$row);
     }
-    $response['percentage_ratings']=$percentage_ratings;    
+    $response['percentage_ratings']=$percentage_ratings;   
+    
+    $response['announcement']=$this->crud_model->notice_list($course_id);
+    $response['faq']=$this->crud_model->qanda_list($course_id);
+    // $question_comments = $forum->course_forum_model->get_child_question($question['id']);
+		// $commented_user = $forum->course_forum_model->get_child_question($question['id'], $this->session->userdata('user_id'))->num_rows();
+
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
 

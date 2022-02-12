@@ -17,7 +17,7 @@ class Course_forum extends CI_Controller {
         $data['course_id'] = $course_id;
         $this->load->view('lessons/add_new_question_form', $data);
     }
-
+   
     function load_question_with_ajax($course_id = "", $limit = 10){
         $data['course_id'] = $course_id;
         $this->load->view('lessons/course_forum', $data);

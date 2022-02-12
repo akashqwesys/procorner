@@ -190,6 +190,9 @@
                         </li> 
                         <li class="nav-item">
                             <a class="nav-link remove-active" id="qna_tab" onclick="load_course_qna('<?= $course_id; ?>')" href="javascript:;">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link remove-active" id="notes" onclick="load_notes()" href="javascript:;">Notes</a>
                         </li>                      
                     </ul>
                 </div>
