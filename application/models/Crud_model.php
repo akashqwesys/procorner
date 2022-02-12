@@ -3276,4 +3276,32 @@ class Crud_model extends CI_Model
     {
         return $this->db->get_where('testimonial', array('testimonial_id' => $id));
     }
+
+
+    function get_course_wise_questions($course_id = ""){
+        $this->db->order_by('id', 'desc');
+        $this->db->where('course_id', $course_id);
+        $this->db->where('is_parent', 0);
+        return $this->db->get('course_forum')->result_array();
+    }
+    function get_course_wise_all_parent_questions($course_id = ""){
+        $this->db->order_by('id', 'desc');
+        $this->db->where('course_id', $course_id);
+        $this->db->where('is_parent', 0);
+        return $this->db->get('course_forum');
+    }
+    function get_child_question($parent_question_id = "", $user_id = ""){
+        if($user_id > 0){
+            $this->db->where('user_id', $user_id);
+        }
+        $this->db->where('is_parent', $parent_question_id);
+        return $this->db->get('course_forum')->result_array();
+    }
+    public function get_all_user($user_id = 0)
+    {
+        if ($user_id > 0) {
+            $this->db->where('id', $user_id);
+        }
+        return $this->db->get('users');
+    }
 }

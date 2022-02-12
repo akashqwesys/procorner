@@ -493,8 +493,28 @@ class Api extends REST_Controller
     
     $response['announcement']=$this->crud_model->notice_list($course_id);
     $response['faq']=$this->crud_model->qanda_list($course_id);
-    // $question_comments = $forum->course_forum_model->get_child_question($question['id']);
-		// $commented_user = $forum->course_forum_model->get_child_question($question['id'], $this->session->userdata('user_id'))->num_rows();
+    
+    $questions = $this->crud_model->get_course_wise_questions($course_id);
+    $response['questions']['number_of_total_questions'] = $this->crud_model->get_course_wise_all_parent_questions($course_id)->num_rows();
+
+    $response['questions']['list']=array();
+    foreach($questions as $question):
+      $question['date_added']=date('D, d-M-Y', $question['date_added']);
+			$question['user_details'] = $this->crud_model->get_all_user($question['user_id'])->row_array();
+			if($question['upvoted_user_id'] == null || $question['upvoted_user_id'] == 'null'){
+				$question['upvoted_user_ids'] = json_encode(array());
+			}else{
+				$question['upvoted_user_ids'] = $question['upvoted_user_id'];
+			}
+			if(in_array($this->session->userdata('user_id'), json_decode($question['upvoted_user_ids']))){
+				$question['upvoted_user'] = true;
+			}else{
+				$question['upvoted_user'] = false;
+			}
+			$question['question_comments'] = $this->crud_model->get_child_question($question['id']);
+			$question['commented_user'] = $this->crud_model->get_child_question($question['id'], $this->session->userdata('user_id'));
+      array_push($response['questions']['list'],$question);		
+		endforeach;
 
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
