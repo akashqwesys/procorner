@@ -897,4 +897,72 @@ class Api_model extends CI_Model
 
 		return $response;
 	}
+
+	function publish_question($data){ 		     
+        $is_valid_user = $this->db->get_where('enrol', array('user_id' => $data['user_id'], 'course_id' => html_escape($data['course_id'])))->num_rows();
+        if($is_valid_user > 0){			
+            $this->db->insert('course_forum', $data);
+        }
+    }
+
+	function search_questions($course_id = ""){
+        $searching_keyword = html_escape($this->input->post('searching_value'));
+        $this->db->like('title', $searching_keyword);
+        $this->db->or_like('description', $searching_keyword);
+        $this->db->where('course_id', $course_id);
+        $this->db->where('is_parent', 0);
+        return $this->db->get('course_forum');
+    }
+
+    function publish_question_comment($data){
+        $is_valid_user = $this->db->get_where('enrol', array('user_id' => $data['user_id'], 'course_id' => html_escape($data['course_id'])))->num_rows();
+        if($is_valid_user > 0){			
+            $this->db->insert('course_forum', $data);
+        }
+    }
+	function delete_question($q_id,$user_id,$course_id){
+    	$this->db->where('id', $q_id);        
+        $question = $this->db->get('course_forum')->row_array();		
+		// $question = $this->course_forum_model->get_questions($q_id)->row_array();                      
+        if($user_id==$question['user_id'] && $course_id==$question['course_id']){
+            $this->db->where('id', $q_id);
+            $this->db->delete('course_forum');
+			return true;
+        }else{
+            return false;
+        }
+	}
+
+	function user_vote($question_id = "",$user_id=""){
+        $array_data = array();        
+        $this->db->where('id', $question_id);
+        $upvoted_user_ids = $this->db->get_where('course_forum')->row('upvoted_user_id');		
+        if($upvoted_user_ids == 'null' || $upvoted_user_ids == null){
+            $data['upvoted_user_id'] = json_encode(array(0 => $user_id));
+            $return_type =  'upvoted';
+        }else{
+            $array_of_user_id = json_decode($upvoted_user_ids);
+            $array_data = $array_of_user_id;
+
+            if(in_array($user_id, $array_of_user_id)){
+                $key = array_search($user_id, $array_of_user_id);
+                unset($array_data[$key]);
+                $array_data = array_values($array_data);
+                $return_type =  'unvoted';
+            }else{
+                array_push($array_data, $user_id);
+                $return_type = 'upvoted';
+            }
+            $data['upvoted_user_id'] = json_encode($array_data);
+        }
+
+        $this->db->where('id', $question_id);
+        $this->db->update('course_forum', $data);
+
+		$this->db->where('id', $question_id);
+		$upvoted_user_ids = $this->db->get_where('course_forum')->row('upvoted_user_id');		
+		$array_of_user_id = json_decode($upvoted_user_ids);				
+        return count($array_of_user_id);
+
+    }
 }

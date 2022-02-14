@@ -506,13 +506,13 @@ class Api extends REST_Controller
 			}else{
 				$question['upvoted_user_ids'] = $question['upvoted_user_id'];
 			}
-			if(in_array($this->session->userdata('user_id'), json_decode($question['upvoted_user_ids']))){
+			if(in_array($logged_in_user_details['user_id'], json_decode($question['upvoted_user_ids']))){
 				$question['upvoted_user'] = true;
 			}else{
 				$question['upvoted_user'] = false;
 			}
 			$question['question_comments'] = $this->crud_model->get_child_question($question['id']);
-			$question['commented_user'] = $this->crud_model->get_child_question($question['id'], $this->session->userdata('user_id'));
+			$question['commented_user'] = $this->crud_model->get_child_question($question['id'], $logged_in_user_details['user_id']);
       array_push($response['questions']['list'],$question);		
 		endforeach;
 
@@ -773,6 +773,91 @@ class Api extends REST_Controller
       $response['zoom_live_class_details'] = array();
       $response['zoom_api_key'] = '';
       $response['zoom_secret_key'] = '';
+    }
+    $this->set_response($response, REST_Controller::HTTP_OK);
+  }
+
+
+  // Forum Api
+  public function add_question_post()
+  {
+    $response = array();
+    $auth_token = $_POST['auth_token'];   
+    $course_id = $_POST['course_id'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+
+    $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+    if ($logged_in_user_details['user_id'] > 0) {
+      $params=array();
+      $params['user_id']=$logged_in_user_details['user_id'];
+      $params['course_id']=$course_id;
+      $params['title']=$title;
+      $params['description']=$description;
+      $params['is_parent']=0;
+      $params['date_added']=strtotime(date('d M Y'));
+      $response = $this->api_model->publish_question($params);
+      $response['status'] = 'success';
+    } else {
+      $response['status'] = 'failed';
+    }
+    $this->set_response($response, REST_Controller::HTTP_OK);
+  }
+  public function add_comment_post()
+  {
+    $response = array();
+    $auth_token = $_POST['auth_token'];   
+    $course_id = $_POST['course_id'];    
+    $description = $_POST['description'];
+    $question_id = $_POST['id'];
+
+    $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+    if ($logged_in_user_details['user_id'] > 0) {
+      $params=array();
+      $params['user_id']=$logged_in_user_details['user_id'];
+      $params['course_id']=$course_id;      
+      $params['description']=$description;
+      $params['is_parent']=$question_id;
+      $params['date_added']=strtotime(date('d M Y'));
+      $response = $this->api_model->publish_question_comment($params);
+      $response['status'] = 'success';
+    } else {
+      $response['status'] = 'failed';
+    }
+    $this->set_response($response, REST_Controller::HTTP_OK);
+  }
+
+
+  public function add_remove_like_post()
+  {
+    $response = array();
+    $auth_token = $_POST['auth_token'];   
+    // $course_id = $_POST['course_id'];        
+    $question_id = $_POST['id'];
+
+    $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+    if ($logged_in_user_details['user_id'] > 0) {   
+      $response['like_count'] = $this->api_model->user_vote($question_id,$logged_in_user_details['user_id']);      
+      $response['status'] = 'success';
+    } else {
+      $response['status'] = 'failed';
+    }
+    $this->set_response($response, REST_Controller::HTTP_OK);
+  }
+
+  public function delete_question_post()
+  {
+    $response = array();
+    $auth_token = $_POST['auth_token']; 
+    $course_id = $_POST['course_id'];            
+    $q_id = $_POST['id'];    
+
+    $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+    if ($logged_in_user_details['user_id'] > 0) {  
+      $result = $this->api_model->delete_question($q_id,$logged_in_user_details['user_id'],$course_id);      
+      $response['status'] = 'success';
+    } else {
+      $response['status'] = 'failed';
     }
     $this->set_response($response, REST_Controller::HTTP_OK);
   }
