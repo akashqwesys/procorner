@@ -523,7 +523,6 @@ class Api extends REST_Controller
 
 			$question['commented_user'] = $this->crud_model->get_child_question($question['id'], $logged_in_user_details['user_id']);
 
-
       $question['total_like']=count(json_decode($question['upvoted_user_ids']));
       // $response['total_comment']=$question['question_comments']
 
@@ -948,7 +947,7 @@ class Api extends REST_Controller
     $auth_token = $_POST['auth_token'];   
     $course_id = $_POST['refCourse_id'];
     $lesson_id = $_POST['refLesson_id'];
-    $title = $_POST['title'];
+    // $title = $_POST['title'];
     $description = $_POST['description'];
 
     $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
@@ -957,7 +956,7 @@ class Api extends REST_Controller
       $params['refUser_id']=$logged_in_user_details['user_id'];
       $params['refCourse_id']=$course_id;
       $params['refLesson_id']=$lesson_id;
-      $params['title']=$title;
+      // $params['title']=$title;
       $params['description']=$description;      
       $params['date_added']=strtotime(date('d M Y'));
       $response = $this->api_model->publish_notes($params);
@@ -983,14 +982,14 @@ class Api extends REST_Controller
     $auth_token = $_POST['auth_token'];   
     $course_id = $_POST['refCourse_id'];
     $lesson_id = $_POST['refLesson_id'];
-    $title = $_POST['title'];
+    // $title = $_POST['title'];
     $description = $_POST['description'];
     $id = $_POST['id'];
 
     $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
     if ($logged_in_user_details['user_id'] > 0) {
       $params=array();          
-      $params['title']=$title;
+      // $params['title']=$title;
       $params['description']=$description;      
       $params['date_added']=strtotime(date('d M Y'));
       $response = $this->api_model->update_notes($params,$id,$logged_in_user_details['user_id'],$course_id);	      

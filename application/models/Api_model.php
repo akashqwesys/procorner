@@ -924,10 +924,16 @@ class Api_model extends CI_Model
         }
 	}
 	
-	function get_all_notes($course_id = "",$user_id=""){        
-        $this->db->where('refCourse_id', $course_id);
+	function get_all_notes($course_id = "",$user_id=""){ 
+		
+		$this->db->select('notes.*,lesson.title as lesson_title');			
+		$this->db->from ("notes");
+		$this->db->where('refCourse_id', $course_id);
         $this->db->where('refUser_id', $user_id);
-        return $this->db->get('notes')->result_array();
+		$this->db->join('lesson', 'lesson.id = notes.refLesson_id','left');
+		return $this->db->get()->result_array();
+        
+        // return $this->db->get('notes')->result_array();
     }
 
 	function publish_question($data){ 		     
