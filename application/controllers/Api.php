@@ -512,7 +512,15 @@ class Api extends REST_Controller
 			}else{
 				$question['upvoted_user'] = false;
 			}
-			$question['question_comments'] = $this->crud_model->get_child_question($question['id']);
+			$question_comments = $this->crud_model->get_child_question($question['id']);
+      $question['question_comments']=array();
+      if(!empty($question_comments)){
+        foreach($question_comments as $row){
+          $row['date_added']=date('D, d-M-Y', $row['date_added']);
+          array_push($question['question_comments'],$row);
+        }
+      }
+
 			$question['commented_user'] = $this->crud_model->get_child_question($question['id'], $logged_in_user_details['user_id']);
 
 
