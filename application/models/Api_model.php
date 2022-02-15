@@ -898,6 +898,25 @@ class Api_model extends CI_Model
 		return $response;
 	}
 
+	function publish_notes($data){ 		     
+        $is_valid_user = $this->db->get_where('enrol', array('user_id' => $data['refUser_id'], 'course_id' => html_escape($data['refCourse_id'])))->num_rows();
+        if($is_valid_user > 0){			
+            $this->db->insert('notes', $data);
+        }
+    }
+	function delete_notes($q_id,$user_id){
+    	$this->db->where('notes_id', $q_id);        
+        $notes = $this->db->get('notes')->row_array();		
+		// $question = $this->course_forum_model->get_questions($q_id)->row_array();                      
+        if($user_id==$notes['refUser_id']){
+            $this->db->where('notes_id', $q_id);
+            $this->db->delete('notes');
+			return true;
+        }else{
+            return false;
+        }
+	}
+
 	function publish_question($data){ 		     
         $is_valid_user = $this->db->get_where('enrol', array('user_id' => $data['user_id'], 'course_id' => html_escape($data['course_id'])))->num_rows();
         if($is_valid_user > 0){			

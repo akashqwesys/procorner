@@ -931,4 +931,46 @@ class Api extends REST_Controller
     }
     $this->set_response($response, REST_Controller::HTTP_OK);
   }
+
+
+  public function add_notes_post()
+  {
+    $response = array();
+    $auth_token = $_POST['auth_token'];   
+    $course_id = $_POST['refCourse_id'];
+    $lesson_id = $_POST['refLesson_id'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+
+    $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+    if ($logged_in_user_details['user_id'] > 0) {
+      $params=array();
+      $params['refUser_id']=$logged_in_user_details['user_id'];
+      $params['refCourse_id']=$course_id;
+      $params['refLesson_id']=$lesson_id;
+      $params['title']=$title;
+      $params['description']=$description;      
+      $params['date_added']=strtotime(date('d M Y'));
+      $response = $this->api_model->publish_notes($params);	      
+      $response['status'] = 'success';
+    } else {
+      $response['status'] = 'failed';
+    }
+    $this->set_response($response, REST_Controller::HTTP_OK);
+  }
+  public function delete_notes_post()
+  {
+    $response = array();
+    $auth_token = $_POST['auth_token'];               
+    $q_id = $_POST['id'];    
+
+    $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+    if ($logged_in_user_details['user_id'] > 0) {  
+      $result = $this->api_model->delete_notes($q_id,$logged_in_user_details['user_id']);      
+      $response['status'] = 'success';
+    } else {
+      $response['status'] = 'failed';
+    }
+    $this->set_response($response, REST_Controller::HTTP_OK);
+  }
 }
