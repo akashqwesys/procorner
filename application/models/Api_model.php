@@ -916,6 +916,12 @@ class Api_model extends CI_Model
             return false;
         }
 	}
+	
+	function get_all_notes($course_id = "",$user_id=""){        
+        $this->db->where('refCourse_id', $course_id);
+        $this->db->where('refUser_id', $user_id);
+        return $this->db->get('notes')->result_array();
+    }
 
 	function publish_question($data){ 		     
         $is_valid_user = $this->db->get_where('enrol', array('user_id' => $data['user_id'], 'course_id' => html_escape($data['course_id'])))->num_rows();
@@ -932,6 +938,8 @@ class Api_model extends CI_Model
         $this->db->where('is_parent', 0);
         return $this->db->get('course_forum');
     }
+
+
 
     function publish_question_comment($data){
         $is_valid_user = $this->db->get_where('enrol', array('user_id' => $data['user_id'], 'course_id' => html_escape($data['course_id'])))->num_rows();

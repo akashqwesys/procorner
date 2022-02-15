@@ -530,6 +530,15 @@ class Api extends REST_Controller
       array_push($response['questions']['list'],$question);		
 		endforeach;
 
+    $result_notes= $this->api_model->get_all_notes($course_id,$logged_in_user_details['user_id']);
+    $response['notes']=array();
+    if(!empty($result_notes)){
+      foreach($result_notes as $row){
+        $row['date_added']=date('D, d-M-Y', $row['date_added']);
+        array_push($response['notes'],$row);  
+      }
+    }
+
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
 
