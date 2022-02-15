@@ -811,6 +811,48 @@ class Api extends REST_Controller
       $params['is_parent']=0;
       $params['date_added']=strtotime(date('d M Y'));
       $response = $this->api_model->publish_question($params);
+
+
+
+
+      $questions = $this->crud_model->get_course_wise_questions($course_id);
+      $response['questions']['number_of_total_questions'] = $this->crud_model->get_course_wise_all_parent_questions($course_id)->num_rows();
+  
+      $response['questions']['list']=array();
+      foreach($questions as $question):
+        $user_details = $this->crud_model->get_all_user($question['user_id'])->row_array();
+        $question['date_added']=date('D, d-M-Y', $question['date_added']);
+        $question['user_details'] = $this->crud_model->get_all_user($question['user_id'])->row_array();
+        if($question['upvoted_user_id'] == null || $question['upvoted_user_id'] == 'null'){
+          $question['upvoted_user_ids'] = json_encode(array());
+        }else{
+          $question['upvoted_user_ids'] = $question['upvoted_user_id'];
+        }
+        if(in_array($logged_in_user_details['user_id'], json_decode($question['upvoted_user_ids']))){
+          $question['upvoted_user'] = true;
+        }else{
+          $question['upvoted_user'] = false;
+        }
+        $question_comments = $this->crud_model->get_child_question($question['id']);
+        $question['question_comments']=array();
+        if(!empty($question_comments)){
+          foreach($question_comments as $row){
+            $row['date_added']=date('D, d-M-Y', $row['date_added']);
+            array_push($question['question_comments'],$row);
+          }
+        }
+  
+        $question['commented_user'] = $this->crud_model->get_child_question($question['id'], $logged_in_user_details['user_id']);
+  
+  
+        $question['total_like']=count(json_decode($question['upvoted_user_ids']));
+        // $response['total_comment']=$question['question_comments']
+  
+        array_push($response['questions']['list'],$question);		
+      endforeach;
+
+
+
       $response['status'] = 'success';
     } else {
       $response['status'] = 'failed';
@@ -834,6 +876,20 @@ class Api extends REST_Controller
       $params['is_parent']=$question_id;
       $params['date_added']=strtotime(date('d M Y'));
       $response = $this->api_model->publish_question_comment($params);
+
+      
+      $question_comments = $this->crud_model->get_child_question($question_id);
+        $question=array();
+        if(!empty($question_comments)){
+          foreach($question_comments as $row){
+            $row['date_added']=date('D, d-M-Y', $row['date_added']);
+            array_push($question,$row);
+          }
+        }
+        $response['question_comments']=$question;
+        $response['commented_user'] = $this->crud_model->get_child_question($question_id, $logged_in_user_details['user_id']);
+
+
       $response['status'] = 'success';
     } else {
       $response['status'] = 'failed';
