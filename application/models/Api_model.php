@@ -904,6 +904,13 @@ class Api_model extends CI_Model
             $this->db->insert('notes', $data);
         }
     }
+	function update_notes($data,$id,$user_id,$refCourse_id){ 		     
+        $is_valid_user = $this->db->get_where('enrol', array('user_id' => $user_id, 'course_id' => html_escape($refCourse_id)))->num_rows();
+        if($is_valid_user > 0){	
+			$this->db->where('notes_id', $id);
+        	$this->db->update('notes', $data);            
+        }
+    }
 	function delete_notes($q_id,$user_id){
     	$this->db->where('notes_id', $q_id);        
         $notes = $this->db->get('notes')->row_array();		

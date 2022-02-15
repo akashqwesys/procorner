@@ -960,7 +960,50 @@ class Api extends REST_Controller
       $params['title']=$title;
       $params['description']=$description;      
       $params['date_added']=strtotime(date('d M Y'));
-      $response = $this->api_model->publish_notes($params);	      
+      $response = $this->api_model->publish_notes($params);
+      
+      $result_notes= $this->api_model->get_all_notes($course_id,$logged_in_user_details['user_id']);
+      $response['notes']=array();
+      if(!empty($result_notes)){
+        foreach($result_notes as $row){
+          $row['date_added']=date('D, d-M-Y', $row['date_added']);
+          array_push($response['notes'],$row);  
+        }
+      }
+      $response['status'] = 'success';
+    } else {
+      $response['status'] = 'failed';
+    }
+    $this->set_response($response, REST_Controller::HTTP_OK);
+  }
+
+  public function update_notes_post()
+  {
+    $response = array();
+    $auth_token = $_POST['auth_token'];   
+    $course_id = $_POST['refCourse_id'];
+    $lesson_id = $_POST['refLesson_id'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $id = $_POST['id'];
+
+    $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
+    if ($logged_in_user_details['user_id'] > 0) {
+      $params=array();          
+      $params['title']=$title;
+      $params['description']=$description;      
+      $params['date_added']=strtotime(date('d M Y'));
+      $response = $this->api_model->update_notes($params,$id,$logged_in_user_details['user_id'],$course_id);	      
+
+      $result_notes= $this->api_model->get_all_notes($course_id,$logged_in_user_details['user_id']);
+      $response['notes']=array();
+      if(!empty($result_notes)){
+        foreach($result_notes as $row){
+          $row['date_added']=date('D, d-M-Y', $row['date_added']);
+          array_push($response['notes'],$row);  
+        }
+      }
+
       $response['status'] = 'success';
     } else {
       $response['status'] = 'failed';
