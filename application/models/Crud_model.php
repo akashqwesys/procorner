@@ -3291,11 +3291,14 @@ class Crud_model extends CI_Model
         return $this->db->get('course_forum');
     }
     function get_child_question($parent_question_id = "", $user_id = ""){
-        if($user_id > 0){
-            $this->db->where('user_id', $user_id);
+        $this->db->select("course_forum.*,users.first_name,users.last_name,users.image");
+        $this->db->from ("course_forum");
+        $this->db->join('users', 'users.id = course_forum.user_id','left');
+        if($user_id > 0){            
+            $this->db->where('course_forum.user_id', $user_id);
         }
         $this->db->where('is_parent', $parent_question_id);
-        return $this->db->get('course_forum')->result_array();
+        return $this->db->get()->result_array();
     }
     public function get_all_user($user_id = 0)
     {

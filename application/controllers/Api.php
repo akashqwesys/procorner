@@ -479,7 +479,7 @@ class Api extends REST_Controller
     $response_array=array();
     foreach($response as $row){
       $row['date_added']=date('D, d-M-Y', $row['date_added']);
-      $row['last_modified']=date('D, d-M-Y', $row['last_modified']);
+      $row['last_modified']=date('D, d-M-Y', $row['last_modified']);      
       array_push($response_array,$row);
     }
     $response=$response_array;
@@ -499,6 +499,7 @@ class Api extends REST_Controller
 
     $response['questions']['list']=array();
     foreach($questions as $question):
+      $user_details = $this->crud_model->get_all_user($question['user_id'])->row_array();
       $question['date_added']=date('D, d-M-Y', $question['date_added']);
 			$question['user_details'] = $this->crud_model->get_all_user($question['user_id'])->row_array();
 			if($question['upvoted_user_id'] == null || $question['upvoted_user_id'] == 'null'){
@@ -513,6 +514,11 @@ class Api extends REST_Controller
 			}
 			$question['question_comments'] = $this->crud_model->get_child_question($question['id']);
 			$question['commented_user'] = $this->crud_model->get_child_question($question['id'], $logged_in_user_details['user_id']);
+
+
+      $question['total_like']=count(json_decode($question['upvoted_user_ids']));
+      // $response['total_comment']=$question['question_comments']
+
       array_push($response['questions']['list'],$question);		
 		endforeach;
 

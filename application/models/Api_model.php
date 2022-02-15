@@ -965,4 +965,5 @@ class Api_model extends CI_Model
         return count($array_of_user_id);
 
     }
+
 }
