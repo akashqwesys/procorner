@@ -1075,12 +1075,8 @@ class Crud_model extends CI_Model
         $lesson_type = $lesson_type_array[0];
         $data['lesson_type'] = $lesson_type;
 
-
-        $attachment_type = $lesson_type_array[0];
-        // $attachment_type = $lesson_type_array[1];
+        $attachment_type = $lesson_type_array[1];
         $data['attachment_type'] = $attachment_type;
-
-        // print_r($data['attachment_type']);die;
 
         if ($lesson_type == 'video') {
             // This portion is for web application's video lesson
