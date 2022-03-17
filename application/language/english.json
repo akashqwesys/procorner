@@ -904,5 +904,14 @@
     "your_subscription_date_is_over_please_renew_your_bundle": "Your subscription date is over please renew your bundle",
     "search_for_bundle": "Search for bundle",
     "buy_course_bundle": "Buy course bundle",
-    "please_login_first": "Please login first"
+    "please_login_first": "Please login first",
+    "for_web_application": "For web application",
+    "this_video_will_be_shown_on_web_application": "This video will be shown on web application",
+    "analyzing_the_url": "Analyzing the url",
+    "invalid_url": "Invalid url",
+    "your_video_source_has_to_be_either_youtube_or_vimeo": "Your video source has to be either youtube or vimeo",
+    "lesson_provider": "Lesson provider",
+    "for_mobile_application": "For mobile application",
+    "only": "Only",
+    "type_video_is_acceptable_for_mobile_application": "Type video is acceptable for mobile application"
 }

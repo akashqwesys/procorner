@@ -1066,7 +1066,9 @@ class Crud_model extends CI_Model
     public function add_lesson()
     {
 
-        echo $this->input->post('course_id');die;
+        // echo $this->input->post('course_id');die;
+
+        // echo '<pre>';print_r($_POST);die;
 
         $data['course_id'] = html_escape($this->input->post('course_id'));
         $data['title'] = html_escape($this->input->post('title'));
