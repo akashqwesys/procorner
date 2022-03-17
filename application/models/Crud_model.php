@@ -1073,7 +1073,7 @@ class Crud_model extends CI_Model
         $lesson_type_array = explode('-', $this->input->post('lesson_type'));
 
 
-        print_r($lesson_type_array);die;
+        // print_r($lesson_type_array);die;
 
         $lesson_type = $lesson_type_array[0];
         $data['lesson_type'] = $lesson_type;
