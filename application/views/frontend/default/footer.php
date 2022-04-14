@@ -23,7 +23,7 @@
       </div>
       
        <div class="col-6 col-sm-6 col-md-3">
-        <h5 class="">Contact Us</h5>
+        <h5 class="">Contact</h5>
         <ul class="list-unstyled text-small custome-ul-li">
             <li class="mb-1 phone">
               <a class="link-secondary footer-hover-link" href="tel:<?php echo get_settings('phone'); ?>">

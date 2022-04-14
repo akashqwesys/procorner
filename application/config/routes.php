@@ -90,5 +90,4 @@ $route['payment'] = "home/payment";
 
 // $route['my-courses'] = "home/logmy_coursesin";
 
-
 $route['translate_uri_dashes'] = FALSE;

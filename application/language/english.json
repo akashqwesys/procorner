@@ -913,5 +913,8 @@
     "lesson_provider": "Lesson provider",
     "for_mobile_application": "For mobile application",
     "only": "Only",
-    "type_video_is_acceptable_for_mobile_application": "Type video is acceptable for mobile application"
+    "type_video_is_acceptable_for_mobile_application": "Type video is acceptable for mobile application",
+    "user_deleted_successfully": "User deleted successfully",
+    "user_added_successfully": "User added successfully",
+    "student_has_been_enrolled_to_that_course": "Student has been enrolled to that course"
 }
